@@ -185,6 +185,33 @@
     padding: 18px 14px; font-size: 11.5px; color: #bbb; text-align: center;
   }
 
+
+  .team-api .team-header { background: #f0fdfa; }
+  .team-api .team-header h2 { color: #0f766e; }
+  .filter-btn.team-api.active { background: #ccfbf1; color: #0f766e; }
+
+
+  /* ── Stackable filter rows (v7) ─────────────────────────────────────── */
+  .filter-row-sep   { flex-basis: 100%; height: 0; margin: 2px 0; }
+  .filter-row-label {
+    font-size: 9px; color: #888; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .06em; flex-basis: 100%; margin-bottom: -6px;
+  }
+  .priority-btn { background: #2a2a2e !important; color: #93c5fd !important; }
+  .priority-btn.active { background: #0071e3 !important; color: #fff !important; }
+  .no-wip-btn { }
+  .no-wip-btn.active { background: #166534 !important; color: #fff !important; }
+  .linear-pill {
+    display: inline-flex; align-items: center; gap: 3px;
+    font-size: 9.5px; background: #eff6ff; color: #1d4ed8; border-radius: 4px;
+    padding: 2px 6px; text-decoration: none; white-space: nowrap; margin: 2px 0;
+  }
+  .linear-pill:hover { background: #dbeafe; }
+  .aparna-note {
+    background: #f0fdf4; border-left: 3px solid #16a34a;
+    padding: 6px 10px; margin: 6px 0; font-size: 12px; border-radius: 3px;
+  }
+
 </style>
 </head>
 <body>
@@ -193,12 +220,18 @@
   <h1>📋 Sydecar Product Feature Requests</h1>
   <span class="meta">Last synced: May 1, 2026 · Jan 1–May 1, 2026</span>
   <input class="search-bar" id="searchInput" placeholder="Search features…" oninput="filterCards()">
-  <button class="filter-btn active" id="filterAll" onclick="setFilter('all')">All</button>
-  <button class="filter-btn" id="filterP1" onclick="setFilter('p1')">P1 only</button>
-  <button class="filter-btn" id="filterChurn" onclick="setFilter('churn')">🚨 Churn risk</button>
-  <button class="filter-btn" id="filterWIP" onclick="setFilter('wip')">⚙ WIP</button>
-  <button class="filter-btn ops-risk-btn" id="filterOpsRisk" onclick="setFilter('ops-risk')">🔴 Ops Risk</button>
-  <button class="filter-btn new-btn" id="filterNew" onclick="setFilter('new')">✨ New</button>
+  <span class="filter-row-label">Priority</span>
+  <button class="filter-btn priority-btn active" id="priAll" onclick="setPriority('all')">All</button>
+  <button class="filter-btn priority-btn" id="priP1" onclick="setPriority('p1')">P1</button>
+  <button class="filter-btn priority-btn" id="priP2" onclick="setPriority('p2')">P2</button>
+  <button class="filter-btn priority-btn" id="priP3" onclick="setPriority('p3')">P3</button>
+  <span class="filter-row-label" style="margin-top:6px;">Status</span>
+  <button class="filter-btn status-btn active" id="filterAll" onclick="setFilter('all')">All</button>
+  <button class="filter-btn status-btn" id="filterWIP" onclick="setFilter('wip')">⚙ WIP</button>
+  <button class="filter-btn status-btn no-wip-btn" id="filterNoWIP" onclick="setFilter('no-wip')">📋 Not started</button>
+  <button class="filter-btn status-btn" id="filterChurn" onclick="setFilter('churn')">🚨 Churn risk</button>
+  <button class="filter-btn status-btn new-btn" id="filterNew" onclick="setFilter('new')">✨ New</button>
+  <button class="filter-btn status-btn ops-risk-btn" id="filterOpsRisk" onclick="setFilter('ops-risk')">🔴 Ops Risk</button>
 </div>
 
 <div class="stats-bar">
@@ -216,6 +249,7 @@
   <button class="filter-btn team-btn team-deal"       id="teamDeal"      onclick="setTeam('deal')">📁 Deal Organizers</button>
   <button class="filter-btn team-btn team-financial"  id="teamFinancial" onclick="setTeam('financial')">💰 Financial Systems</button>
   <button class="filter-btn team-btn team-ops"        id="teamOps"       onclick="setTeam('ops')">⚙️ Operations</button>
+  <button class="filter-btn team-btn team-api" id="teamApi" onclick="setTeam('api')">🔌 API Partners</button>
   <button style="margin-left:auto;background:#1d1d1f;color:#fff;border:none;border-radius:6px;padding:5px 12px;font-size:11px;cursor:pointer;font-weight:600;" id="btnSelect" onclick="toggleSelectMode()">☑ Select</button>
   <button style="background:#fee2e2;color:#991b1b;border:1px solid #fca5a5;border-radius:6px;padding:5px 12px;font-size:11px;cursor:pointer;font-weight:600;display:none;" id="btnArchiveSelected" onclick="archiveSelected()">📦 Archive selected</button>
 </div>
@@ -372,6 +406,42 @@
             <a class="source-link" href="https://prod_sydecar2_dwh.mozart.all_feedback">Snowflake · all_feedback</a>
             <h4>CX Confirmation (Brett's Crumbs 2 · Apr 2026)</h4><p>Independently flagged by Deal Operations as a top CX request. Adds weight to prioritization. <a class="source-link" href="https://www.notion.so/sydecar/Deal-Operations-Product-Requests-Brett-s-Crumbs-2-3373608079af807798b8f809f50061f6" target="_blank">Brett's Crumbs 2</a></p>
             <p class="cx-note" style="background:#fff3e0;border-left:3px solid #ff9800;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📊 <strong>Front data (Jan–Apr 2026):</strong> "Investing with Alto IRA" in Urgent/Deal Closing tag bucket (3 threads). One deal (DPV Nexus II) required ops to directly facilitate fund transfer between AltoIRA and investors. IRA investors consistently require ops mediation to close.</p><span class="updated">Last updated: Apr 8, 2026</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-card" id="card-investor-bank-first-investment" data-priority="p1" data-tags="wip investors bank-account wire-funding distribution churn aparna-roadmap linear manually-added" draggable="true">
+      <div class="card-row">
+        <span class="drag-handle">&#8286;</span>
+        <div class="card-content">
+          <div class="card-top">
+            <span class="card-title" onclick="toggleDetail(this)">Investor Bank Account — Capture at First Investment, Not After Signing</span>
+            <span class="badge p1">P1</span>
+            <span class="badge wip">⚙ <a href="https://linear.app/sydecario/issue/LP-357" target="_blank" class="linear-pill" style="color:inherit;background:transparent;padding:0;">WIP · Current Cycle · LP-357</a></span>
+            <span class="badge churn">🚨 Churn signal</span>
+            <span class="badge" style="background:#6a1b9a;color:#fff;font-size:10px;padding:2px 6px;border-radius:4px;">✨ New</span>
+          </div>
+          <div class="card-meta"><span class="mention">Investors</span><span>246 inbound emails — the single highest-volume investor touchpoint in the support corpus (49% of all 500 LP emails). Root cause: bank details are collected separately from the investment flow, so signed investors go into limbo. LP-357 is the current cycle parent epic.</span></div>
+          <div class="friction-bar"><span class="friction-label">Friction impact:</span><div class="friction-dots"><div class="friction-dot filled"></div><div class="friction-dot filled"></div><div class="friction-dot filled"></div></div></div>
+          <div class="card-detail">
+            
+            <h4>Background (Aparna Q2 Roadmap)</h4>
+            <p>This is the highest-volume LP friction item in the entire email corpus: 246 emails across all categories are caused by bank account not being collected at the point of first investment. Breakdown:</p>
+            <p style="background:#fff3e0;border-left:3px solid #ff9800;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📧 <strong>182 emails</strong> = Distribution Notification failures (Ops cannot pay because no bank info on file) · <strong>34</strong> = Unclaimed Funds Outreach · <strong>13</strong> = Wire Funding Issues · <strong>10</strong> = Refund Wire Issues. All four categories disappear or shrink dramatically if bank info is captured at first investment.</p>
+            <p style="background:#fff3e0;border-left:3px solid #ff9800;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">💬 <strong>Brett Sagan · #product-feedback · Feb 20, 2026:</strong> <em>"The biggest issue from Day 1… I've been trying to figure out the final calculations."</em> First-time DL on Chamaeleon LLC SPV experienced delayed close and last-minute modifications due to bank account / fee flow confusion.</p>
+            <p style="background:#fff3e0;border-left:3px solid #ff9800;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">💬 <strong>Jeremy Sell · #product-feedback · Apr 13, 2026:</strong> <em>"Seems broken that $2 would hold up a $20m deal."</em></p>
+            <p style="background:#e3f2fd;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📓 <strong>Brett's Crumbs alignment:</strong> "Increased visibility into payment statuses" — the only item in the entire wishlist that maps to ALL four teams: Deal Leads + Operations + Financial Systems + Investors.</p>
+            <h4>Linear Tickets</h4>
+            <p>
+              <a href="https://linear.app/sydecario/issue/LP-357" target="_blank" class="linear-pill">LP-357 · Parent epic (current cycle)</a>
+              <a href="https://linear.app/sydecario/issue/LP-673" target="_blank" class="linear-pill">LP-673 · Phase 1 — new investors</a>
+              <a href="https://linear.app/sydecario/issue/LP-178" target="_blank" class="linear-pill">LP-178 · LP bank account creation experience</a>
+              <a href="https://linear.app/sydecario/issue/LP-537" target="_blank" class="linear-pill">LP-537 · Multi-close wire verification (Iceboxed)</a>
+            </p>
+            <h4>North Star Relevance</h4>Each of those 246 emails is a direct CX touchpoint. Eliminating even 70% = ~172 touchpoints removed per period. No other single feature in the LP roadmap has this leverage.
+    
+            <span class="updated">Added May 1, 2026 · Source: Aparna Q2 2026 Investor Experience Roadmap</span>
           </div>
         </div>
       </div>
@@ -858,6 +928,70 @@
       </div>
     </div>
 
+    <div class="feature-card" id="card-kyc-auto-trigger" data-priority="p2" data-tags="investors kyc onboarding trigger backlog aparna-roadmap linear manually-added" draggable="true">
+      <div class="card-row">
+        <span class="drag-handle">&#8286;</span>
+        <div class="card-content">
+          <div class="card-top">
+            <span class="card-title" onclick="toggleDetail(this)">Auto-Trigger KYC Upon Profile Completion — Remove Manual Review Gate</span>
+            <span class="badge p2">P2</span>
+            <span class="badge" style="background:#6a1b9a;color:#fff;font-size:10px;padding:2px 6px;border-radius:4px;">✨ New</span>
+          </div>
+          <div class="card-meta"><span class="mention">Investors</span><span>KYC initiation is a manual step gated on internal review. 83 emails are generated by investors stuck in limbo waiting for a trigger that has to be manually fired. Eliminates 1–2 deal-day delays per entity deal.</span></div>
+          <div class="friction-bar"><span class="friction-label">Friction impact:</span><div class="friction-dots"><div class="friction-dot filled"></div><div class="friction-dot filled"></div><div class="friction-dot"></div></div></div>
+          <div class="card-detail">
+            
+            <h4>Background (Aparna Q2 Roadmap)</h4>
+            <p>Status: <strong>Backlog.</strong> 83 emails: 75 KYC trigger-related + 8 KYC status help emails. Auto-triggering on profile completion eliminates the most common "why hasn't my KYC started?" touchpoint category.</p>
+            <p style="background:#fff3e0;border-left:3px solid #ff9800;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">💬 <strong>Sophie Dvorkin · #product-feedback · Apr 2, 2026:</strong> <em>"Investors can't upload their ID (Ops does it for them)."</em> One of four cascading bugs that put a $40K investment at risk on the 25Madison/Anysphere SPV. The underlying issue: KYC depends on a manual gate that doesn't fire when investors are ready.</p>
+            <h4>Linear Tickets</h4>
+            <p>
+              <a href="https://linear.app/sydecario/issue/LP-449" target="_blank" class="linear-pill">LP-449 · Reset KYC on modified terms</a>
+              <a href="https://linear.app/sydecario/issue/LP-608" target="_blank" class="linear-pill">LP-608 · KYC Unknown/Failed status display</a>
+              <a href="https://linear.app/sydecario/issue/NPS-34" target="_blank" class="linear-pill">NPS-34 · KYC Unknown/Failed (cross-team)</a>
+              <a href="https://linear.app/sydecario/issue/NPS-31" target="_blank" class="linear-pill">NPS-31 · "Invalidated" KYC status confusing</a>
+              <a href="https://linear.app/sydecario/issue/NPS-3" target="_blank" class="linear-pill">NPS-3 · No email when KYC/KYB pending action</a>
+            </p>
+            <h4>North Star Relevance</h4>Each KYC delay generates a "what's my status?" touchpoint at minimum — often two (one from investor, one escalated by DL). Auto-trigger removes the entire delay category for newly-completed profiles.
+    
+            <span class="updated">Added May 1, 2026 · Source: Aparna Q2 2026 Investor Experience Roadmap</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-card" id="card-lp-commit-modification" data-priority="p2" data-tags="investors commitment modification allocation backlog aparna-roadmap linear manually-added" draggable="true">
+      <div class="card-row">
+        <span class="drag-handle">&#8286;</span>
+        <div class="card-content">
+          <div class="card-top">
+            <span class="card-title" onclick="toggleDetail(this)">LP Commitment Amount Edit — No Self-Serve Modification After Initial Entry</span>
+            <span class="badge p2">P2</span>
+            <span class="badge" style="background:#6a1b9a;color:#fff;font-size:10px;padding:2px 6px;border-radius:4px;">✨ New</span>
+          </div>
+          <div class="card-meta"><span class="mention">Investors</span><span>When investors are invited with a range and want to change their commitment, they cannot do it without an Ops ticket. Brett Martin flagged this as "XS effort" in #product-feedback. 18 emails, 5 Linear tickets, disproportionate ops load relative to build cost.</span></div>
+          <div class="friction-bar"><span class="friction-label">Friction impact:</span><div class="friction-dots"><div class="friction-dot filled"></div><div class="friction-dot filled"></div><div class="friction-dot"></div></div></div>
+          <div class="card-detail">
+            
+            <h4>Background (Aparna Q2 Roadmap)</h4>
+            <p>Status: <strong>Backlog.</strong> 18 emails (13 inbound, 6 classified as blockers). Sized XS by engineering. The mismatch between effort-to-build and frequency-of-ask makes this a strong discretionary candidate.</p>
+            <p style="background:#fff3e0;border-left:3px solid #ff9800;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">💬 <strong>Brett Martin · #product-feedback · Feb 24, 2026:</strong> <em>"Super common email for us. I see the effort is 'XS' so it would be great if this could slot into a discretionary bucket."</em></p>
+            <h4>Linear Tickets</h4>
+            <p>
+              <a href="https://linear.app/sydecario/issue/LP-220" target="_blank" class="linear-pill">LP-220 · Reduce allocation without re-signing</a>
+              <a href="https://linear.app/sydecario/issue/NPS-7" target="_blank" class="linear-pill">NPS-7 · Auto-update sub amount for small over/under-funding</a>
+              <a href="https://linear.app/sydecario/issue/LP-474" target="_blank" class="linear-pill">LP-474 · Change commitment if invited for range (Iceboxed)</a>
+              <a href="https://linear.app/sydecario/issue/LP-413" target="_blank" class="linear-pill">LP-413 · Done — removed $1K minimum (Mar 2026)</a>
+              <a href="https://linear.app/sydecario/issue/LP-362" target="_blank" class="linear-pill">LP-362 · Done — Modify Terms mgmt fee fix (Apr 2026)</a>
+            </p>
+            <h4>North Star Relevance</h4>Every commitment change request today = 1 ops ticket + 1 investor touchpoint. XS effort, recurrent frequency. High ROI relative to sprint cost.
+    
+            <span class="updated">Added May 1, 2026 · Source: Aparna Q2 2026 Investor Experience Roadmap</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
 </div><!-- /investors -->
 
 
@@ -1008,6 +1142,33 @@
       </div>
     </div>
 
+    <div class="feature-card" id="card-fof-layer-disclosure" data-priority="p1" data-tags="fof layered disclosure deal-leads wip linear" draggable="true">
+      <div class="card-row">
+        <span class="drag-handle">&#8286;</span>
+        <div class="card-content">
+          <div class="card-top">
+            <span class="card-title" onclick="toggleDetail(this)">FoF Layer Disclosure — Collect & Surface Layer + Fee Data in Deal Setup</span>
+            <span class="badge p1">P1</span>
+            <span class="badge wip">⚙ WIP · Linear DL Project · Jamie DRI</span>
+            <span class="badge" style="background:#6a1b9a;color:#fff;font-size:10px;padding:2px 6px;border-radius:4px;">✨ New</span>
+          </div>
+          <div class="card-meta"><span class="mention">Deal Organizers</span><span>Deal leads setting up layered SPVs (SPV investing into another SPV or fund) must disclose layer structure and fee economics at deal creation. No product mechanism currently enforces or surfaces this data.</span></div>
+          <div class="friction-bar"><span class="friction-label">Friction impact:</span><div class="friction-dots"><div class="friction-dot filled"></div><div class="friction-dot filled"></div><div class="friction-dot filled"></div></div></div>
+          <div class="card-detail">
+            
+            <h4>Background</h4>
+            <p>Linear project "FoF Layer Disclosure" created May 1, 2026 — lead: Jamie Karol, team: Deal Leads, status: Backlog. This is the product implementation workstream tied to the "Where We Draw the Line" policy memo (Apr 16) which recommended: max 2-layer cap, required DL attestations on transfer restrictions and ROFRs, fee transparency at each layer, and a certification tier for customers who consistently document deal access.</p>
+            <p>Related but distinct: see <em>Layered SPV Policy — Layer + Fee Data Collection</em> card for the policy framework. This card tracks the product build.</p>
+            <p style="background:#e3f2fd;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📋 <strong>Slack #revisiting-layered-spvs-apr-26 (May 1, 2026):</strong> Active discussion on how to distinguish "Another SPV or Fund" from "Secondary Transaction" in the deal setup flow. Jamie: <em>"where the money is going and who's on the other side of the transaction"</em> — SPV/Fund purchasing new shares vs. a seller in a secondary. The current UI label "Another SPV or Fund" doesn't surface this distinction clearly enough, leading to deal leads selecting the wrong type and requiring ops correction post-launch.</p>
+            <h4>Signal Type</h4>🔴 Internal Ops Risk + Compliance + Regulatory
+            <h4>North Star Relevance</h4>Undisclosed layered structures generate post-close support contact when LPs discover unexpected fee loads or structural complexity. Collecting this data at deal setup eliminates a class of investor confusion touchpoints and positions Sydecar to enforce its own layering policy consistently. Every incorrectly typed deal also creates an ops correction touchpoint.
+    
+            <p class="cx-note" style="background:#e3f2fd;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">🔗 <strong>Related Linear project (May 1, 2026):</strong> "FoF Layer Disclosure" created as a product build workstream — lead Jamie Karol, DL team, Backlog. See card <em>FoF Layer Disclosure — Collect &amp; Surface Layer + Fee Data in Deal Setup</em> for the implementation track. This card covers the policy framework; that card tracks the product build.</p><span class="updated">Added May 1, 2026 · Sources: Linear, Slack #revisiting-layered-spvs-apr-26</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="section-divider">Priority 2</div>
 
     <div class="feature-card" data-priority="p2" data-tags="co-syndication co-gp churn" draggable="true">
@@ -1101,6 +1262,8 @@
             <a class="source-link" href="https://sydecar.slack.com/archives/C0AELC49E0Y">#wallet-share-logs · Feb 19</a>
             <a class="source-link" href="https://app.notion.com/p/3173608079af808da890daee33daf2ba">Winter Mead Notion Note · Mar 2</a>
             <h4>CX Confirmation (Brett's Crumbs 2 · Apr 2026)</h4><p>Independently flagged by Deal Operations as a top CX request. Adds weight to prioritization. <a class="source-link" href="https://www.notion.so/sydecar/Deal-Operations-Product-Requests-Brett-s-Crumbs-2-3373608079af807798b8f809f50061f6" target="_blank">Brett's Crumbs 2</a></p>
+            
+            <p class="aparna-note">📊 <strong>Aparna Q2 Roadmap signal (May 2026):</strong> 76 emails from investors with 88% inbound rate — the highest inbound ratio in the entire LP email corpus. Triple-mapped to Brett's Crumbs: "Better visibility into closing readiness for DLs and for Ops" · "Increased transparency around deal review" · "Add clearer view of the status of an investment." Customer-originated Linear: <a href="https://linear.app/sydecario/issue/LP-605" target="_blank" class="linear-pill">LP-605 · Investment Updates clarity</a> <a href="https://linear.app/sydecario/issue/NPS-36" target="_blank" class="linear-pill">NPS-36 · Investment updates "not usable as is"</a> <a href="https://linear.app/sydecario/issue/NPS-65" target="_blank" class="linear-pill">NPS-65 · In Progress · text formatting</a> <a href="https://linear.app/sydecario/issue/LP-628" target="_blank" class="linear-pill">LP-628 · investor close dates</a></p>
             <span class="updated">Last updated: Mar 2, 2026</span>
           </div>
         </div>
@@ -1708,6 +1871,31 @@
       </div>
     </div>
 
+    <div class="feature-card" id="card-deal-type-selection-ux" data-priority="p2" data-tags="deal-setup ux deal-type fof secondary onboarding" draggable="true">
+      <div class="card-row">
+        <span class="drag-handle">&#8286;</span>
+        <div class="card-content">
+          <div class="card-top">
+            <span class="card-title" onclick="toggleDetail(this)">Deal Type Selection — "Another SPV or Fund" Label Conflates Secondary + FoF Flows</span>
+            <span class="badge p2">P2</span>
+            <span class="badge" style="background:#6a1b9a;color:#fff;font-size:10px;padding:2px 6px;border-radius:4px;">✨ New</span>
+          </div>
+          <div class="card-meta"><span class="mention">Deal Organizers</span><span>The deal setup screen asks "What is your SPV investing in?" with three options. "Another SPV or Fund" is ambiguous — deal leads doing a secondary through a fund vehicle don't know which to pick, causing misfiled deal types and downstream ops corrections.</span></div>
+          <div class="friction-bar"><span class="friction-label">Friction impact:</span><div class="friction-dots"><div class="friction-dot filled"></div><div class="friction-dot filled"></div><div class="friction-dot"></div></div></div>
+          <div class="card-detail">
+            
+            <h4>Customer Feedback</h4>
+            <p style="background:#fff3e0;border-left:3px solid #ff9800;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">💬 <strong>Slack #revisiting-layered-spvs-apr-26 (May 1, 2026 — Nik + Jamie Karol):</strong> Current options: (1) Private Company, (2) Another SPV or Fund, (3) Secondary Transaction. The confusion: if you're doing a secondary <em>through</em> another SPV vehicle, it's unclear whether to pick #2 or #3. Jamie: <em>"Secondary = existing equity, someone is selling. Another SPV = new issuance, just through a layered vehicle. Perhaps that wording exactly is what is missing."</em></p>
+            <p>Proposed restructure (Nik, May 1): <strong>1. Private Company (Direct Offering)</strong> — purchasing new shares directly from the company. <strong>2. Secondary Transaction</strong> — with two sub-options: (a) buying shares directly from a seller; (b) buying through an SPV or fund vehicle that provides exposure to a specific target asset. <strong>3. Investment into a Fund</strong> — a VC or other fund that invests across a portfolio of assets.</p>
+            <h4>Signal Type</h4>🟠 Internal Product Clarity + Ops Risk
+            <h4>North Star Relevance</h4>Deal type misfiling happens at deal creation and often isn't caught until review or close, generating at minimum one ops correction touchpoint per affected deal. Clearer labels + progressive disclosure (sub-options on secondary selection) would eliminate this at the source. Also directly reduces the ops review burden on layered SPV deals, which are currently one of the top manual intervention categories.
+    
+            <span class="updated">Added May 1, 2026 · Sources: Linear, Slack #revisiting-layered-spvs-apr-26</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
 </div><!-- /deal organizers -->
 
 
@@ -1852,6 +2040,8 @@
             <h4>Sources</h4>
             <a class="source-link" href="https://sydecar.slack.com/archives/C0AELC49E0Y">#wallet-share-logs · Mar 31</a>
             <a class="source-link" href="https://sydecar.slack.com/archives/C0802JV8CEP">#leadership-team · Apr 20</a>
+            
+            <p class="aparna-note">🚨 <strong>Explicit churn evidence (Aparna Q2 Roadmap, May 2026):</strong> Shane Neman (Neman Ventures Family Office) ran 8 deals off-platform in the last 12 months at $10M average deal size, citing the need for financial statements and partner capital statements (currently going to Carta). CSM assessment: At Risk · 100% of business expected to be lost. <em>"He said he would return to Sydecar if we offered reporting."</em> — Olia Golinder · #wallet-share-logs · Apr 3, 2026. This is the only named customer in the Q1 wallet share data with an explicit return condition tied to a single feature. Q2 deliverable per roadmap: thesis on reporting scope tied to the upmarket segment definition.</p>
             <span class="updated">Last updated: Apr 20, 2026</span>
           </div>
         </div>
@@ -2743,6 +2933,283 @@
 </div><!-- /operations -->
 
 <!-- ═══════════════════════════════════════════════════
+     API PARTNERS TEAM
+══════════════════════════════════════════════════════ -->
+<div class="team-section team-api" id="section-api">
+  <div class="team-header" onclick="toggleSection('api')">
+    <h2>🔌 API Partners Team</h2>
+    <span class="team-badge">Clients: Republic · Aqua · Monark · Florida Funders</span>
+    <span class="team-count" id="count-api"></span>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="team-body" id="body-api">
+
+    <div class="section-divider">Priority 1</div>
+
+
+    <div class="feature-card" id="card-api-dl534-architecture" data-priority="p1" data-tags="api architecture churn wip" draggable="true">
+      <div class="card-row">
+        <span class="drag-handle">&#8286;</span>
+        <div class="card-content">
+          <div class="card-top">
+            <span class="card-title" onclick="toggleDetail(this)">API Architectural Debt — Dual Codebase Blocking Feature Parity (DL-534)</span>
+            <span class="badge p1">P1</span>
+            <span class="badge wip">⚙ WIP · DL-534 Backlog</span>
+            <span class="badge churn">🚨 Churn signal</span>
+            <span class="badge" style="background:#6a1b9a;color:#fff;font-size:10px;padding:2px 6px;border-radius:4px;">✨ New</span>
+          </div>
+          <div class="card-meta"><span class="mention">API Partners</span><span>Two divergent HTTP surfaces (api-server + backend) are the root cause of most API feature gaps. Every new platform capability requires double implementation to reach API clients.</span></div>
+          <div class="friction-bar"><span class="friction-label">Friction impact:</span><div class="friction-dots"><div class="friction-dot filled"></div><div class="friction-dot filled"></div><div class="friction-dot filled"></div></div></div>
+          <div class="card-detail">
+            
+            <h4>Background</h4>
+            <p>DL-534 is the strategic epic to unify the partner API — reshaping api-server as a v2 routing layer over backend. DL-538 (workstream 4) adds backend ts-rest contracts for the existing parity gaps. Until this ships, every feature built for core product requires a second implementation pass to reach API clients, creating a permanent lag. This is the root cause behind the majority of open API issues in the backlog.</p>
+            <p style="background:#fce4ec;border-left:3px solid #e53935;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">🚨 <strong>API Audit (Apr 29, 2026):</strong> <em>"We have not invested in API meaningfully and our clients are giving direct feedback to the lack of support and sound experience from a product perspective. They heavily rely on Sydecar in a way our core customers do not and if we cannot show up for them — they will leave."</em></p>
+            <h4>Signal Type</h4>🔴 Internal Ops Risk + Strategic Architecture
+            <h4>North Star Relevance</h4>API clients generate disproportionate ops touchpoints because every product gap requires a manual workaround through Sydecar ops. DL-534 is the single fix that unblocks the most cards in this section. Without it, the API client relationship stays in a support-heavy, low-trust posture.
+    
+            <span class="updated">Added May 1, 2026 · Source: API Product Audit 4/29/2026</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-card" id="card-api-client-dashboard" data-priority="p1" data-tags="api visibility dashboard churn republic" draggable="true">
+      <div class="card-row">
+        <span class="drag-handle">&#8286;</span>
+        <div class="card-content">
+          <div class="card-top">
+            <span class="card-title" onclick="toggleDetail(this)">API Client Dashboard — No Deal Status, K-1, or Lifecycle Visibility</span>
+            <span class="badge p1">P1</span>
+            <span class="badge churn">🚨 Churn signal</span>
+            <span class="badge" style="background:#6a1b9a;color:#fff;font-size:10px;padding:2px 6px;border-radius:4px;">✨ New</span>
+          </div>
+          <div class="card-meta"><span class="mention">API Partners</span><span>API clients have no self-serve view of deal health, investor status, K-1 timelines, or lifecycle events. Republic explicitly described their experience as "flying blind."</span></div>
+          <div class="friction-bar"><span class="friction-label">Friction impact:</span><div class="friction-dots"><div class="friction-dot filled"></div><div class="friction-dot filled"></div><div class="friction-dot filled"></div></div></div>
+          <div class="card-detail">
+            
+            <h4>Customer Feedback</h4>
+            <p style="background:#fff3e0;border-left:3px solid #ff9800;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📊 <strong>Republic Client Page (Notion, Apr 2026):</strong> Republic described their experience as <em>"flying blind"</em> — no deal data visibility, no K-1 status, no client dashboard. They rely entirely on Sydecar ops for deal status updates. Every status question is a touchpoint that shouldn't exist.</p>
+            <h4>Signal Type</h4>🟠 Current Customer Issue (Republic, affects all API clients)
+            <h4>North Star Relevance</h4>No visibility = constant ops touchpoints. API clients initiate more outbound inquiries per deal than core platform customers precisely because they have no self-serve data layer. A lightweight client dashboard (deal stage, LP count, K-1 status) would eliminate a predictable class of recurring touchpoints.
+    
+            <span class="updated">Added May 1, 2026 · Source: API Product Audit 4/29/2026</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider">Priority 2</div>
+
+
+    <div class="feature-card" id="card-api-pii-nonbanking" data-priority="p2" data-tags="api pii kyc nonbanking finsys" draggable="true">
+      <div class="card-row">
+        <span class="drag-handle">&#8286;</span>
+        <div class="card-content">
+          <div class="card-top">
+            <span class="card-title" onclick="toggleDetail(this)">PII Fields (SSN/DOB) — Required for Non-Banking API Clients but Shouldn't Be</span>
+            <span class="badge p2">P2</span>
+            <span class="badge wip">⚙ Backlog · FINSYS-2731</span>
+            <span class="badge" style="background:#6a1b9a;color:#fff;font-size:10px;padding:2px 6px;border-radius:4px;">✨ New</span>
+          </div>
+          <div class="card-meta"><span class="mention">API Partners</span><span>Non-banking API clients are forced to collect SSN/DOB from investors even when banking integrations are not in scope. High priority per Linear.</span></div>
+          <div class="friction-bar"><span class="friction-label">Friction impact:</span><div class="friction-dots"><div class="friction-dot filled"></div><div class="friction-dot filled"></div><div class="friction-dot"></div></div></div>
+          <div class="card-detail">
+            
+            <h4>Background</h4>
+            <p>FINSYS-2731 (Nov 2025, high priority): PII fields including SSN and date of birth are currently required for all API deal flows regardless of whether the client uses banking. Non-banking clients like Monark and Aqua are collecting unnecessary sensitive investor data, creating compliance surface risk and investor friction with no product benefit.</p>
+            <p>Related: FINSYS-1398 — non-banking deals requiring fake bank account entry. Monark clients must enter placeholder bank info to complete the close flow. Both issues stem from the same non-banking flow not being fully scoped out.</p>
+            <h4>Signal Type</h4>🔴 Internal Ops Risk + Compliance
+            <h4>North Star Relevance</h4>Unnecessary PII collection adds investor friction at onboarding and creates compliance exposure. Removing it for non-banking clients reduces onboarding drop-off and ops review load.
+    
+            <span class="updated">Added May 1, 2026 · Source: API Product Audit 4/29/2026</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-card" id="card-api-docset-management" data-priority="p2" data-tags="api docset documents wip" draggable="true">
+      <div class="card-row">
+        <span class="drag-handle">&#8286;</span>
+        <div class="card-content">
+          <div class="card-top">
+            <span class="card-title" onclick="toggleDetail(this)">Docset Selection via API — No Self-Serve Attachment to Deals</span>
+            <span class="badge p2">P2</span>
+            <span class="badge wip">⚙ WIP · API-189/190 In Progress</span>
+            <span class="badge" style="background:#6a1b9a;color:#fff;font-size:10px;padding:2px 6px;border-radius:4px;">✨ New</span>
+          </div>
+          <div class="card-meta"><span class="mention">API Partners</span><span>API clients cannot attach a specific docset to a deal. Defaults to most recent non-custom docset; fixing it requires manual DB intervention by engineering.</span></div>
+          <div class="friction-bar"><span class="friction-label">Friction impact:</span><div class="friction-dots"><div class="friction-dot filled"></div><div class="friction-dot filled"></div><div class="friction-dot"></div></div></div>
+          <div class="card-detail">
+            
+            <h4>Background</h4>
+            <p>API-189 (Sep 2025, In Progress): No endpoint to attach a specific docset to a deal via API. API-190: GET endpoints for docsets not yet built. API-193: Docset endpoints lack documentation. All three are active. The current workaround is manual DB fix by the engineering team — every docset issue that comes in from an API client generates a direct engineering ops touchpoint.</p>
+            <p style="background:#e3f2fd;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">🔧 <strong>API Audit (Apr 2026):</strong> FINSYS-2023 (resolved Jul 2025) showed docset issues have caused wrong doc downloads and missing profile docsets for Monark. The issue class recurs because the underlying API capability doesn't exist.</p>
+            <h4>Signal Type</h4>🟠 Current Customer Issue (Monark, all API clients)
+            <h4>North Star Relevance</h4>Each docset mis-assignment generates at minimum one ops + engineering intervention to correct. Building the endpoint eliminates the manual DB fix path entirely.
+    
+            <span class="updated">Added May 1, 2026 · Source: API Product Audit 4/29/2026</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-card" id="card-api-edd-kyc" data-priority="p2" data-tags="api edd kyc compliance wip" draggable="true">
+      <div class="card-row">
+        <span class="drag-handle">&#8286;</span>
+        <div class="card-content">
+          <div class="card-top">
+            <span class="card-title" onclick="toggleDetail(this)">EDD / KYC Admin Console + Business Logic — No Centralized View, No US Residency Scoping</span>
+            <span class="badge p2">P2</span>
+            <span class="badge wip">⚙ WIP · API-183 In Progress</span>
+            <span class="badge" style="background:#6a1b9a;color:#fff;font-size:10px;padding:2px 6px;border-radius:4px;">✨ New</span>
+          </div>
+          <div class="card-meta"><span class="mention">API Partners</span><span>No admin UI for EDD applications (in progress). EDD business logic needs redesign for deal vs. fund level context. No US residency collection to scope EDD requirements.</span></div>
+          <div class="friction-bar"><span class="friction-label">Friction impact:</span><div class="friction-dots"><div class="friction-dot filled"></div><div class="friction-dot filled"></div><div class="friction-dot"></div></div></div>
+          <div class="card-detail">
+            
+            <h4>Background</h4>
+            <p>Three related gaps: (1) API-183 (Jul 2025, In Progress) — no centralized admin console view for EDD applications; Sydecar ops has no single place to manage EDD across API deals. (2) API-185 (Jul 2025, To Do) — EDD business logic needs redesign to handle deal vs. fund level complexity context-aware. (3) API-106 (Aug 2024, Backlog) — no US residency collection to scope which investors need EDD; currently applies EDD requirements broadly.</p>
+            <p>Related resolved: API-163 (LPs could fund before passing KYC), API-83 (no EDD submission endpoint) — both fixed, but the admin + scoping layer remains incomplete.</p>
+            <h4>Signal Type</h4>🔴 Internal Ops Risk + Compliance
+            <h4>North Star Relevance</h4>Incomplete EDD tooling means ops handles EDD reviews manually per deal. Each unscoped EDD requirement adds investor friction and support touchpoints. The admin console is a prerequisite for the ops team to manage API deal compliance at scale.
+    
+            <span class="updated">Added May 1, 2026 · Source: API Product Audit 4/29/2026</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-card" id="card-api-toi-purchase-price" data-priority="p2" data-tags="api toi transfer compliance" draggable="true">
+      <div class="card-row">
+        <span class="drag-handle">&#8286;</span>
+        <div class="card-content">
+          <div class="card-top">
+            <span class="card-title" onclick="toggleDetail(this)">Transfer of Interest API — Missing Purchase Price Field</span>
+            <span class="badge p2">P2</span>
+            <span class="badge" style="background:#6a1b9a;color:#fff;font-size:10px;padding:2px 6px;border-radius:4px;">✨ New</span>
+          </div>
+          <div class="card-meta"><span class="mention">API Partners</span><span>The Transfer of Interest endpoint does not collect purchase price, which is required for compliance and recordkeeping on secondary transactions.</span></div>
+          <div class="friction-bar"><span class="friction-label">Friction impact:</span><div class="friction-dots"><div class="friction-dot filled"></div><div class="friction-dot filled"></div><div class="friction-dot"></div></div></div>
+          <div class="card-detail">
+            
+            <h4>Background</h4>
+            <p>API-162 (Nov 2024, To Do): The ToI endpoint processes the transfer flow but does not capture the purchase price between transferor and transferee. This is a compliance and recordkeeping gap — the actual economics of the transfer are not recorded in the platform, requiring manual reconciliation off-system.</p>
+            <h4>Signal Type</h4>🔴 Internal Ops Risk + Compliance
+            <h4>North Star Relevance</h4>Missing purchase price means every API-processed ToI requires a manual ops step to capture and record the transaction economics. Adds a recurring touchpoint per transfer.
+    
+            <span class="updated">Added May 1, 2026 · Source: API Product Audit 4/29/2026</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-card" id="card-api-ops-visibility" data-priority="p2" data-tags="api ops visibility admin" draggable="true">
+      <div class="card-row">
+        <span class="drag-handle">&#8286;</span>
+        <div class="card-content">
+          <div class="card-top">
+            <span class="card-title" onclick="toggleDetail(this)">Ops Visibility for API Deals — Admin Console Gaps</span>
+            <span class="badge p2">P2</span>
+            <span class="badge" style="background:#6a1b9a;color:#fff;font-size:10px;padding:2px 6px;border-radius:4px;">✨ New</span>
+          </div>
+          <div class="card-meta"><span class="mention">API Partners</span><span>Sydecar ops team cannot see full deal info for API-created deals in admin. Creates internal blind spots for deal management and escalation.</span></div>
+          <div class="friction-bar"><span class="friction-label">Friction impact:</span><div class="friction-dots"><div class="friction-dot filled"></div><div class="friction-dot filled"></div><div class="friction-dot"></div></div></div>
+          <div class="card-detail">
+            
+            <h4>Background</h4>
+            <p>OPE-401 (Jan 2026, Triage): Ops team lacks full deal info visibility for API deals in the admin console. This means CX and ops escalations on API deals require back-channel engineering queries or direct DB access. Related: PLAT-1678 (API deals not loading in admin Deal Page — resolved Feb 2025) recurrence suggests admin support for API deals remains incomplete.</p>
+            <p style="background:#fff3e0;border-left:3px solid #ff9800;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📊 <strong>Republic Client Page (Notion, Apr 2026):</strong> Republic's "flying blind" complaint applies on both sides — ops is also operating without full deal visibility for API deals. </p>
+            <h4>Signal Type</h4>🔴 Internal Ops Risk
+            <h4>North Star Relevance</h4>Ops blind spots on API deals result in slower resolution times and more escalation touchpoints. Every deal question from an API client that ops can't resolve in the admin console adds at minimum one engineering-loop touchpoint.
+    
+            <span class="updated">Added May 1, 2026 · Source: API Product Audit 4/29/2026</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-card" id="card-api-holdback-correction" data-priority="p2" data-tags="api holdback close republic" draggable="true">
+      <div class="card-row">
+        <span class="drag-handle">&#8286;</span>
+        <div class="card-content">
+          <div class="card-top">
+            <span class="card-title" onclick="toggleDetail(this)">Post-Close Holdback Correction — No Self-Serve Fix</span>
+            <span class="badge p2">P2</span>
+            <span class="badge" style="background:#6a1b9a;color:#fff;font-size:10px;padding:2px 6px;border-radius:4px;">✨ New</span>
+          </div>
+          <div class="card-meta"><span class="mention">API Partners</span><span>API clients who close deals with incorrect holdback amounts have no self-serve correction path. Republic hit this — required manual ops intervention.</span></div>
+          <div class="friction-bar"><span class="friction-label">Friction impact:</span><div class="friction-dots"><div class="friction-dot filled"></div><div class="friction-dot filled"></div><div class="friction-dot"></div></div></div>
+          <div class="card-detail">
+            
+            <h4>Background</h4>
+            <p>FINSYS-2848 (Apr 2026): Republic closed deals with incorrect holdback amounts and had no way to correct this without Sydecar ops involvement. The fix required manual ops intervention at the deal level. No self-serve correction flow exists for post-close holdback adjustments via the API.</p>
+            <h4>Signal Type</h4>🟠 Current Customer Issue (Republic)
+            <h4>North Star Relevance</h4>Post-close corrections are high-stakes ops touchpoints — they require ops involvement, engineering support in some cases, and create anxiety for the API client about deal integrity. A self-serve correction path removes this touchpoint class entirely.
+    
+            <span class="updated">Added May 1, 2026 · Source: API Product Audit 4/29/2026</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider">Priority 3</div>
+
+
+    <div class="feature-card" id="card-api-docs-dx" data-priority="p3" data-tags="api docs developer-experience" draggable="true">
+      <div class="card-row">
+        <span class="drag-handle">&#8286;</span>
+        <div class="card-content">
+          <div class="card-top">
+            <span class="card-title" onclick="toggleDetail(this)">API Documentation & Developer Experience — No Changelog, Schema Errors, Missing Guides</span>
+            <span class="badge p3">P3</span>
+            <span class="badge" style="background:#6a1b9a;color:#fff;font-size:10px;padding:2px 6px;border-radius:4px;">✨ New</span>
+          </div>
+          <div class="card-meta"><span class="mention">API Partners</span><span>No changelog or versioning visible in API docs. OpenAPI schema errors reported by clients. Missing reference guides for investor account creation, KYC flow, and document management.</span></div>
+          <div class="friction-bar"><span class="friction-label">Friction impact:</span><div class="friction-dots"><div class="friction-dot filled"></div><div class="friction-dot"></div><div class="friction-dot"></div></div></div>
+          <div class="card-detail">
+            
+            <h4>Background</h4>
+            <p>Several open issues: API-102 (Backlog, Aug 2024) — no changelog or versioning in API docs; API clients have no way to know what changed. API-175 (To Do, Dec 2024) — API reference docs for investor account creation missing clarification. API-193 (To Do, Sep 2025) — docset API endpoints lack documentation. API-165 (To Do, Nov 2024) — no change management process for rolling out KYC changes to existing clients, risking broken integrations.</p>
+            <p>Resolved but indicative: API-201 (Feb 2026) — ExemptionType defined as array instead of string in OpenAPI spec, caught by client. FINSYS-1575 (Feb 2026) — sandbox transfer endpoint docs were inaccurate. Schema errors and doc gaps are recurring, not one-offs.</p>
+            <h4>Signal Type</h4>🔵 Prospective Signal + Developer Experience
+            <h4>North Star Relevance</h4>Poor API docs increase integration time for new clients and generate recurring support questions from existing ones. A changelog alone would reduce "what changed?" touchpoints. Schema errors that clients catch before Sydecar does are trust-eroding.
+    
+            <span class="updated">Added May 1, 2026 · Source: API Product Audit 4/29/2026</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-card" id="card-api-investor-search" data-priority="p3" data-tags="api investor search aqua" draggable="true">
+      <div class="card-row">
+        <span class="drag-handle">&#8286;</span>
+        <div class="card-content">
+          <div class="card-top">
+            <span class="card-title" onclick="toggleDetail(this)">Investor Search by Name/Keyword — Only Exact ID Lookup Supported</span>
+            <span class="badge p3">P3</span>
+            <span class="badge" style="background:#6a1b9a;color:#fff;font-size:10px;padding:2px 6px;border-radius:4px;">✨ New</span>
+          </div>
+          <div class="card-meta"><span class="mention">API Partners</span><span>API clients can only look up investors by exact ID. No name or keyword search endpoint exists. Requested by Aqua.</span></div>
+          <div class="friction-bar"><span class="friction-label">Friction impact:</span><div class="friction-dots"><div class="friction-dot filled"></div><div class="friction-dot"></div><div class="friction-dot"></div></div></div>
+          <div class="card-detail">
+            
+            <h4>Background</h4>
+            <p>API-48 (Jul 2024, Backlog): Aqua requested a name/keyword search endpoint for investors. Currently the only lookup method is exact ID match, which requires clients to maintain their own investor ID mapping outside the platform. Any investor lookup that doesn't have an ID on hand requires a manual ops request.</p>
+            <h4>Signal Type</h4>🟠 Current Customer Request (Aqua)
+            <h4>North Star Relevance</h4>A basic search endpoint reduces the number of "who is this investor?" queries that flow through ops, and removes a friction point in the API client's integration layer.
+    
+            <span class="updated">Added May 1, 2026 · Source: API Product Audit 4/29/2026</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /body-api -->
+</div><!-- /api -->
+
+
+<!-- ═══════════════════════════════════════════════════
      ARCHIVE
 ══════════════════════════════════════════════════════ -->
 <div class="archive-section" id="archive-section">
@@ -2759,7 +3226,7 @@
 
 </div><!-- /main -->
 
-<div class="footnote">Generated May 1, 2026 (v4 — Drive: Q2 Board Memo, H1 Roadmap, Layered SPV policy, Liquidity strategy) · Sources: #wallet-share-logs, #meeting-logs, #enterprise-call-logs, #product-feedback, #team-api-gtm, #product-biz-sync, Snowflake mozart.all_feedback, Front ops inbox — subject analysis + body keyword scan (Jan–Apr 2026): friction, confusion, feature request, competitor, manual process signals, Notion 1:1s, Apr 9 Product Update · 🟠 = Current Customer · 🔵 = Prospective · North Star: <strong>Touchpoints per closed deal</strong> · Priority = potential friction reduction × signal volume × churn risk · Drag cards to reprioritize · This file was created in whole or in part by Generative AI</div>
+<div class="footnote">Generated May 1, 2026 (v7 — Stackable filters, "Not started" view; 3 new Aparna Q2 roadmap cards: bank capture, KYC trigger, commit edit) · Sources: #wallet-share-logs, #meeting-logs, #enterprise-call-logs, #product-feedback, #team-api-gtm, #product-biz-sync, Snowflake mozart.all_feedback, Front ops inbox — subject analysis + body keyword scan (Jan–Apr 2026): friction, confusion, feature request, competitor, manual process signals, Notion 1:1s, Apr 9 Product Update · 🟠 = Current Customer · 🔵 = Prospective · North Star: <strong>Touchpoints per closed deal</strong> · Priority = potential friction reduction × signal volume × churn risk · Drag cards to reprioritize · This file was created in whole or in part by Generative AI</div>
 
 <script>
 // ── Toggle section collapse ──────────────────────────────
@@ -2775,23 +3242,33 @@ function toggleDetail(titleEl) {
 }
 
 // ── Filter ──────────────────────────────────────────────
-let activeFilter = 'all';
-let activeTeam   = 'all';
+let activeFilter  = 'all';
+let activePriority = 'all';
+let activeTeam    = 'all';
 
 const filterBtnIds = {
-  all: 'filterAll', p1: 'filterP1', churn: 'filterChurn',
-  wip: 'filterWIP', 'ops-risk': 'filterOpsRisk', 'new': 'filterNew'
+  all: 'filterAll', churn: 'filterChurn', wip: 'filterWIP',
+  'no-wip': 'filterNoWIP', 'ops-risk': 'filterOpsRisk', 'new': 'filterNew'
 };
+const priorityBtnIds = { all: 'priAll', p1: 'priP1', p2: 'priP2', p3: 'priP3' };
 const teamBtnIds = {
   all: 'teamAll', investors: 'teamInvestors', deal: 'teamDeal',
-  financial: 'teamFinancial', ops: 'teamOps'
+  financial: 'teamFinancial', ops: 'teamOps', api: 'teamApi'
 };
 
 function setFilter(f) {
   activeFilter = f;
   // Update status filter button states
-  document.querySelectorAll('.header .filter-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.header .status-btn').forEach(b => b.classList.remove('active'));
   const btnId = filterBtnIds[f];
+  if (btnId) document.getElementById(btnId).classList.add('active');
+  applyFilter();
+}
+
+function setPriority(p) {
+  activePriority = p;
+  document.querySelectorAll('.priority-btn').forEach(b => b.classList.remove('active'));
+  const btnId = priorityBtnIds[p];
   if (btnId) document.getElementById(btnId).classList.add('active');
   applyFilter();
 }
@@ -2803,7 +3280,7 @@ function setTeam(t) {
   const btnId = teamBtnIds[t];
   if (btnId) document.getElementById(btnId).classList.add('active');
   // Show/hide entire sections based on team
-  ['investors','deal','financial','ops'].forEach(id => {
+  ['investors','deal','financial','ops','api'].forEach(id => {
     const sec = document.getElementById('section-' + id);
     if (sec) sec.classList.toggle('hidden', t !== 'all' && t !== id);
   });
@@ -2827,13 +3304,15 @@ function applyFilter() {
       return;
     }
 
-    // Status filter
-    let show = true;
-    if (activeFilter === 'p1')       show = card.dataset.priority === 'p1';
-    if (activeFilter === 'churn')    show = tags.includes('churn');
-    if (activeFilter === 'wip')      show = tags.includes('wip');
-    if (activeFilter === 'ops-risk') show = text.includes('internal ops risk') || text.includes('🔴');
-    if (activeFilter === 'new')      show = tags.includes('manually-added');
+    // Priority × Status stackable filters
+    const priorityMatch = activePriority === 'all' || card.dataset.priority === activePriority;
+    let statusMatch = true;
+    if (activeFilter === 'churn')       statusMatch = tags.includes('churn');
+    else if (activeFilter === 'wip')    statusMatch = tags.includes('wip');
+    else if (activeFilter === 'no-wip') statusMatch = !tags.includes('wip');
+    else if (activeFilter === 'ops-risk') statusMatch = text.includes('internal ops risk') || text.includes('🔴');
+    else if (activeFilter === 'new')    statusMatch = tags.includes('manually-added');
+    let show = priorityMatch && statusMatch;
 
     // Search query (AND with status filter)
     if (query) show = show && (text.includes(query) || tags.includes(query));
@@ -2852,7 +3331,7 @@ function updateCounts() {
   document.getElementById('churnCount').textContent = [...cards].filter(c => (c.dataset.tags||'').includes('churn')).length;
   document.getElementById('wipCount').textContent = [...cards].filter(c => (c.dataset.tags||'').includes('wip')).length;
 
-  ['investors','deal','financial','ops'].forEach(id => {
+  ['investors','deal','financial','ops','api'].forEach(id => {
     const body = document.getElementById('body-' + id);
     if (!body) return;
     const visible = body.querySelectorAll('.feature-card:not(.hidden):not([data-archived])').length;
