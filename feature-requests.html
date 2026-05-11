@@ -224,7 +224,7 @@
 
 <div class="header">
   <h1>📋 Sydecar Product Feature Requests</h1>
-  <span class="meta">Last synced: May 10, 2026 · Jan 1–May 10, 2026</span>
+  <span class="meta">Last synced: May 11, 2026 · Jan 1–May 11, 2026</span>
   <input class="search-bar" id="searchInput" placeholder="Search features…" oninput="filterCards()">
   <span class="filter-row-label">Priority</span>
   <button class="filter-btn priority-btn active" id="priAll" onclick="setPriority('all')">All</button>
@@ -453,6 +453,7 @@
             <p class="roadmap-note" style="background:#eff6ff;border-left:3px solid #2563eb;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📍 <strong>2026 Roadmap:</strong> PM: Aparna · EM: Natalie · Stage: <strong>⚙ In flight (LP-357)</strong> · Artifacts: Prototype · LP-357 · <a href="https://docs.google.com/spreadsheets/d/1IoB8dfESAwCqYDiguOAq1Lf1icE39KWMOEWqJolZKHo" style="color:#1d4ed8;">Roadmap sheet ↗</a></p>
 <span class="updated">Added May 1, 2026 · Source: Aparna Q2 2026 Investor Experience Roadmap</span>
           <p style="background:#e3f2fd;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">🔄 <strong>May 5 (Linear):</strong> LP-673 (Collect outgoing bank account at first investment) actively In Progress. Companion ticket LP-357 (preference capture) still To Do.</p>
+          <p style="background:#e8f5e9;border-left:3px solid #43a047;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">✅ <strong>May 11 (Linear LP-707, Done):</strong> "Collect outgoing bank account for existing investors without payment instructions on file" shipped (assignee: Ibrahim, parent: LP-357). Closes the gap for the existing-investor cohort that LP-673 missed. The "no bank info → can't pay distribution" tail should start shrinking as more existing investors hit the new prompt.</p>
           </div>
         </div>
       </div>
@@ -483,6 +484,7 @@
             <p class="cx-note" style="background:#e8f5e9;border-left:3px solid #43a047;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">✅ <strong>Linear LP-726 (Done — May 1, 2026):</strong> "Investor email cross-pollination" fix shipped. Resolved edge case where investors with multiple profiles were getting cross-pollinated email notifications — a data isolation/privacy bug that was also causing investor confusion about which deal they were acting on.</p><p class="roadmap-note" style="background:#eff6ff;border-left:3px solid #2563eb;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📍 <strong>2026 Roadmap:</strong> PM: Aparna · EM: Natalie · Design: Jo · Stage: <strong>⏸ Blocked — awaiting identity/permissions work</strong> · <a href="https://docs.google.com/spreadsheets/d/1IoB8dfESAwCqYDiguOAq1Lf1icE39KWMOEWqJolZKHo" style="color:#1d4ed8;">Roadmap sheet ↗</a></p>
 <span class="updated">Last updated: Apr 9, 2026</span>
           <p style="background:#e8f5e9;border-left:3px solid #43a047;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">🐛 <strong>May 6 (Sophie Dvorkin / CX, #product-feedback):</strong> Investors who half-create a profile they don't want to use get stuck — current workaround forces them to finish the unwanted profile first, then create the right one. <em>"This is 2x the work for an investor and creates confusing user flows in the platform when the user can see what they need to click but can't actually do so."</em> Aparna investigating with Sophie; Dan flagged shell profiles to Tony Tran / Rodrigo Teixeira for mitigation. Sophie's view: "we should realistically allow them to switch stuff around at any point before signing." <a href="https://www.loom.com/share/273e91b1fcc2489ba27e79726a942309" target="_blank">Loom video</a>.</p>
+          <p style="background:#e8f5e9;border-left:3px solid #43a047;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">💡 <strong>May 11 (Jeremy Sell, #product-feedback):</strong> Proposed self-serve flow with mockup. <em>"Scenario: Investor creates individual account. Wants to invest as a Trust or Entity instead. Current solution: Requires me or DL to modify investor. Then investor to log back in and click invest. Then small button to 'add new profile'. Proposed: Remove DL / Ops / me from the equation. Speeds up time. Better experience."</em> Sophie added: <em>"This could even be a prompt to email the DL to tell them that they want to change their profile. Would also greatly reduce the amount of questions from DLs on how to change an investor's profile."</em> Aparna confirmed: <em>"this is on the list of low hanging fruit for us to fix this quarter towards reducing cx touchpoints."</em> Three concurrent all_feedback signals same day (Esteban Urrea, Kelvin Cu, Christian Hilbert) reinforce volume. <a href="https://sydecar.slack.com/archives/C073W6XRY76/p1778515676582179" target="_blank">Slack thread</a>.</p>
           </div>
         </div>
       </div>
@@ -511,6 +513,7 @@
             <p class="cx-note" style="background:#e8f5e9;border-left:3px solid #43a047;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">✅ <strong>Linear LP-728 (Done — Apr 30, 2026):</strong> "Dropbox Sign feature flag" shipped. Dropbox Sign integration now controllable via feature flag, enabling safer rollout and rollback capability for the e-sign workflow.</p><p class="roadmap-note" style="background:#eff6ff;border-left:3px solid #2563eb;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📍 <strong>2026 Roadmap:</strong> PM: Aparna · EM: Natalie · Design: Jo · Stage: <strong>⚙ In flight</strong> · Channel: <a href="https://sydecar.slack.com/archives/C0ACUTZNHFE" style="color:#1d4ed8;">#proj-document-signing-poc</a> · Artifacts: PRD · Figma · Linear · <a href="https://docs.google.com/spreadsheets/d/1IoB8dfESAwCqYDiguOAq1Lf1icE39KWMOEWqJolZKHo" style="color:#1d4ed8;">Roadmap sheet ↗</a></p>
 <span class="updated">Last updated: Apr 30, 2026</span>
           <p style="background:#e3f2fd;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">✅ <strong>May 5: LP-728 Done</strong> — Dropbox-Sign string-variation LaunchDarkly flag wired into draft deal creation flow. <strong>LP-640 (Backend: Packet Creation & Variables) and LP-653 (Frontend: Series Agreement / LLCA)</strong> remain In Progress.</p>
+          <p style="background:#e3f2fd;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">🔄 <strong>May 11 (Linear):</strong> Sub-ticket progress on LP-640/LP-653: <strong>LP-647</strong> (Series Agreement / LLCA end-to-end Dropbox Sign) In Progress; <strong>LP-732</strong> (embedded Dropbox Sign iframe in SingleAgreement / DualAgreementsCoinvestor) In Review; <strong>LP-782</strong> (Claude-created: file-backed MockSigningStore for resume/teammate-swap stories) In Review. The mock surface is being hardened to unblock resume + teammate-swap flows that previously died past Story 1. End of May MVP target is on track for the happy path; resume/swap edge cases are the real gating risk.</p>
           </div>
         </div>
       </div>
@@ -648,7 +651,9 @@
             </ul>
             <h4>Sources</h4>
             <a class="source-link" href="https://prod_sydecar2_dwh.mozart.all_feedback">Snowflake · all_feedback</a>
-            <p class="cx-note" style="background:#fff3e0;border-left:3px solid #ff9800;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📊 <strong>mozart.all_feedback (Apr 30–May 1, 2026):</strong> Support ticket: document upload silently failing for both PDF and PNG file types. Investor attempted multiple uploads with no success and no error message explaining what went wrong. Silent failure = customer assumes success, creates delayed discovery touchpoint when ops notices docs are missing.</p><span class="updated">Last updated: Apr 30, 2026</span>
+            <p class="cx-note" style="background:#fff3e0;border-left:3px solid #ff9800;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📊 <strong>mozart.all_feedback (Apr 30–May 1, 2026):</strong> Support ticket: document upload silently failing for both PDF and PNG file types. Investor attempted multiple uploads with no success and no error message explaining what went wrong. Silent failure = customer assumes success, creates delayed discovery touchpoint when ops notices docs are missing.</p>
+            <p class="cx-note" style="background:#e8f5e9;border-left:3px solid #43a047;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">💬 <strong>May 10–11 (mozart.all_feedback, three concurrent tickets):</strong> (1) Susan Moring (Cortado Ventures): <em>"One of my SPV investors has requested their FE subscription documents. I can't seem to find that anywhere on the platform."</em> — DL can't surface counter-signed sub docs. (2) Pablo Cruz: <em>"I can't seem to download the Series Agreement (counter-Signed) (LICA) which makes me believe the investment hasn't gone through."</em> — Missing doc is being interpreted as missing investment, eroding trust. (3) steve@pineridgeadvisers: <em>"Beneficial owner section does not appear. Edit function also does not bring up any information to edit."</em> — UBO edit broken; cross-references the Entity Onboarding UBO card. Three downloads/doc-find failures in 24 hours is unusual; worth checking whether a deploy or doc-store change triggered the pattern.</p>
+            <span class="updated">Last updated: Apr 30, 2026 · Enriched May 11, 2026 (3 concurrent doc-find / UBO-edit tickets)</span>
           </div>
         </div>
       </div>
@@ -1236,6 +1241,7 @@
             <p class="roadmap-note" style="background:#eff6ff;border-left:3px solid #2563eb;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📍 <strong>2026 Roadmap:</strong> PM: Jamie · EM: Carlos · Stage: <strong>⚙ In flight</strong> · Channel: <a href="https://sydecar.slack.com/archives/C09U8C6KK2R" style="color:#1d4ed8;">#proj-naming-guidelines</a> · Artifacts: PRD · Figma · Linear · <a href="https://docs.google.com/spreadsheets/d/1IoB8dfESAwCqYDiguOAq1Lf1icE39KWMOEWqJolZKHo" style="color:#1d4ed8;">Roadmap sheet ↗</a></p>
 <span class="updated">Last updated: Apr 17, 2026</span>
           <p style="background:#e8f5e9;border-left:3px solid #43a047;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">✅ <strong>Shipped May 7, 2026 (3pm PT)</strong>: Three-field naming UX (Company legal / Deal display / SPV legal) live with inline validation. In-product banner targets Investors / Organizers / All Users with admin selection. Help center article published. <strong>Follow-up: DL-611</strong> (May 7, Mo/Jamie) — auto-abbreviation logic needs to check against existing SPV names to avoid collisions. Banner mechanism is short-term; <strong>AnnounceKit prototype (LP-752, Aparna spike)</strong> in flight for longer-term in-app comms.</p>
+          <p style="background:#e8eaf6;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">⚙ <strong>May 11 (PDE-524, Brett):</strong> New Triage ticket — update SPV legal name character limit to 69 (IRS actual limit, includes prefix + Master LLC + spaces + punctuation). Current Sydecar limit is tighter than IRS reality, forcing customer name truncations that don't need to happen. Follow-up to the naming UX work; ungates a class of customer name requests without launching anything new.</p>
           </div>
         </div>
       </div>
@@ -1449,8 +1455,9 @@
             <h4>Sources</h4>
             <a class="source-link" href="https://sydecar.slack.com/archives/C04GA5766DT">#meeting-logs (multiple)</a>
             <a class="source-link" href="https://sydecar.slack.com/archives/C0802JV8CEP">#leadership-team · Apr 20</a>
-            <p class="roadmap-note" style="background:#eff6ff;border-left:3px solid #2563eb;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📍 <strong>2026 Roadmap:</strong> PM: Jamie · EM: — · Stage: <strong>🔍 Discovery</strong> · Channel: <a href="https://sydecar.slack.com/archives/C0ADD04RHC3" style="color:#1d4ed8;">#bd-ria-initiative</a> · <a href="https://docs.google.com/spreadsheets/d/1IoB8dfESAwCqYDiguOAq1Lf1icE39KWMOEWqJolZKHo" style="color:#1d4ed8;">Roadmap sheet ↗</a></p>
-<span class="updated">Last updated: Apr 22, 2026</span>
+            <p class="roadmap-note" style="background:#eff6ff;border-left:3px solid #2563eb;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📍 <strong>2026 Roadmap:</strong> PM: Jamie (departed; reassign) · EM: — · Stage: <strong>🔍 Discovery</strong> · Channel: <a href="https://sydecar.slack.com/archives/C0ADD04RHC3" style="color:#1d4ed8;">#bd-ria-initiative</a> · <a href="https://docs.google.com/spreadsheets/d/1IoB8dfESAwCqYDiguOAq1Lf1icE39KWMOEWqJolZKHo" style="color:#1d4ed8;">Roadmap sheet ↗</a></p>
+            <p class="cx-note" style="background:#fff3e0;border-left:3px solid #ff9800;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📞 <strong>May 11 (#meeting-logs, two same-day calls, Jake Don Sing):</strong> (1) Peter Teneriello / <strong>Pomifer Capital</strong> (Austin RIA, 2-4 PE + 2-4 VC per year, $500K–$2M deal size, Texas-but-not-SEC). Not a fit at this time <em>"due to audit, but will be good to keep pulse on him as we develop audit support offering"</em>. (2) John Bosworth / <strong>Tschetter Group</strong> (Seattle RIA, Deloitte auditor, previously used full-service fund admin for 3c1 FoF tax/accounting/audit). <em>"RIA - not a fit"</em>. Both Tier 2 leads turned away in 24 hours for the same reason. The audit-support gap is now a self-flagged loss reason in the AE workflow.</p>
+            <span class="updated">Last updated: Apr 22, 2026 · Enriched May 11, 2026 (Pomifer + Tschetter both declined same day for audit)</span>
           </div>
         </div>
       </div>
@@ -1518,7 +1525,9 @@
             From #revisiting-layered-spvs (Apr 22, Nik): Collecting layer + fee/carry structure at submission could (a) provide prevalence data and (b) change behavior without a hard cap. LP disclosure improvement needed when deal name implies direct investment but is actually into another SPV. Hard layer cap (e.g., max 2 layers) under evaluation.
             <h4>Sources</h4>
             <a class="source-link" href="https://sydecar.slack.com/archives/C0AUR3UT2RJ">#revisiting-layered-spvs-apr-26 · Apr 22</a>
-            <p class="cx-note" style="background:#e3f2fd;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📋 <strong>"Where We Draw the Line" memo (Apr 16, 2026):</strong> Formal policy proposal recommends: (1) Layer cap — max 2 layers, Sydecar SPV never the 3rd layer; (2) Remove Sydecar as manager in Q2'26 (already WIP); (3) Publish market standard for fees/carry in layered SPVs; (4) Create "certification tier" for customers who consistently document deal access; (5) Required attestations from DLs on transfer restrictions, ROFRs, and fee transparency at each layer. Over time, LLM/rules-engine workflow to review underlying agreements is proposed as a marketable feature.</p><span class="updated">Last updated: Apr 22, 2026</span>
+            <p class="cx-note" style="background:#e3f2fd;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📋 <strong>"Where We Draw the Line" memo (Apr 16, 2026):</strong> Formal policy proposal recommends: (1) Layer cap — max 2 layers, Sydecar SPV never the 3rd layer; (2) Remove Sydecar as manager in Q2'26 (already WIP); (3) Publish market standard for fees/carry in layered SPVs; (4) Create "certification tier" for customers who consistently document deal access; (5) Required attestations from DLs on transfer restrictions, ROFRs, and fee transparency at each layer. Over time, LLM/rules-engine workflow to review underlying agreements is proposed as a marketable feature.</p>
+            <p class="cx-note" style="background:#e8f5e9;border-left:3px solid #43a047;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">🟢 <strong>May 10–11 (Gmail + Drive):</strong> Internal direction lands at "support layered SPVs contingent on affidavit and fee validation" — a green light with policy guardrails rather than a hard layer cap. Marketing scripts drafted in Drive doc <em>"2026-05-10 Layered SPVs"</em>: explains what they are, the fee compression problem, the 10% look-through rule on 3(c)(1) underlying funds, and the K-1 delay problem (extensions required). Customer signal same window: Wanjoon Lim (GMI Capital) and Luca Buratto (returning customer) both pricing layered SPVs in initial sales calls. Two-step play: (a) ship affidavit + fee-collection guardrails; (b) lean into the marketing position as the platform that handles layered correctly.</p>
+            <span class="updated">Last updated: Apr 22, 2026 · Enriched May 11, 2026 (internal go-ahead + 2 sales-call signals)</span>
           </div>
         </div>
       </div>
@@ -2045,7 +2054,33 @@
         </div>
       </div>
     </div>
-  
+
+    <div class="feature-card" data-priority="p2" data-tags="deal-organizers bug closing-math admin-vs-dl linear" draggable="true">
+      <div class="card-row">
+        <span class="drag-handle">&#8286;</span>
+        <div class="card-content">
+          <div class="card-top">
+            <span class="card-title" onclick="toggleDetail(this)">Closing Amount Misalignment — Actuals/Calculations vs. DL View Show Different Numbers</span>
+            <span class="badge p2">P2</span>
+            <span class="badge wip">🐛 <a href="https://linear.app/sydecario/issue/PDE-522" target="_blank" class="linear-pill" style="color:inherit;background:transparent;padding:0;">Bug · Backlog · PDE-522</a></span>
+            <span class="badge" style="background:#6a1b9a;color:#fff;font-size:10px;padding:2px 6px;border-radius:4px;">✨ New</span>
+          </div>
+          <div class="card-meta"><span class="mention">Deal Organizers</span><span>Closing amount shown in admin (actuals → calculations) does not match what the DL sees in their own view. One investor on modified terms still showing funds as available. Math does not reconcile.</span></div>
+          <div class="friction-bar"><span class="friction-label">Friction impact:</span>
+            <div class="friction-dots">
+              <div class="friction-dot filled"></div><div class="friction-dot filled"></div><div class="friction-dot"></div>
+            </div>
+          </div>
+          <div class="card-detail">
+            <h4>Customer Feedback</h4>Sophie Dvorkin filed PDE-522 (May 11, 2026, High priority): "Closing amount showing differently in actuals -> calculations vs what's being shown to the DL. Math does not make sense. There is one investor in modified terms but why is it showing their funds as still available?" Assigned to Carlos Mecha. On-call labeled, SLA already breaching.
+            <h4>Signal Type</h4>🟠 Current Customer Issue + 🐛 Calculation Bug
+            <h4>North Star Relevance</h4>Closing math is the single most consequential calculation the DL sees. When admin and DL diverge, CX has to be the bridge: explain the discrepancy, walk through the modified-terms case, reconcile by hand. Each occurrence generates a multi-touch CX thread before close. Fixing the calculation eliminates a recurring closing-stage touchpoint AND removes a trust failure mode in the DL's most sensitive screen.
+            <span class="updated">Added May 11, 2026 (Linear PDE-522, on-call)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="feature-card" data-priority="p2" data-tags="deal-organizers fund-plus migration nav transition churn-watch current-customer" draggable="true">
       <div class="card-row">
         <span class="drag-handle">&#8286;</span>
@@ -2064,7 +2099,8 @@
             <h4>Customer Feedback</h4>Jeremy Sell call notes (May 10, #meeting-logs): "Call with Rob to confirm some details with Rob Naka. The switch up from Zive to NAV isnt ideal. He knows its not my fault so he wasnt going to yell at me. Talked about the optics, the rush, fees, and such. He gave a lot of respect to Cher about her taking time to chat with him directly about it."
             <h4>Signal Type</h4>🟠 Current Customer + 🚨 Migration Friction
             <h4>North Star Relevance</h4>Fund+ migration deadline is June 1. Customer-facing migrations under time pressure with mid-stream destination changes (Zive → NAV) generate inbound CX touches and erode trust on the way out. Even successful migrations leak goodwill if optics aren't managed; this customer was effectively saved by Cher's personal outreach. That doesn't scale.
-            <span class="updated">Added May 10, 2026 (Slack #meeting-logs)</span>
+            <div class="enrichment-note" style="background:#fff3e0;border-left:3px solid #ff9800;padding:8px 10px;margin-top:8px;font-size:0.9em;"><strong>May 11 update (Gmail / Nik thread):</strong> Zive restructuring confirmed externally. NAV agreed to match current pricing for remainder of customer terms. Customer outreach in progress. The same dynamic Darius experienced will play out for every remaining Fund+ customer in the next 21 days. Risk: stacked migration + pricing change + product fixes compound churn. Pre-stage Cher's playbook so it isn't a one-off save per customer.</div>
+            <span class="updated">Added May 10, 2026 (Slack #meeting-logs) · Enriched May 11, 2026 (Gmail thread w/ Cher; NAV pricing match)</span>
           </div>
         </div>
       </div>
@@ -2961,6 +2997,7 @@
             <a class="source-link" href="https://sydecar.slack.com/archives/C08PR4EQ448/p1776807218181559">#pmux-internal (Apr 21)</a> · <a class="source-link" href="https://docs.google.com/document/d/1hjz91dnJ1kCFGAHgc4OTvBwGp6jfWrPOoOsYEY0mU0c/edit">SpaceX In-Kind Distribution Brief (Dan)</a>
             <span class="updated">Last updated: Apr 30, 2026</span>
           <p style="background:#fff3e0;border-left:3px solid #ff9800;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📊 <strong>Front (May 4–6):</strong> "SpaceX IPO prep for your SPV" subject hit <strong>83 inbound threads in 2 days</strong> — top subject by volume across all of ops@. Confirms investor anxiety is broad and immediate. PRD scope is the gating step.</p>
+          <p style="background:#e3f2fd;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">⚙ <strong>May 11 (Linear, OPE-465 / "SpaceX IPO Support" project):</strong> <strong>OPE-491</strong> (ts-rest contract + endpoints for DL distribution approval) In Review — sub-ticket of OPE-465 with companion <strong>OPE-490</strong> (shared state-machine service) as blocker. Distribution approval API for DLs is the gating piece for both in-kind handling and the broader distribution flow. Pace and dependency chain are real; the gap from "approval API in review" to "in-kind distribution shippable" is still wide. Also: Hanu Kunduru (SpaceX Riverside Ventures June 24 investor) submitted support request May 11 looking for investment details — investor-facing visibility ask, separate from the in-kind ops work.</p>
           </div>
         </div>
       </div>
@@ -3427,7 +3464,7 @@
 
 </div><!-- /main -->
 
-<div class="footnote">Generated May 10, 2026 (v11 — May 8–10 sweep: 1 new card [Fund+ → NAV migration friction]; 5 enrichments [API Arch / Monark third-party formalized, Branded Master / Luca Buratto returned, Bank Details / Lucinda 4-request cluster, Mobile / Patrick Stutz JPEG, Name Change / OPE-437 In Progress]) · Sources: #meeting-logs, #team-api-gtm, mozart.all_feedback, Linear · 🟠 = Current Customer · 🔵 = Prospective · North Star: <strong>Touchpoints per closed deal</strong> · Priority = potential friction reduction × signal volume × churn risk · Drag cards to reprioritize · This file was created in whole or in part by Generative AI</div>
+<div class="footnote">Generated May 11, 2026 (v12 — May 10–11 sweep: 1 new card [Closing Amount Misalignment bug / PDE-522]; 9 enrichments [Multiple Profiles / Jeremy proposed self-serve flow, SPV Naming / PDE-524 IRS 69-char follow-up, Investor Bank Account / LP-707 ✅ done, Document Management / LP-647 + LP-732 + LP-782 in flight, Document Upload / Susan + Pablo can't find docs + UBO edit bug, Layered SPV / internal go-ahead + Wanjoon + Luca recurring, Audit/RIA / Pomifer + Tschetter declined same day, Fund+ NAV / Darius+Rob call w/ Cher, SpaceX IPO / OPE-491 + OPE-465 project active]) · Sources: #meeting-logs, #product-feedback, #team-api-gtm, mozart.all_feedback, Gmail, Notion, Drive, Linear · 🟠 = Current Customer · 🔵 = Prospective · North Star: <strong>Touchpoints per closed deal</strong> · Priority = potential friction reduction × signal volume × churn risk · Drag cards to reprioritize · This file was created in whole or in part by Generative AI</div>
 
 <script>
 // ── Toggle section collapse ──────────────────────────────
