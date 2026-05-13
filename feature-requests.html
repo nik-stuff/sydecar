@@ -224,7 +224,7 @@
 
 <div class="header">
   <h1>📋 Sydecar Product Feature Requests</h1>
-  <span class="meta">Last synced: May 11, 2026 · Jan 1–May 11, 2026</span>
+  <span class="meta">Last synced: May 13, 2026 · Jan 1–May 13, 2026</span>
   <input class="search-bar" id="searchInput" placeholder="Search features…" oninput="filterCards()">
   <span class="filter-row-label">Priority</span>
   <button class="filter-btn priority-btn active" id="priAll" onclick="setPriority('all')">All</button>
@@ -653,7 +653,10 @@
             <a class="source-link" href="https://prod_sydecar2_dwh.mozart.all_feedback">Snowflake · all_feedback</a>
             <p class="cx-note" style="background:#fff3e0;border-left:3px solid #ff9800;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📊 <strong>mozart.all_feedback (Apr 30–May 1, 2026):</strong> Support ticket: document upload silently failing for both PDF and PNG file types. Investor attempted multiple uploads with no success and no error message explaining what went wrong. Silent failure = customer assumes success, creates delayed discovery touchpoint when ops notices docs are missing.</p>
             <p class="cx-note" style="background:#e8f5e9;border-left:3px solid #43a047;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">💬 <strong>May 10–11 (mozart.all_feedback, three concurrent tickets):</strong> (1) Susan Moring (Cortado Ventures): <em>"One of my SPV investors has requested their FE subscription documents. I can't seem to find that anywhere on the platform."</em> — DL can't surface counter-signed sub docs. (2) Pablo Cruz: <em>"I can't seem to download the Series Agreement (counter-Signed) (LICA) which makes me believe the investment hasn't gone through."</em> — Missing doc is being interpreted as missing investment, eroding trust. (3) steve@pineridgeadvisers: <em>"Beneficial owner section does not appear. Edit function also does not bring up any information to edit."</em> — UBO edit broken; cross-references the Entity Onboarding UBO card. Three downloads/doc-find failures in 24 hours is unusual; worth checking whether a deploy or doc-store change triggered the pattern.</p>
-            <span class="updated">Last updated: Apr 30, 2026 · Enriched May 11, 2026 (3 concurrent doc-find / UBO-edit tickets)</span>
+            <p style="background:#e3f2fd;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">⚙ <strong>May 11–12 (#pde-leads thread, Aparna · Tyler · Dan):</strong> Susan Moring case diagnosed: she's asking to see investor sub docs as a DL teammate, which the platform does <em>not</em> currently expose to DLs. <em>"It looks like what the DL is requesting is the ability to view investor sub docs. We don't currently make investor docs available to the DL."</em> <strong>Aparna pulled DL-513</strong> (year-old feature request) back into scope. Dan flagged a feature releasing this sprint to expose sub docs to DLs (Edmund working on it) — needs confirmation whether that covers post-close legacy deals. Pablo Cruz case ruled out as new-tab / loading UX confusion via LogRocket — not a bug. Aparna note: <em>"in general, it feels like there are many cases of DLs needing to act on behalf of investors that maybe haven't been scoped into the platform's functionality yet."</em></p>
+          <p style="background:#fff3e0;border-left:3px solid #ff9800;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📧 <strong>May 11–12 (mozart.all_feedback, recurring pattern):</strong> Shane Smith: <em>"How to download my investment docs."</em> Christian Hilbert: <em>"Need to send deal details to my financial advisor. Deal: Unable to download investment documents/disclosures."</em> Discoverability/permissions issue is hitting investors and their advisors, not just DL teammates.</p>
+          <p style="background:#fff3e0;border-left:3px solid #ff9800;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📧 <strong>May 12 (Email, Nass Law Group / Redwood Materials):</strong> External counsel: <em>"still having trouble accessing the Redwood Materials transfer documentation on your platform"</em> — ops had to manually walk them through profile creation. Transfer-doc access friction on platform; related to LP-50 / transfers flow.</p>
+            <span class="updated">Last updated: Apr 30, 2026 · Enriched May 13, 2026 (Aparna pulled DL-513 back into scope; Edmund's DL-side sub-doc feature in flight; advisor/legal access pattern surfacing)</span>
           </div>
         </div>
       </div>
@@ -1242,6 +1245,9 @@
 <span class="updated">Last updated: Apr 17, 2026</span>
           <p style="background:#e8f5e9;border-left:3px solid #43a047;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">✅ <strong>Shipped May 7, 2026 (3pm PT)</strong>: Three-field naming UX (Company legal / Deal display / SPV legal) live with inline validation. In-product banner targets Investors / Organizers / All Users with admin selection. Help center article published. <strong>Follow-up: DL-611</strong> (May 7, Mo/Jamie) — auto-abbreviation logic needs to check against existing SPV names to avoid collisions. Banner mechanism is short-term; <strong>AnnounceKit prototype (LP-752, Aparna spike)</strong> in flight for longer-term in-app comms.</p>
           <p style="background:#e8eaf6;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">⚙ <strong>May 11 (PDE-524, Brett):</strong> New Triage ticket — update SPV legal name character limit to 69 (IRS actual limit, includes prefix + Master LLC + spaces + punctuation). Current Sydecar limit is tighter than IRS reality, forcing customer name truncations that don't need to happen. Follow-up to the naming UX work; ungates a class of customer name requests without launching anything new.</p>
+          <p style="background:#fff3e0;border-left:3px solid #ff9800;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">⚠️ <strong>May 12 (Brett · #product-feedback):</strong> Brett shared a screenshot of <em>"one DL [who] has found a minor workaround"</em> on the new naming guardrails (Peter Martinez-Fonts in thread: <em>"I've been trying to get allocation in Thea Mulet Holdings"</em> — joking nod). <strong>Nik replied: "Wow. Let's fix."</strong> Guardrails went live May 7 but the rule set is leaky on the customer side.</p>
+          <p style="background:#fff3e0;border-left:3px solid #ff9800;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📧 <strong>May 12 (Front, AGC Together AI II):</strong> Customer email to ops: <em>"Can you please manually change the spv name? It should be AGC Together AI II, a Series of AGC AI Nexus Fund LLC."</em> Customers are still routing rename requests through ops post-launch — the in-product naming flow either isn't surfacing or isn't trusted for legitimate edits.</p>
+          <p style="background:#e3f2fd;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">⚙ <strong>May 12 (Linear DL-614, In Review):</strong> "Update SPV legal name character limits" — extends SPV legal name + Deal display name to the IRS 69-char limit. PR open. This is the executing ticket for the PDE-524 follow-up; the May 11 entry above can be retired once DL-614 ships.</p>
           </div>
         </div>
       </div>
@@ -2971,7 +2977,10 @@
             <h4>Signal Type</h4>🔴 Internal Ops Risk
             <h4>Sources</h4>
             <a class="source-link" href="https://sydecar.slack.com/archives/C0A32QMGR1R/p1777580206134499">#pde-leads (Apr 30)</a>
-            <p class="cx-note" style="background:#fff3e0;border-left:3px solid #ff9800;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📊 <strong>Front keyword scan (Jan–Apr 2026):</strong> Fund+ off-boarding generating multi-thread ops sequences. One organizer "will probably go with Zive" — competitive churn signal. Multiple follow-up threads on transition blockers (bank account address, Fund I transition). Each off-boarding step requires manual ops coordination. DRI still unresolved as of Apr 30.</p><p class="cx-note" style="background:#e3f2fd;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📋 <strong>Notion Nik|Tim 1:1 (Apr 30, 2026):</strong> Jamie confirmed as DRI. &lt;10 customers remain on Fund+; target 100% off by June 1 except 5 multi-asset customers (3 real, 2 sales miscommunications). RH fund requires technical investigation on Cord platform. Tyler (departing ~3 weeks) critical for final migrations. Co-invest migration plan sent to engineering. <strong>Gmail (Apr 30):</strong> GatePass Capital (Kyane Kassiri) expressing friction over Zive transition requirements (Form D, EDGAR, NASAA EFD) — transition deadline extended to May 15 to accommodate active deal close.</p><span class="updated">Last updated: Apr 30, 2026</span>
+            <p class="cx-note" style="background:#fff3e0;border-left:3px solid #ff9800;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📊 <strong>Front keyword scan (Jan–Apr 2026):</strong> Fund+ off-boarding generating multi-thread ops sequences. One organizer "will probably go with Zive" — competitive churn signal. Multiple follow-up threads on transition blockers (bank account address, Fund I transition). Each off-boarding step requires manual ops coordination. DRI still unresolved as of Apr 30.</p><p class="cx-note" style="background:#e3f2fd;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📋 <strong>Notion Nik|Tim 1:1 (Apr 30, 2026):</strong> Jamie confirmed as DRI. &lt;10 customers remain on Fund+; target 100% off by June 1 except 5 multi-asset customers (3 real, 2 sales miscommunications). RH fund requires technical investigation on Cord platform. Tyler (departing ~3 weeks) critical for final migrations. Co-invest migration plan sent to engineering. <strong>Gmail (Apr 30):</strong> GatePass Capital (Kyane Kassiri) expressing friction over Zive transition requirements (Form D, EDGAR, NASAA EFD) — transition deadline extended to May 15 to accommodate active deal close.</p>
+          <p style="background:#ffebee;border-left:3px solid #c62828;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">🚨 <strong>May 11–13 (Email, "Important Update: Change to Your Fund Transition Plan" — Cher Murphy blast):</strong> Pivot from Zive to NAV announced to all remaining Fund+ customers. 88-message thread; multiple GPs publicly furious. <em>Colin Gardiner (Yonder): "really crappy situation… I just told all my LPs this transition was happening and now I have to walk that back."</em> <em>Joel Ciarochi: "What a mess."</em> <em>Jeff Gerdes: "what a shit show this all has been."</em> <em>Ezeibe (Assembly, also a Sydecar investor): "the worst customer experience I have ever..."</em> <em>Diego Salas (Epakon)</em> explicitly exploring AngelList instead of NAV. <em>Mike Costanoa</em> demanding 6/30 transition or "earned my faith back". <strong>Kyane (Delusional)</strong> pushing back on hidden registered-agent / DE fees. <strong>Maia Bittner:</strong> "Ok let's go with NAV. As you know we are looking to make an investment as soon as possible..." — active deal blocked on transition.</p>
+          <p style="background:#ffebee;border-left:3px solid #c62828;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">🚨 <strong>May 11–13 (Email · Antigravity / Gadi):</strong> <em>"Sydecar's first fund client"</em> has signed with <strong>Formulary</strong> for Fund I and Fund II. Cannot reverse course. Major logo loss; second pure churn-to-named-competitor signal this week alongside the AngelList exploration.</p>
+<span class="updated">Last updated: May 13, 2026</span>
           </div>
         </div>
       </div>
@@ -2998,6 +3007,7 @@
             <span class="updated">Last updated: Apr 30, 2026</span>
           <p style="background:#fff3e0;border-left:3px solid #ff9800;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📊 <strong>Front (May 4–6):</strong> "SpaceX IPO prep for your SPV" subject hit <strong>83 inbound threads in 2 days</strong> — top subject by volume across all of ops@. Confirms investor anxiety is broad and immediate. PRD scope is the gating step.</p>
           <p style="background:#e3f2fd;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">⚙ <strong>May 11 (Linear, OPE-465 / "SpaceX IPO Support" project):</strong> <strong>OPE-491</strong> (ts-rest contract + endpoints for DL distribution approval) In Review — sub-ticket of OPE-465 with companion <strong>OPE-490</strong> (shared state-machine service) as blocker. Distribution approval API for DLs is the gating piece for both in-kind handling and the broader distribution flow. Pace and dependency chain are real; the gap from "approval API in review" to "in-kind distribution shippable" is still wide. Also: Hanu Kunduru (SpaceX Riverside Ventures June 24 investor) submitted support request May 11 looking for investment details — investor-facing visibility ask, separate from the in-kind ops work.</p>
+          <p style="background:#ffebee;border-left:3px solid #c62828;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">🚨 <strong>May 11–13 (Email + mozart.all_feedback · Anthropic-related parallel):</strong> Anthropic posted a public "unauthorized SPV stock sales and investment scams" article on their support site May 11. <em>Pieter Snoeck (May 12):</em> <em>"Anthropic announced SPV investments through sydecar as void. Could you please provide more information?"</em> <em>Basil Hashem (May 11):</em> linked to the Anthropic article asking <em>"As a holder of SPV-based equity from 2023. Can you confirm that we are ok?"</em> Brett Martin compiling a privileged "Anthropic Investor Questions" doc with Halle/Sam/Shauna. Shauna also notified Academy Bank under Program Agreement §10(e). <strong>Same investor-comms pattern as SpaceX</strong>: a public counterparty event triggers a flood of "is my SPV legitimate" inquiries with no in-product surface to reassure holders. Same gap, different ticker.</p>
           </div>
         </div>
       </div>
@@ -3142,7 +3152,35 @@
       </div>
     </div>
 
-</div><!-- /operations -->
+
+    <div class="feature-card" data-priority="p2" data-tags="operations fund-plus commitment manual-intervention pde-525 pde-527 ope-509" draggable="true">
+      <div class="card-row">
+        <span class="drag-handle">⠿</span>
+        <div class="card-content">
+          <div class="card-top">
+            <span class="card-title" onclick="toggleDetail(this)">Commitment Adjustment Admin Tooling — Replace Engineer Scripts</span>
+            <span class="badge p2">P2</span>
+            <span class="badge wip">⚙ WIP</span>
+            <span class="badge" style="background:#6a1b9a;color:#fff;font-size:10px;padding:2px 6px;border-radius:4px;">✨ New</span>
+          </div>
+          <div class="card-meta"><span class="mention">@Operations + Eng</span><span>Admin tooling to check and cancel/accept commitment changes — eliminates engineer-script manual interventions</span></div>
+          <div class="friction-bar"><span class="friction-label">Friction impact:</span><div class="friction-dots"><div class="friction-dot filled"></div><div class="friction-dot filled"></div><div class="friction-dot"></div></div></div>
+          <div class="card-detail">
+            <h4>Customer Feedback</h4>
+            <p>Triggered by PDE-525 (Holocene Ventures / HVF1 Fund+ commitment rollback, May 13) where an engineer had to script the cancellation. PDE-527 and OPE-509 (both In Review, May 12) build the admin-side check + cancel/accept flow so ops can resolve these directly. Sister tickets to FINSYS-2736 (Manual Intervention Inbox).</p>
+            <h4>Signal Type</h4>🔴 Internal Ops Risk
+            <h4>North Star Relevance</h4>Every commitment adjustment currently requires engineer touch. Self-serve admin tooling pulls these into the ops Inbox path and removes a recurring eng-on-call interruption — same playbook as FINSYS-2736.
+            <h4>Sources</h4>
+            <a class="source-link" href="https://linear.app/sydecario/issue/PDE-525">Linear · PDE-525</a>
+            <a class="source-link" href="https://linear.app/sydecario/issue/PDE-527">Linear · PDE-527</a>
+            <a class="source-link" href="https://linear.app/sydecario/issue/OPE-509">Linear · OPE-509</a>
+            <span class="updated">Added May 13, 2026 (Linear)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </div><!-- /operations -->
 
 <!-- ═══════════════════════════════════════════════════
      API PARTNERS TEAM
@@ -3444,7 +3482,33 @@
         </div>
       </div>
     </div>
-  </div><!-- /api -->
+  
+    <div class="feature-card" data-priority="p2" data-tags="api third-party-manager monark aqua republic architecture" draggable="true">
+      <div class="card-row">
+        <span class="drag-handle">⠿</span>
+        <div class="card-content">
+          <div class="card-top">
+            <span class="card-title" onclick="toggleDetail(this)">API Third-Party Manager Pattern — Monark / Aqua / Republic Co-Manager Architecture</span>
+            <span class="badge p2">P2</span>
+            <span class="badge" style="background:#6a1b9a;color:#fff;font-size:10px;padding:2px 6px;border-radius:4px;">✨ New</span>
+          </div>
+          <div class="card-meta"><span class="mention">API Partners + Legal</span><span>Multiple API clients run SPVs where a third party is the Organizer/Advisor — but the contracting and KYC paths aren't standardized</span></div>
+          <div class="friction-bar"><span class="friction-label">Friction impact:</span><div class="friction-dots"><div class="friction-dot filled"></div><div class="friction-dot filled"></div><div class="friction-dot"></div></div></div>
+          <div class="card-detail">
+            <h4>Customer Feedback</h4>
+            <p>Brett Martin (#team-api-gtm, May 5–12, 2026): "Monark is looking to run an SPV where another party is the manager... This seems similar to what Republic Capital Markets and Aqua do." Aqua shows Florence Capital Advisors as Organizer/Advisor while Aqua is Platform Provider; Republic runs the same pattern. Shauna: <em>"we'll need Monark to get signed SOWs (I'm ok if it's the same language as we've given to Monark) from each of these co-managers, and MSAs (which is standardized)."</em> Tuan: <em>"our deal with them is that they would display a version of our MSA (and by extension, our SOW). Here is our 'resale' provision in all of our API MSAs."</em></p>
+            <h4>Signal Type</h4>🟠 Current API Customer Issue + Architecture Gap
+            <h4>North Star Relevance</h4>An undocumented co-manager pattern means each new API instance hits legal + compliance review one-off. Standardizing the contracting flow (SOW templating, MSA cascade, Alloy KYC routing) and surfacing it in the API onboarding path cuts the per-deal touchpoint load for both ops and legal.
+            <h4>Sources</h4>
+            <a class="source-link" href="https://sydecar.slack.com/archives/C06U764CHHA/p1778437597629109">#team-api-gtm · May 10 (Brett)</a>
+            <a class="source-link" href="https://sydecar.slack.com/archives/C06U764CHHA/p1778594645267459">#team-api-gtm · May 12 (Brett/Shauna/Tuan)</a>
+            <span class="updated">Added May 13, 2026 (#team-api-gtm)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </div><!-- /api -->
 
 
 <!-- ═══════════════════════════════════════════════════
@@ -3464,7 +3528,7 @@
 
 </div><!-- /main -->
 
-<div class="footnote">Generated May 11, 2026 (v12 — May 10–11 sweep: 1 new card [Closing Amount Misalignment bug / PDE-522]; 9 enrichments [Multiple Profiles / Jeremy proposed self-serve flow, SPV Naming / PDE-524 IRS 69-char follow-up, Investor Bank Account / LP-707 ✅ done, Document Management / LP-647 + LP-732 + LP-782 in flight, Document Upload / Susan + Pablo can't find docs + UBO edit bug, Layered SPV / internal go-ahead + Wanjoon + Luca recurring, Audit/RIA / Pomifer + Tschetter declined same day, Fund+ NAV / Darius+Rob call w/ Cher, SpaceX IPO / OPE-491 + OPE-465 project active]) · Sources: #meeting-logs, #product-feedback, #team-api-gtm, mozart.all_feedback, Gmail, Notion, Drive, Linear · 🟠 = Current Customer · 🔵 = Prospective · North Star: <strong>Touchpoints per closed deal</strong> · Priority = potential friction reduction × signal volume × churn risk · Drag cards to reprioritize · This file was created in whole or in part by Generative AI</div>
+<div class="footnote">Generated May 13, 2026 (v13 — May 12–13 sweep: 2 new cards [API Third-Party Manager Pattern P2; Commitment Adjustment Admin Tooling P2/WIP]; 4 enrichments [SPV Naming / Brett workaround screenshot + AGC Together AI manual rename + DL-614 In Review IRS 69-char, Fund+ Migration / Cher Zive→NAV blast triggered AngelList exploration + Antigravity churned to Formulary, Document Upload / DL-513 pulled back into scope by Aparna + advisor/legal access pattern, SpaceX IPO card / Anthropic public-scam-notice parallel investor-comms pattern]) · Sources: #pde-leads, #pmux-internal, #product-feedback, #team-api-gtm, mozart.all_feedback, Front body keyword scan, Gmail, Notion, Linear (LP-707 ✅, DL-614 In Review, PDE-525/527, OPE-437/509) · Previous: v12 — May 10–11 sweep: 1 new card [Closing Amount Misalignment bug / PDE-522]; 9 enrichments [Multiple Profiles / Jeremy proposed self-serve flow, SPV Naming / PDE-524 IRS 69-char follow-up, Investor Bank Account / LP-707 ✅ done, Document Management / LP-647 + LP-732 + LP-782 in flight, Document Upload / Susan + Pablo can't find docs + UBO edit bug, Layered SPV / internal go-ahead + Wanjoon + Luca recurring, Audit/RIA / Pomifer + Tschetter declined same day, Fund+ NAV / Darius+Rob call w/ Cher, SpaceX IPO / OPE-491 + OPE-465 project active]) · Sources: #meeting-logs, #product-feedback, #team-api-gtm, mozart.all_feedback, Gmail, Notion, Drive, Linear · 🟠 = Current Customer · 🔵 = Prospective · North Star: <strong>Touchpoints per closed deal</strong> · Priority = potential friction reduction × signal volume × churn risk · Drag cards to reprioritize · This file was created in whole or in part by Generative AI</div>
 
 <script>
 // ── Toggle section collapse ──────────────────────────────
