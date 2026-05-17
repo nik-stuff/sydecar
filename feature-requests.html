@@ -224,7 +224,7 @@
 
 <div class="header">
   <h1>📋 Sydecar Product Feature Requests</h1>
-  <span class="meta">Last synced: May 13, 2026 · Jan 1–May 13, 2026</span>
+  <span class="meta">Last synced: May 17, 2026 · Jan 1–May 17, 2026</span>
   <input class="search-bar" id="searchInput" placeholder="Search features…" oninput="filterCards()">
   <span class="filter-row-label">Priority</span>
   <button class="filter-btn priority-btn active" id="priAll" onclick="setPriority('all')">All</button>
@@ -454,6 +454,7 @@
 <span class="updated">Added May 1, 2026 · Source: Aparna Q2 2026 Investor Experience Roadmap</span>
           <p style="background:#e3f2fd;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">🔄 <strong>May 5 (Linear):</strong> LP-673 (Collect outgoing bank account at first investment) actively In Progress. Companion ticket LP-357 (preference capture) still To Do.</p>
           <p style="background:#e8f5e9;border-left:3px solid #43a047;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">✅ <strong>May 11 (Linear LP-707, Done):</strong> "Collect outgoing bank account for existing investors without payment instructions on file" shipped (assignee: Ibrahim, parent: LP-357). Closes the gap for the existing-investor cohort that LP-673 missed. The "no bank info → can't pay distribution" tail should start shrinking as more existing investors hit the new prompt.</p>
+          <p style="background:#e3f2fd;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">🔄 <strong>May 15 (Linear LP-357):</strong> Parent epic moved from To Do → <strong>In Progress</strong>; Ibrahim Alvarez owner. With LP-707 (existing) and LP-673 (new) both shipped, LP-357 is now actively executing the preference-capture front-end work.</p>
           </div>
         </div>
       </div>
@@ -514,6 +515,8 @@
 <span class="updated">Last updated: Apr 30, 2026</span>
           <p style="background:#e3f2fd;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">✅ <strong>May 5: LP-728 Done</strong> — Dropbox-Sign string-variation LaunchDarkly flag wired into draft deal creation flow. <strong>LP-640 (Backend: Packet Creation & Variables) and LP-653 (Frontend: Series Agreement / LLCA)</strong> remain In Progress.</p>
           <p style="background:#e3f2fd;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">🔄 <strong>May 11 (Linear):</strong> Sub-ticket progress on LP-640/LP-653: <strong>LP-647</strong> (Series Agreement / LLCA end-to-end Dropbox Sign) In Progress; <strong>LP-732</strong> (embedded Dropbox Sign iframe in SingleAgreement / DualAgreementsCoinvestor) In Review; <strong>LP-782</strong> (Claude-created: file-backed MockSigningStore for resume/teammate-swap stories) In Review. The mock surface is being hardened to unblock resume + teammate-swap flows that previously died past Story 1. End of May MVP target is on track for the happy path; resume/swap edge cases are the real gating risk.</p>
+          <p style="background:#e3f2fd;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">🔄 <strong>May 13–17 (Linear):</strong> Packet-flow tickets advanced: <strong>LP-640</strong> Backend Packet Creation + Variables — In Review (Tyler). <strong>LP-647</strong> Series Agreement / LLCA — In Review. <strong>LP-653</strong> Frontend Series Agreement / LLCA — In Review. <strong>LP-732</strong> Embedded Dropbox Sign view — In Review. <strong>LP-646</strong> Deal Lead Signature Page — newly active. All four review-stage tickets need to land together for end-of-May happy-path target.</p>
+          <p style="background:#e8f5e9;border-left:3px solid #43a047;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">✅ <strong>May 15 (Linear LP-752, Done · Aparna spike):</strong> AnnounceKit prototype spike closed. Compliance/DPA review was the gating concern; spike outcome will inform whether AnnounceKit becomes the canonical in-app comms primitive or whether LP-748 (Audience-targeted system banner, shipped May 15) carries the load. Both now exist as in-app announcement rails — issuer-notice + naming-launch use cases unblocked either way.</p>
           </div>
         </div>
       </div>
@@ -656,7 +659,9 @@
             <p style="background:#e3f2fd;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">⚙ <strong>May 11–12 (#pde-leads thread, Aparna · Tyler · Dan):</strong> Susan Moring case diagnosed: she's asking to see investor sub docs as a DL teammate, which the platform does <em>not</em> currently expose to DLs. <em>"It looks like what the DL is requesting is the ability to view investor sub docs. We don't currently make investor docs available to the DL."</em> <strong>Aparna pulled DL-513</strong> (year-old feature request) back into scope. Dan flagged a feature releasing this sprint to expose sub docs to DLs (Edmund working on it) — needs confirmation whether that covers post-close legacy deals. Pablo Cruz case ruled out as new-tab / loading UX confusion via LogRocket — not a bug. Aparna note: <em>"in general, it feels like there are many cases of DLs needing to act on behalf of investors that maybe haven't been scoped into the platform's functionality yet."</em></p>
           <p style="background:#fff3e0;border-left:3px solid #ff9800;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📧 <strong>May 11–12 (mozart.all_feedback, recurring pattern):</strong> Shane Smith: <em>"How to download my investment docs."</em> Christian Hilbert: <em>"Need to send deal details to my financial advisor. Deal: Unable to download investment documents/disclosures."</em> Discoverability/permissions issue is hitting investors and their advisors, not just DL teammates.</p>
           <p style="background:#fff3e0;border-left:3px solid #ff9800;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📧 <strong>May 12 (Email, Nass Law Group / Redwood Materials):</strong> External counsel: <em>"still having trouble accessing the Redwood Materials transfer documentation on your platform"</em> — ops had to manually walk them through profile creation. Transfer-doc access friction on platform; related to LP-50 / transfers flow.</p>
-            <span class="updated">Last updated: Apr 30, 2026 · Enriched May 13, 2026 (Aparna pulled DL-513 back into scope; Edmund's DL-side sub-doc feature in flight; advisor/legal access pattern surfacing)</span>
+            <p style="background:#e8f5e9;border-left:3px solid #43a047;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">💬 <strong>May 14–15 (Investor CSAT + Support):</strong> Three new direct hits: (1) James Jungjohann: <em>"Downloads don't work. Confusing ability to get wire transfer docs."</em> (2) Suhas Subramanya: <em>"Not able to download documents."</em> (3) William Powell (Anthropy Partners, support): <em>"I need copies of the investment contracts (SAFE, Converts, Pref, Common, etc) for everyone of our SPVs asap today. I cannot seem to find them."</em> Pattern is now spanning DL + investor + portfolio-doc retrieval. This is the third consecutive weekly run where document discoverability is the single highest-frequency CX signal.</p>
+            <p style="background:#e3f2fd;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">✅ <strong>May 15 shipped (OPE-512, Charlie M):</strong> Default behavior for document downloads now opens PDFs in a new tab rather than auto-downloading. Download still available from PDF viewer. <strong>OPE-448</strong> (standardize document access across admin) merged in as duplicate. Quick win driven from #product office hours; partial response to download UX confusion in CSAT.</p>
+            <span class="updated">Last updated: May 17, 2026 · Enriched (Document doc-retrieval pattern is now the single highest-frequency CX signal; OPE-512 shipped May 15 addresses one slice; broader DL/investor/advisor discoverability still open via DL-513 + LP-647/653/732 packet flow)</span>
           </div>
         </div>
       </div>
@@ -705,6 +710,29 @@
             <a class="source-link" href="https://app.frontapp.com">Front · operations@sydecar.io · Apr 30, 2026</a>
             <span class="updated">Last updated: Apr 30, 2026</span>
           <p style="background:#e8f5e9;border-left:3px solid #43a047;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📨 <strong>May 8 (mozart.all_feedback, Lucinda Baily):</strong> Filed <strong>4 separate support requests within 30 minutes</strong> trying to figure out how to edit banking details — "How do I edit my banking details" → "I need to update my banking details" → "Bank account needs editing" → "Banking details need to be editd." Single user generating 4 CX touches on the same flow in one sitting is a textbook discoverability failure on the edit path.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="feature-card" data-priority="p1" data-tags="plaid bank connect silent failure funding investor current-customer" draggable="true">
+      <div class="card-row">
+        <span class="drag-handle">&#8286;</span>
+        <div class="card-content">
+          <div class="card-top">
+            <span class="card-title" onclick="toggleDetail(this)">Bank Connect Funding — "Success" with No Transfer (Plaid Path)</span>
+            <span class="badge p1">P1</span>
+          </div>
+          <div class="card-meta"><span class="mention">Investors</span><span>Investor connects bank via Plaid, sees "Success," is returned to original screen, but no money moves. Silent failure on the funding path.</span></div>
+          <div class="friction-bar"><span class="friction-label">Friction impact:</span><div class="friction-dots"><div class="friction-dot filled"></div><div class="friction-dot filled"></div><div class="friction-dot filled"></div></div></div>
+          <div class="card-detail">
+            <h4>Customer Feedback</h4>
+            Kevin Dorsey (mozart.all_feedback, support request, May 15 2026): <em>"I've tried 3 times to fund my investment from my bank. It walks me through the process of connecting to my bank, which I do, and it says 'Success', then it brings me back to your original screen, but no money transferred. Help, please."</em>
+            <p style="background:#e8f5e9;border-left:3px solid #43a047;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">💬 <strong>Adjacent signal (May 15, Clarence Mitchell III · investor CSAT):</strong> <em>"I tried to submit a wire but didn't get notified if it failed or the account number was wrong. It just kept asking for the wire. I just switched to ACH so hopefully this works now."</em> Different rail but same failure shape: investor can't tell whether their payment attempt succeeded.</p>
+            <h4>Signal Type</h4>🟠 Current Customer Issue · 🟠 Funding-blocking
+            <h4>North Star Relevance</h4>Every "success but no transfer" event spawns 1+ CX touches (investor pings DL → DL pings ops → ops chases bank). Three attempts by Kevin alone means at least 3 touchpoints already burned on one closing. Plaid path needs (1) actual confirmation of whether the linked account was used, (2) a clear pending state when no transfer initiated, (3) a recovery prompt instead of dumping back to the original screen.
+            <h4>Sources</h4>
+            <a class="source-link" href="https://prod_sydecar2_dwh.mozart.all_feedback">Snowflake · all_feedback · May 15</a>
+            <span class="updated">Added May 17, 2026 (mozart.all_feedback · support request)</span>
           </div>
         </div>
       </div>
@@ -1142,7 +1170,8 @@
             <a class="source-link" href="https://sydecar.slack.com/archives/C0AELC49E0Y">#wallet-share-logs · Feb 17</a>
             <a class="source-link" href="https://docs.google.com/presentation/d/1aSfiA9F9S-F1RESvrL8RT-aJ_yNdYi1FHyB9fyWiFIs">Apr 9 Product Update</a>
             <p class="roadmap-note" style="background:#eff6ff;border-left:3px solid #2563eb;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📍 <strong>2026 Roadmap:</strong> PM: Jamie · EM: Carlos · Design: Wooj · Stage: <strong>⚙ In flight</strong> · Channel: <a href="https://sydecar.slack.com/archives/C0AFBP7JCGP" style="color:#1d4ed8;">#fees-on-top-2026</a> · Artifacts: PRD · Figma · Linear · <a href="https://docs.google.com/spreadsheets/d/1IoB8dfESAwCqYDiguOAq1Lf1icE39KWMOEWqJolZKHo" style="color:#1d4ed8;">Roadmap sheet ↗</a></p>
-<span class="updated">Last updated: Apr 22, 2026</span>
+            <p style="background:#fff3e0;border-left:3px solid #ff9800;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">⚠️ <strong>May 12 PM Sync (Dan + Aparna + Rohini · Notion):</strong> Fees on Top scope under review. Project described as <em>"black hole"</em> pulling resources from other initiatives — offline billing feature took weeks longer due to Fees on Top conflicts. Described as <em>"wildly overcomplicated relative to value."</em> Current timeline: code complete July, launch August. <strong>LLCA waterfall issue partially solved outside Fees on Top via amendments</strong> (Shauna working with council on distribution language). Need to verify if remaining scope is a revenue unlock for NPM/larger clients or just a distribution fix. <strong>Action items:</strong> (1) Dan + Aparna to scrutinize DL team scope and simplify; (2) Dan to meet with Carlos to discuss Fees on Top scope + resource allocation; (3) Move discovery review to product team sooner, keep engineering execution on track. <strong>Decision: hold current team structure through H1; ownership eventually moves to operations/financial systems team in July.</strong></p>
+            <span class="updated">Last updated: May 17, 2026</span>
           </div>
         </div>
       </div>
@@ -1248,6 +1277,8 @@
           <p style="background:#fff3e0;border-left:3px solid #ff9800;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">⚠️ <strong>May 12 (Brett · #product-feedback):</strong> Brett shared a screenshot of <em>"one DL [who] has found a minor workaround"</em> on the new naming guardrails (Peter Martinez-Fonts in thread: <em>"I've been trying to get allocation in Thea Mulet Holdings"</em> — joking nod). <strong>Nik replied: "Wow. Let's fix."</strong> Guardrails went live May 7 but the rule set is leaky on the customer side.</p>
           <p style="background:#fff3e0;border-left:3px solid #ff9800;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📧 <strong>May 12 (Front, AGC Together AI II):</strong> Customer email to ops: <em>"Can you please manually change the spv name? It should be AGC Together AI II, a Series of AGC AI Nexus Fund LLC."</em> Customers are still routing rename requests through ops post-launch — the in-product naming flow either isn't surfacing or isn't trusted for legitimate edits.</p>
           <p style="background:#e3f2fd;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">⚙ <strong>May 12 (Linear DL-614, In Review):</strong> "Update SPV legal name character limits" — extends SPV legal name + Deal display name to the IRS 69-char limit. PR open. This is the executing ticket for the PDE-524 follow-up; the May 11 entry above can be retired once DL-614 ships.</p>
+          <p style="background:#fff3e0;border-left:3px solid #ff9800;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📧 <strong>May 13–15 (Front, ops@sydecar.io):</strong> "Action Required: Your Sydecar Deal in Review" still generating investor confusion at scale. Verbatim from inbound: <em>"I'm still confused — what do I put under investor name. This whole thing: 'MHI0526, a Series of CGF2021 LLC,' please clarify."</em> The display/legal split landed for DLs but investors still see the raw legal string in deal-review emails and freeze. Templated copy probably needs the same display-first treatment.</p>
+          <p style="background:#e3f2fd;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">🐞 <strong>May 17 (Linear DL-617, Triage · spawned from OPE-513):</strong> "Stale target_company.short_name after deal-naming flag rollout." OPE-513 (closed May 17) confirmed edited Display Name wasn't propagating to Target Name in admin/console; DL-617 is the follow-up for the same staleness pattern in target_company.short_name. The naming refactor surface area is still leaking — likely more downstream consumers to audit.</p>
           </div>
         </div>
       </div>
@@ -1342,7 +1373,11 @@
             <h4>Sources</h4>
             <a class="source-link" href="https://sydecar.slack.com/archives/C04GA5766DT">#meeting-logs · Apr 27, Apr 16</a>
             <a class="source-link" href="https://sydecar.slack.com/archives/C0AELC49E0Y">#wallet-share-logs · Mar 10</a>
-            <span class="updated">Last updated: Apr 27, 2026</span>
+            <p style="background:#e8f5e9;border-left:3px solid #43a047;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">💬 <strong>May 14 (Investor NPS, Patrick Latterell · lvpcapital.com):</strong> <em>"Split the investment amount and fee into two separate items, with no fee on the investment amount, and the 10% fee separate. By combining them as you do the fee is effectively 11.1%, not 10%. You should consider giving a refund to everyone for the 1.1% excess fee that was charged."</em> Direct refund demand grounded in fee-math UX. Different from Patrick's investor identity than the Fees on Top deal-lead ask, but the underlying problem rhymes: customers do not believe the fee math because the surface doesn't show it cleanly.</p>
+            <p style="background:#e8f5e9;border-left:3px solid #43a047;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">💬 <strong>May 13 (Townhall doc, Shri):</strong> Leadership acknowledgement of customer feedback: <em>"Missing expectation and market convention on waterfall calcs. That was disappointing and hurt critical vectors of our growth — trust and brand."</em> Confirms waterfall accuracy is an executive-level concern.</p>
+            <p style="background:#e8eaf6;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">⚙ <strong>May 12 PM Sync:</strong> Shauna working on updated LCA with council to address distribution language; partial waterfall fix happening via amendments outside Fees on Top. <strong>Action: ping Shauna to confirm LCA stopgap was implemented for net new deals.</strong></p>
+            <p style="background:#e3f2fd;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">⚙ <strong>May 14–15 (Drive):</strong> New "Distribution waterfall IN-KIND" template created May 15 (parent: SpaceX waterfall folder). "HUME Venice x STM VC SPV Feb 2023 Distribution waterfall" reopened May 14 — both tied to distribution-mechanics work that should eventually fold back into OPE-427 scope.</p>
+            <span class="updated">Last updated: May 17, 2026</span>
           </div>
         </div>
       </div>
@@ -2106,7 +2141,8 @@
             <h4>Signal Type</h4>🟠 Current Customer + 🚨 Migration Friction
             <h4>North Star Relevance</h4>Fund+ migration deadline is June 1. Customer-facing migrations under time pressure with mid-stream destination changes (Zive → NAV) generate inbound CX touches and erode trust on the way out. Even successful migrations leak goodwill if optics aren't managed; this customer was effectively saved by Cher's personal outreach. That doesn't scale.
             <div class="enrichment-note" style="background:#fff3e0;border-left:3px solid #ff9800;padding:8px 10px;margin-top:8px;font-size:0.9em;"><strong>May 11 update (Gmail / Nik thread):</strong> Zive restructuring confirmed externally. NAV agreed to match current pricing for remainder of customer terms. Customer outreach in progress. The same dynamic Darius experienced will play out for every remaining Fund+ customer in the next 21 days. Risk: stacked migration + pricing change + product fixes compound churn. Pre-stage Cher's playbook so it isn't a one-off save per customer.</div>
-            <span class="updated">Added May 10, 2026 (Slack #meeting-logs) · Enriched May 11, 2026 (Gmail thread w/ Cher; NAV pricing match)</span>
+            <div class="enrichment-note" style="background:#fff3e0;border-left:3px solid #ff9800;padding:8px 10px;margin-top:8px;font-size:0.9em;"><strong>May 13–16 update (Gmail · Cher · Customer Acquisition Agreement):</strong> Active Customer Acquisition Agreement negotiation with Zive — 16 confirmed funds worth $1M+ in future billings being transitioned. Migration fees + pricing model detailed in agreement. Separate NAV/Zive pricing parity thread shows Zive matching Sydecar pricing and bundling taxes — explicit competitive response. Fund+ → June 1 cutoff is now compressed with three active streams: (1) Zive intake of fund admin book; (2) NAV taking the remaining customers; (3) outbound comms to ~10 Fund+ customers left. Cher's individual save model is structurally not going to scale across all three streams in 2 weeks.</div>
+            <span class="updated">Added May 10, 2026 · Enriched May 17, 2026 (Zive Customer Acquisition Agreement in negotiation; pricing parity competitive response; June 1 deadline compressed)</span>
           </div>
         </div>
       </div>
@@ -2749,11 +2785,18 @@
             </ul>
             <h4>Roadmap</h4>
             In-Kind Distribution brokerage partner path: Q3 directional. Two parts: (1) brokerage info collection (extension of Q2 distribution notification work); (2) third-party brokerage partner to form account on behalf of SPV and manage stock distribution.
+            <div style="margin-top:8px;padding:8px 10px;background:#fff3e0;border-left:3px solid #ff9800;border-radius:3px;font-size:12.5px;">
+              <strong>May 17 enrichment — Anthropic May 11 issuer notice pattern.</strong> Anthropic published a May 11 investor page naming Sydecar as "not authorized" to buy/sell its shares. Within 48 hours, structured legal-style investor inquiry arrived (Juan-Pablo Mas / Felipe Tunnell, support req May 15): asks for legal structure, capital deployment proof, board approval, ROFR clearance, refund/unwind options. Brett drafted privileged Q&A doc (May 12–13) with templated responses across 11+ questions and 3 outreach variants. Pattern is now recurring (SpaceX scam notice in April, Anthropic May 11) — IPO June 15 will trigger same. Sydecar follow-up actions captured in doc: (1) DL engagement strategy, (2) independent legal position on "void" holdings, (3) K-1 treatment if void, (4) litigation reserve, (5) counsel readiness. This is the issuer-notice-response capability that needs to exist as infrastructure, not as a one-off doc.
+            </div>
+            <div style="margin-top:6px;padding:8px 10px;background:#e3f2fd;border-left:3px solid #1e88e5;border-radius:3px;font-size:12.5px;">
+              <strong>May 17 Linear status.</strong> OPE-465 SpaceX IPO Support project parent — child tickets OPE-490 state-machine service (blocker) and OPE-491 DL distribution approval endpoints still in flight. New scope adds: OPE-506/507 LP Distribution Waterfall doc upload + DL approval surface exposure; OPE-498/499 Waterfall LPs review table component; OPE-492/495 global DL approval notification + e2e coverage. LP-748 Audience-Targeted System Banner shipped May 15 (in-app comms primitive that supports issuer-notice broadcasts).
+            </div>
             <h4>Sources</h4>
             <a class="source-link" href="https://sydecar.slack.com/archives/C0AELC49E0Y">#wallet-share-logs · Apr 7</a>
             <a class="source-link" href="https://app.notion.com/p/34f3608079af811393baef0cfaf990b2">Rohini 1:1 · Apr 30</a>
             <a class="source-link" href="https://docs.google.com/presentation/d/1aSfiA9F9S-F1RESvrL8RT-aJ_yNdYi1FHyB9fyWiFIs">Apr 9 Product Update · Slides 33–36</a>
-            <span class="updated">Last updated: Apr 30, 2026</span>
+            <a class="source-link" href="https://docs.google.com/document/d/137y9tMLkr5NtvxrFyagD7ak8x21NcC6eX8LCtgPw9p0">Privileged: Anthropic Investor Questions · May 13</a>
+            <span class="updated">Last updated: May 17, 2026</span>
           </div>
         </div>
       </div>
