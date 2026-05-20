@@ -237,6 +237,10 @@
   <button class="filter-btn status-btn no-wip-btn" id="filterNoWIP" onclick="setFilter('no-wip')">📋 Not started</button>
   <button class="filter-btn status-btn" id="filterChurn" onclick="setFilter('churn')">🚨 Churn risk</button>
   <button class="filter-btn status-btn new-btn" id="filterNew" onclick="setFilter('new')">✨ New</button>
+  <button class="filter-btn status-btn" id="filterLinearFull" onclick="setFilter('linear-full')">✅ Linear all-done</button>
+  <button class="filter-btn status-btn" id="filterLinearPartial" onclick="setFilter('linear-partial')">⏳ Linear partial</button>
+  <button class="filter-btn status-btn" id="filterArchive" onclick="setFilter('archive')">📦 Archived</button>
+  <button class="filter-btn status-btn" id="filterDone" onclick="setFilter('done')">🏁 Done (manual)</button>
   <button class="filter-btn status-btn ops-risk-btn" id="filterOpsRisk" onclick="setFilter('ops-risk')">🔴 Ops Risk</button>
 </div>
 
@@ -276,7 +280,7 @@
 
     <div class="section-divider">Priority 1</div>
 
-    <div class="feature-card" data-priority="p1" data-tags="wip churn onboarding ubo roadmap-2026" draggable="true">
+    <div class="feature-card" data-priority="p1" data-tags="wip churn onboarding ubo roadmap-2026" draggable="true" data-linear-activity="partial">
       <div class="card-row">
         <span class="drag-handle">⠿</span>
         <div class="card-content">
@@ -304,13 +308,19 @@
             <a class="source-link" href="https://docs.google.com/presentation/d/1aSfiA9F9S-F1RESvrL8RT-aJ_yNdYi1FHyB9fyWiFIs/edit">Apr 9 Product Update</a>
             <p class="cx-note" style="background:#fff3e0;border-left:3px solid #ff9800;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📊 <strong>Front data (Jan–Apr 2026):</strong> KYC-tagged emails confirm UBO default values are wrong for many entity types — investors submitting with pre-filled incorrect counts, then requiring ops correction. "Required: Finalize the Number of Beneficial Owners" is a recurring support trigger, especially for foreign entities.</p><p class="roadmap-note" style="background:#eff6ff;border-left:3px solid #2563eb;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📍 <strong>2026 Roadmap:</strong> PM: Aparna · EM: Natalie · Design: Jo · Stage: <strong>🚀 M1 prod · ⚙ M2–M3 in flight</strong> · Channel: <a href="https://sydecar.slack.com/archives/C0AG54GEXC5" style="color:#1d4ed8;">#proj-ent-onboarding-ubos</a> · Artifacts: PRD · Figma · Linear · <a href="https://docs.google.com/spreadsheets/d/1IoB8dfESAwCqYDiguOAq1Lf1icE39KWMOEWqJolZKHo" style="color:#1d4ed8;">Roadmap sheet ↗</a></p>
 <p style="background:#e3f2fd;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">🔄 <strong>May 18–19 (Linear):</strong> <strong>LP-788</strong> Fix add-UBO flow gaps and <strong>LP-789</strong> Fix edit-UBO flow gaps both opened (To Do · Timothy). Surfaces specific UBO entry/edit defects beneath the LP-50 umbrella — likely a near-term cleanup pass before the full UBO redesign lands.</p>
+          <div class="linear-log" style="background:#f0fdf4;border-left:3px solid #16a34a;padding:8px 12px;margin:8px 0;border-radius:3px;">
+            <strong style="font-size:12px;color:#15803d;">📜 Linear completions (since Jan 1, 2026):</strong>
+            <ul style="font-size:11px;margin:6px 0 0 0;padding-left:18px;color:#333;">
+              <li><strong>LP-50</strong> &middot; 2026-05-18 &middot; <a href="https://linear.app/sydecario/issue/LP-50/phase-2-ubo-management-handoff" style="color:#1d4ed8;">Phase 2: UBO management + handoff</a></li>
+            </ul>
+          </div>
           <span class="updated">Last updated: Apr 9, 2026</span>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="feature-card" data-priority="p1" data-tags="wip onboarding teammates account roadmap-2026" draggable="true">
+    <div class="feature-card" data-priority="p1" data-tags="wip onboarding teammates account roadmap-2026" draggable="true" data-linear-activity="full">
       <div class="card-row">
         <span class="drag-handle">⠿</span>
         <div class="card-content">
@@ -339,7 +349,13 @@
             <a class="source-link" href="https://linear.app/sydecario/issue/LP-730/add-account-teammates-ui-feature-flag">Linear LP-730</a>
             <h4>CX Confirmation (Brett's Crumbs 2 · Apr 2026)</h4><p>Independently flagged by Deal Operations as a top CX request. Adds weight to prioritization. <a class="source-link" href="https://www.notion.so/sydecar/Deal-Operations-Product-Requests-Brett-s-Crumbs-2-3373608079af807798b8f809f50061f6" target="_blank">Brett's Crumbs 2</a></p>
             <p class="roadmap-note" style="background:#eff6ff;border-left:3px solid #2563eb;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📍 <strong>2026 Roadmap:</strong> PM: Aparna · EM: Natalie · Design: Jo · Stage: <strong>⚙ In flight</strong> · Channel: <a href="https://sydecar.slack.com/archives/C0A77NEF0F9" style="color:#1d4ed8;">#proj-account-teammates</a> · Artifacts: Local prototype · Linear · <a href="https://docs.google.com/spreadsheets/d/1IoB8dfESAwCqYDiguOAq1Lf1icE39KWMOEWqJolZKHo" style="color:#1d4ed8;">Roadmap sheet ↗</a></p>
-<span class="updated">Last updated: Apr 30, 2026</span>
+<div class="linear-log" style="background:#f0fdf4;border-left:3px solid #16a34a;padding:8px 12px;margin:8px 0;border-radius:3px;">
+            <strong style="font-size:12px;color:#15803d;">📜 Linear completions (since Jan 1, 2026):</strong>
+            <ul style="font-size:11px;margin:6px 0 0 0;padding-left:18px;color:#333;">
+              <li><strong>LP-730</strong> &middot; 2026-05-17 &middot; <a href="https://linear.app/sydecario/issue/LP-730/add-account-teammates-ui-feature-flag" style="color:#1d4ed8;">Add Account Teammates UI Feature Flag</a></li>
+            </ul>
+          </div>
+          <span class="updated">Last updated: Apr 30, 2026</span>
           </div>
         </div>
       </div>
@@ -421,7 +437,7 @@
       </div>
     </div>
 
-    <div class="feature-card" id="card-investor-bank-first-investment" data-priority="p1" data-tags="wip investors bank-account wire-funding distribution churn aparna-roadmap linear manually-added roadmap-2026" draggable="true">
+    <div class="feature-card" id="card-investor-bank-first-investment" data-priority="p1" data-tags="wip investors bank-account wire-funding distribution churn aparna-roadmap linear manually-added roadmap-2026" draggable="true" data-linear-activity="partial">
       <div class="card-row">
         <span class="drag-handle">&#8286;</span>
         <div class="card-content">
@@ -453,6 +469,15 @@
     
             <p class="roadmap-note" style="background:#eff6ff;border-left:3px solid #2563eb;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📍 <strong>2026 Roadmap:</strong> PM: Aparna · EM: Natalie · Stage: <strong>⚙ In flight (LP-357)</strong> · Artifacts: Prototype · LP-357 · <a href="https://docs.google.com/spreadsheets/d/1IoB8dfESAwCqYDiguOAq1Lf1icE39KWMOEWqJolZKHo" style="color:#1d4ed8;">Roadmap sheet ↗</a></p>
 <p style="background:#e3f2fd;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">✅ <strong>May 20 (Linear):</strong> <strong>LP-766</strong> Implement Plaid auto-import of outgoing bank account details — <strong>Done</strong> (Timothy). <strong>LP-776</strong> Frontend wire into Receiving Funds UI — Ready to Merge. Removes a manual step from the bank-account entry path the LP-357 work is rebuilding.</p>
+          <div class="linear-log" style="background:#f0fdf4;border-left:3px solid #16a34a;padding:8px 12px;margin:8px 0;border-radius:3px;">
+            <strong style="font-size:12px;color:#15803d;">📜 Linear completions (since Jan 1, 2026):</strong>
+            <ul style="font-size:11px;margin:6px 0 0 0;padding-left:18px;color:#333;">
+              <li><strong>LP-766</strong> &middot; 2026-05-20 &middot; <a href="https://linear.app/sydecario/issue/LP-766/implement-plaid-auto-import-of-outgoing-bank-account-details" style="color:#1d4ed8;">Implement Plaid auto-import of outgoing bank account details</a></li>
+              <li><strong>LP-357</strong> &middot; 2026-05-18 &middot; <a href="https://linear.app/sydecario/issue/LP-357/collect-investor-outgoing-bank-account-preference-at-the-time-of" style="color:#1d4ed8;">Collect investor outgoing bank account preference at the time of investment</a></li>
+              <li><strong>LP-707</strong> &middot; 2026-05-11 &middot; <a href="https://linear.app/sydecario/issue/LP-707/collect-outgoing-bank-account-for-existing-investors-without-payment" style="color:#1d4ed8;">Collect outgoing bank account for existing investors without payment instructions on file</a></li>
+              <li><strong>LP-673</strong> &middot; 2026-05-07 &middot; <a href="https://linear.app/sydecario/issue/LP-673/collect-outgoing-bank-account-for-new-investors-at-time-of-first" style="color:#1d4ed8;">Collect outgoing bank account for new investors at time of first investment</a></li>
+            </ul>
+          </div>
           <span class="updated">Added May 1, 2026 · Source: Aparna Q2 2026 Investor Experience Roadmap</span>
           <p style="background:#e3f2fd;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">🔄 <strong>May 5 (Linear):</strong> LP-673 (Collect outgoing bank account at first investment) actively In Progress. Companion ticket LP-357 (preference capture) still To Do.</p>
           <p style="background:#e8f5e9;border-left:3px solid #43a047;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">✅ <strong>May 11 (Linear LP-707, Done):</strong> "Collect outgoing bank account for existing investors without payment instructions on file" shipped (assignee: Ibrahim, parent: LP-357). Closes the gap for the existing-investor cohort that LP-673 missed. The "no bank info → can't pay distribution" tail should start shrinking as more existing investors hit the new prompt.</p>
@@ -464,7 +489,7 @@
 
     <div class="section-divider">Priority 2</div>
 
-    <div class="feature-card" data-priority="p2" data-tags="wip multiple profiles roadmap-2026" draggable="true">
+    <div class="feature-card" data-priority="p2" data-tags="wip multiple profiles roadmap-2026" draggable="true" data-linear-activity="full">
       <div class="card-row">
         <span class="drag-handle">⠿</span>
         <div class="card-content">
@@ -485,7 +510,13 @@
             <a class="source-link" href="https://docs.google.com/presentation/d/1aSfiA9F9S-F1RESvrL8RT-aJ_yNdYi1FHyB9fyWiFIs">Apr 9 Product Update</a>
             <h4>CX Confirmation (Brett's Crumbs 2 · Apr 2026)</h4><p>Independently flagged by Deal Operations as a top CX request. Adds weight to prioritization. <a class="source-link" href="https://www.notion.so/sydecar/Deal-Operations-Product-Requests-Brett-s-Crumbs-2-3373608079af807798b8f809f50061f6" target="_blank">Brett's Crumbs 2</a></p>
             <p class="cx-note" style="background:#e8f5e9;border-left:3px solid #43a047;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">✅ <strong>Linear LP-726 (Done — May 1, 2026):</strong> "Investor email cross-pollination" fix shipped. Resolved edge case where investors with multiple profiles were getting cross-pollinated email notifications — a data isolation/privacy bug that was also causing investor confusion about which deal they were acting on.</p><p class="roadmap-note" style="background:#eff6ff;border-left:3px solid #2563eb;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📍 <strong>2026 Roadmap:</strong> PM: Aparna · EM: Natalie · Design: Jo · Stage: <strong>⏸ Blocked — awaiting identity/permissions work</strong> · <a href="https://docs.google.com/spreadsheets/d/1IoB8dfESAwCqYDiguOAq1Lf1icE39KWMOEWqJolZKHo" style="color:#1d4ed8;">Roadmap sheet ↗</a></p>
-<span class="updated">Last updated: Apr 9, 2026</span>
+<div class="linear-log" style="background:#f0fdf4;border-left:3px solid #16a34a;padding:8px 12px;margin:8px 0;border-radius:3px;">
+            <strong style="font-size:12px;color:#15803d;">📜 Linear completions (since Jan 1, 2026):</strong>
+            <ul style="font-size:11px;margin:6px 0 0 0;padding-left:18px;color:#333;">
+              <li><strong>LP-726</strong> &middot; 2026-05-01 &middot; <a href="https://linear.app/sydecario/issue/LP-726/bug-report-investors-emails-are-cross-pollinated" style="color:#1d4ed8;">[Bug Report] investor's emails are cross-pollinated</a></li>
+            </ul>
+          </div>
+          <span class="updated">Last updated: Apr 9, 2026</span>
           <p style="background:#e8f5e9;border-left:3px solid #43a047;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">🐛 <strong>May 6 (Sophie Dvorkin / CX, #product-feedback):</strong> Investors who half-create a profile they don't want to use get stuck — current workaround forces them to finish the unwanted profile first, then create the right one. <em>"This is 2x the work for an investor and creates confusing user flows in the platform when the user can see what they need to click but can't actually do so."</em> Aparna investigating with Sophie; Dan flagged shell profiles to Tony Tran / Rodrigo Teixeira for mitigation. Sophie's view: "we should realistically allow them to switch stuff around at any point before signing." <a href="https://www.loom.com/share/273e91b1fcc2489ba27e79726a942309" target="_blank">Loom video</a>.</p>
           <p style="background:#e8f5e9;border-left:3px solid #43a047;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">💡 <strong>May 11 (Jeremy Sell, #product-feedback):</strong> Proposed self-serve flow with mockup. <em>"Scenario: Investor creates individual account. Wants to invest as a Trust or Entity instead. Current solution: Requires me or DL to modify investor. Then investor to log back in and click invest. Then small button to 'add new profile'. Proposed: Remove DL / Ops / me from the equation. Speeds up time. Better experience."</em> Sophie added: <em>"This could even be a prompt to email the DL to tell them that they want to change their profile. Would also greatly reduce the amount of questions from DLs on how to change an investor's profile."</em> Aparna confirmed: <em>"this is on the list of low hanging fruit for us to fix this quarter towards reducing cx touchpoints."</em> Three concurrent all_feedback signals same day (Esteban Urrea, Kelvin Cu, Christian Hilbert) reinforce volume. <a href="https://sydecar.slack.com/archives/C073W6XRY76/p1778515676582179" target="_blank">Slack thread</a>.</p>
           </div>
@@ -493,7 +524,7 @@
       </div>
     </div>
 
-    <div class="feature-card" data-priority="p2" data-tags="wip documents e-sign dropbox roadmap-2026" draggable="true">
+    <div class="feature-card" data-priority="p2" data-tags="wip documents e-sign dropbox roadmap-2026" draggable="true" data-linear-activity="partial">
       <div class="card-row">
         <span class="drag-handle">⠿</span>
         <div class="card-content">
@@ -515,6 +546,19 @@
             <a class="source-link" href="https://app.notion.com/p/34f3608079af811393baef0cfaf990b2">Rohini 1:1 · Apr 30</a>
             <p class="cx-note" style="background:#e8f5e9;border-left:3px solid #43a047;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">✅ <strong>Linear LP-728 (Done — Apr 30, 2026):</strong> "Dropbox Sign feature flag" shipped. Dropbox Sign integration now controllable via feature flag, enabling safer rollout and rollback capability for the e-sign workflow.</p><p class="roadmap-note" style="background:#eff6ff;border-left:3px solid #2563eb;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📍 <strong>2026 Roadmap:</strong> PM: Aparna · EM: Natalie · Design: Jo · Stage: <strong>⚙ In flight</strong> · Channel: <a href="https://sydecar.slack.com/archives/C0ACUTZNHFE" style="color:#1d4ed8;">#proj-document-signing-poc</a> · Artifacts: PRD · Figma · Linear · <a href="https://docs.google.com/spreadsheets/d/1IoB8dfESAwCqYDiguOAq1Lf1icE39KWMOEWqJolZKHo" style="color:#1d4ed8;">Roadmap sheet ↗</a></p>
 <p style="background:#e3f2fd;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">✅ <strong>May 18–19 (Linear · Tyler):</strong> Four backend tickets landed in a single push — <strong>LP-648</strong> Subscription Agreement, <strong>LP-652</strong> Series Agreement / LLCA, <strong>LP-685</strong> Signing API contract + mock controller, <strong>LP-782</strong> stateful mock signing for resume/teammate-swap. Backend MVP is functionally complete; remaining work concentrates in frontend/review tickets (LP-640/653/732). End-of-May happy-path target now realistic; resume + teammate-swap edge cases were the gating risk and the mock store closes that gap.</p>
+          <div class="linear-log" style="background:#f0fdf4;border-left:3px solid #16a34a;padding:8px 12px;margin:8px 0;border-radius:3px;">
+            <strong style="font-size:12px;color:#15803d;">📜 Linear completions (since Jan 1, 2026):</strong>
+            <ul style="font-size:11px;margin:6px 0 0 0;padding-left:18px;color:#333;">
+              <li><strong>LP-648</strong> &middot; 2026-05-19 &middot; <a href="https://linear.app/sydecario/issue/LP-648/backend-subscription-agreement" style="color:#1d4ed8;">Backend: Subscription Agreement</a></li>
+              <li><strong>LP-652</strong> &middot; 2026-05-19 &middot; <a href="https://linear.app/sydecario/issue/LP-652/backend-series-agreement-llca" style="color:#1d4ed8;">Backend: Series Agreement / LLCA</a></li>
+              <li><strong>LP-685</strong> &middot; 2026-05-19 &middot; <a href="https://linear.app/sydecario/issue/LP-685/backend-signing-api-contract-mock-controller" style="color:#1d4ed8;">Backend: Signing API contract + mock controller</a></li>
+              <li><strong>LP-782</strong> &middot; 2026-05-19 &middot; <a href="https://linear.app/sydecario/issue/LP-782/stateful-mock-signing-file-backed-mocksigningstore-for-resumeteammate" style="color:#1d4ed8;">Stateful mock signing — file-backed MockSigningStore for resume/teammate-swap scenarios</a></li>
+              <li><strong>LP-732</strong> &middot; 2026-05-18 &middot; <a href="https://linear.app/sydecario/issue/LP-732/embedded-render-embedded-dropbox-sign-view-for-series-agreement" style="color:#1d4ed8;">[embedded] Render embedded Dropbox Sign view for Series Agreement</a></li>
+              <li><strong>LP-748</strong> &middot; 2026-05-15 &middot; <a href="https://linear.app/sydecario/issue/LP-748/audience-targeted-system-banner" style="color:#1d4ed8;">Audience-targeted system banner</a></li>
+              <li><strong>LP-752</strong> &middot; 2026-05-15 &middot; <a href="https://linear.app/sydecario/issue/LP-752/spike-investigate-and-prototype-announcekit-in-app-integration-for" style="color:#1d4ed8;">[SPIKE] Investigate and prototype AnnounceKit in-app integration for targeted announcement</a></li>
+              <li><strong>LP-728</strong> &middot; 2026-04-30 &middot; <a href="https://linear.app/sydecario/issue/LP-728/wire-dropbox-sign-string-variation-launchdarkly-flag-into-draft-deal" style="color:#1d4ed8;">Wire dropbox-sign-string-variation LaunchDarkly flag into draft deal creation</a></li>
+            </ul>
+          </div>
           <span class="updated">Last updated: Apr 30, 2026</span>
           <p style="background:#e3f2fd;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">✅ <strong>May 5: LP-728 Done</strong> — Dropbox-Sign string-variation LaunchDarkly flag wired into draft deal creation flow. <strong>LP-640 (Backend: Packet Creation & Variables) and LP-653 (Frontend: Series Agreement / LLCA)</strong> remain In Progress.</p>
           <p style="background:#e3f2fd;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">🔄 <strong>May 11 (Linear):</strong> Sub-ticket progress on LP-640/LP-653: <strong>LP-647</strong> (Series Agreement / LLCA end-to-end Dropbox Sign) In Progress; <strong>LP-732</strong> (embedded Dropbox Sign iframe in SingleAgreement / DualAgreementsCoinvestor) In Review; <strong>LP-782</strong> (Claude-created: file-backed MockSigningStore for resume/teammate-swap stories) In Review. The mock surface is being hardened to unblock resume + teammate-swap flows that previously died past Story 1. End of May MVP target is on track for the happy path; resume/swap edge cases are the real gating risk.</p>
@@ -554,7 +598,7 @@
       </div>
     </div>
 
-    <div class="feature-card" data-priority="p2" data-tags="payment instructions plaid ach" draggable="true">
+    <div class="feature-card" data-priority="p2" data-tags="payment instructions plaid ach" draggable="true" data-linear-activity="partial">
       <div class="card-row">
         <span class="drag-handle">⠿</span>
         <div class="card-content">
@@ -582,6 +626,12 @@
             <a class="source-link" href="https://prod_sydecar2_dwh.mozart.all_feedback">Snowflake · all_feedback</a>
             <a class="source-link" href="https://app.notion.com/p/34f3608079af811393baef0cfaf990b2">Rohini 1:1 · Apr 30</a>
             <p class="cx-note" style="background:#fff3e0;border-left:3px solid #ff9800;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📊 <strong>Front keyword scan (Jan–Apr 2026):</strong> Intermediary bank blocker confirmed. Verbatim: <em>"My bank details utilize an intermediary bank that the system (portal) does not accommodate. I am inquiring to determine if the wire transfer was manually overridden and sent to this account."</em> Non-standard banking (intermediary banks, international accounts) silently fails without user-facing explanation.</p><p class="cx-note" style="background:#fff3e0;border-left:3px solid #ff9800;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📊 <strong>mozart.all_feedback (Apr 30–May 1, 2026):</strong> SUPPORT_REQUEST: Plaid ACH connection failing during investment flow. Investor could not complete ACH setup and had no alternative self-serve path shown. Each Plaid failure forces a wire fallback or an ops intervention to collect payment manually — adding 1–2 touchpoints per affected investor.</p><p style="background:#e3f2fd;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">🔄 <strong>May 20 (Linear):</strong> <strong>LP-798</strong> [LP-776] UX redesign: display Plaid import card inline (replace button + modal) — In Progress (Timothy). Inline display reduces friction in the funding step where investors currently bounce out of the modal. Pairs with LP-766 Done (outgoing bank Plaid auto-import).</p>
+          <div class="linear-log" style="background:#f0fdf4;border-left:3px solid #16a34a;padding:8px 12px;margin:8px 0;border-radius:3px;">
+            <strong style="font-size:12px;color:#15803d;">📜 Linear completions (since Jan 1, 2026):</strong>
+            <ul style="font-size:11px;margin:6px 0 0 0;padding-left:18px;color:#333;">
+              <li><strong>LP-766</strong> &middot; 2026-05-20 &middot; <a href="https://linear.app/sydecario/issue/LP-766/implement-plaid-auto-import-of-outgoing-bank-account-details" style="color:#1d4ed8;">Implement Plaid auto-import of outgoing bank account details</a></li>
+            </ul>
+          </div>
           <span class="updated">Last updated: Apr 30, 2026</span>
           </div>
         </div>
@@ -639,7 +689,7 @@
       </div>
     </div>
 
-    <div class="feature-card" data-priority="p3" data-tags="document upload" draggable="true">
+    <div class="feature-card" data-priority="p3" data-tags="document upload" draggable="true" data-linear-activity="partial">
       <div class="card-row">
         <span class="drag-handle">⠿</span>
         <div class="card-content">
@@ -665,7 +715,14 @@
           <p style="background:#fff3e0;border-left:3px solid #ff9800;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📧 <strong>May 12 (Email, Nass Law Group / Redwood Materials):</strong> External counsel: <em>"still having trouble accessing the Redwood Materials transfer documentation on your platform"</em> — ops had to manually walk them through profile creation. Transfer-doc access friction on platform; related to LP-50 / transfers flow.</p>
             <p style="background:#e8f5e9;border-left:3px solid #43a047;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">💬 <strong>May 14–15 (Investor CSAT + Support):</strong> Three new direct hits: (1) James Jungjohann: <em>"Downloads don't work. Confusing ability to get wire transfer docs."</em> (2) Suhas Subramanya: <em>"Not able to download documents."</em> (3) William Powell (Anthropy Partners, support): <em>"I need copies of the investment contracts (SAFE, Converts, Pref, Common, etc) for everyone of our SPVs asap today. I cannot seem to find them."</em> Pattern is now spanning DL + investor + portfolio-doc retrieval. This is the third consecutive weekly run where document discoverability is the single highest-frequency CX signal.</p>
             <p style="background:#e3f2fd;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">✅ <strong>May 15 shipped (OPE-512, Charlie M):</strong> Default behavior for document downloads now opens PDFs in a new tab rather than auto-downloading. Download still available from PDF viewer. <strong>OPE-448</strong> (standardize document access across admin) merged in as duplicate. Quick win driven from #product office hours; partial response to download UX confusion in CSAT.</p>
-            <span class="updated">Last updated: May 17, 2026 · Enriched (Document doc-retrieval pattern is now the single highest-frequency CX signal; OPE-512 shipped May 15 addresses one slice; broader DL/investor/advisor discoverability still open via DL-513 + LP-647/653/732 packet flow)</span>
+            <div class="linear-log" style="background:#f0fdf4;border-left:3px solid #16a34a;padding:8px 12px;margin:8px 0;border-radius:3px;">
+            <strong style="font-size:12px;color:#15803d;">📜 Linear completions (since Jan 1, 2026):</strong>
+            <ul style="font-size:11px;margin:6px 0 0 0;padding-left:18px;color:#333;">
+              <li><strong>LP-50</strong> &middot; 2026-05-18 &middot; <a href="https://linear.app/sydecario/issue/LP-50/phase-2-ubo-management-handoff" style="color:#1d4ed8;">Phase 2: UBO management + handoff</a></li>
+              <li><strong>OPE-512</strong> &middot; 2026-05-15 &middot; <a href="https://linear.app/sydecario/issue/OPE-512/change-default-behavior-of-document-download" style="color:#1d4ed8;">Change default behavior of document download</a></li>
+            </ul>
+          </div>
+          <span class="updated">Last updated: May 17, 2026 · Enriched (Document doc-retrieval pattern is now the single highest-frequency CX signal; OPE-512 shipped May 15 addresses one slice; broader DL/investor/advisor discoverability still open via DL-513 + LP-647/653/732 packet flow)</span>
           </div>
         </div>
       </div>
@@ -896,7 +953,7 @@
         </div>
       </div>
     </div>
-    <div class="feature-card" data-priority="p2" data-tags="kyc certification investor front-signal manually-added" draggable="true">
+    <div class="feature-card" data-priority="p2" data-tags="kyc certification investor front-signal manually-added" draggable="true" data-linear-activity="full">
       <div class="card-row">
         <span class="drag-handle">&#8286;</span>
         <div class="card-content">
@@ -913,7 +970,14 @@
             <h4>Signal Type</h4>&#128992; Current Customer Issue
             <h4>Sources</h4>
             <span style="font-size:12px;">Front ops@sydecar.io KYC-tagged emails (Jan 1–Apr 30, 2026)</span>
-            <p class="cx-note" style="background:#e8f5e9;border-left:3px solid #43a047;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">✅ <strong>Linear LP-712–LP-724 (Done — Apr 28–30, 2026):</strong> QC dual-threshold certification tickets completed. Engineering shipped 13 related tickets in the LP-712–724 series covering QC certification logic — urgent compliance work completed just before deadline. This addresses part of the certification upgrade path, though the full self-serve UI for investor-initiated upgrades remains outstanding.</p><span class="updated">Added May 1, 2026 (Front email analysis)</span>
+            <p class="cx-note" style="background:#e8f5e9;border-left:3px solid #43a047;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">✅ <strong>Linear LP-712–LP-724 (Done — Apr 28–30, 2026):</strong> QC dual-threshold certification tickets completed. Engineering shipped 13 related tickets in the LP-712–724 series covering QC certification logic — urgent compliance work completed just before deadline. This addresses part of the certification upgrade path, though the full self-serve UI for investor-initiated upgrades remains outstanding.</p><div class="linear-log" style="background:#f0fdf4;border-left:3px solid #16a34a;padding:8px 12px;margin:8px 0;border-radius:3px;">
+            <strong style="font-size:12px;color:#15803d;">📜 Linear completions (since Jan 1, 2026):</strong>
+            <ul style="font-size:11px;margin:6px 0 0 0;padding-left:18px;color:#333;">
+              <li><strong>LP-724</strong> &middot; 2026-04-30 &middot; <a href="https://linear.app/sydecario/issue/LP-724/add-coverage-for-dual-threshold-qc-certification-onboarding-behavior" style="color:#1d4ed8;">Add coverage for dual-threshold QC certification onboarding behavior</a></li>
+              <li><strong>LP-712</strong> &middot; 2026-04-28 &middot; <a href="https://linear.app/sydecario/issue/LP-712/add-qc-new-threshold-qualification-status-enums-and-supporting-maps" style="color:#1d4ed8;">Add QC new-threshold qualification status enums and supporting maps</a></li>
+            </ul>
+          </div>
+          <span class="updated">Added May 1, 2026 (Front email analysis)</span>
           </div>
         </div>
       </div>
@@ -1146,7 +1210,7 @@
 
     <div class="section-divider">Priority 1</div>
 
-    <div class="feature-card" data-priority="p1" data-tags="wip fees on top pricing investment churn roadmap-2026" draggable="true">
+    <div class="feature-card" data-priority="p1" data-tags="wip fees on top pricing investment churn roadmap-2026" draggable="true" data-linear-activity="partial">
       <div class="card-row">
         <span class="drag-handle">⠿</span>
         <div class="card-content">
@@ -1178,13 +1242,20 @@
             <p class="roadmap-note" style="background:#eff6ff;border-left:3px solid #2563eb;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📍 <strong>2026 Roadmap:</strong> PM: Jamie · EM: Carlos · Design: Wooj · Stage: <strong>⚙ In flight</strong> · Channel: <a href="https://sydecar.slack.com/archives/C0AFBP7JCGP" style="color:#1d4ed8;">#fees-on-top-2026</a> · Artifacts: PRD · Figma · Linear · <a href="https://docs.google.com/spreadsheets/d/1IoB8dfESAwCqYDiguOAq1Lf1icE39KWMOEWqJolZKHo" style="color:#1d4ed8;">Roadmap sheet ↗</a></p>
             <p style="background:#fff3e0;border-left:3px solid #ff9800;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">⚠️ <strong>May 12 PM Sync (Dan + Aparna + Rohini · Notion):</strong> Fees on Top scope under review. Project described as <em>"black hole"</em> pulling resources from other initiatives — offline billing feature took weeks longer due to Fees on Top conflicts. Described as <em>"wildly overcomplicated relative to value."</em> Current timeline: code complete July, launch August. <strong>LLCA waterfall issue partially solved outside Fees on Top via amendments</strong> (Shauna working with council on distribution language). Need to verify if remaining scope is a revenue unlock for NPM/larger clients or just a distribution fix. <strong>Action items:</strong> (1) Dan + Aparna to scrutinize DL team scope and simplify; (2) Dan to meet with Carlos to discuss Fees on Top scope + resource allocation; (3) Move discovery review to product team sooner, keep engineering execution on track. <strong>Decision: hold current team structure through H1; ownership eventually moves to operations/financial systems team in July.</strong></p>
             <p style="background:#e3f2fd;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">✅ <strong>May 19 (Linear):</strong> <strong>DL-622</strong> Fees Tab: Fees within UI stubs — Done (Steven). <strong>DL-154</strong> FEES-2.2 per-version function modules — Done (Henry). UI scaffolding and function-module split both shipped on the same day — first real forward motion on the Fees on Top track since the May 12 PM Sync flagged it as a "black hole." DL-279 (Save Selected Fees Engine), DL-461 (Investor Fee Estimates Endpoint), DL-482 (Investor Save & Sign Flow) remain in Backlog.</p>
+          <div class="linear-log" style="background:#f0fdf4;border-left:3px solid #16a34a;padding:8px 12px;margin:8px 0;border-radius:3px;">
+            <strong style="font-size:12px;color:#15803d;">📜 Linear completions (since Jan 1, 2026):</strong>
+            <ul style="font-size:11px;margin:6px 0 0 0;padding-left:18px;color:#333;">
+              <li><strong>DL-154</strong> &middot; 2026-05-19 &middot; <a href="https://linear.app/sydecario/issue/DL-154/fees-22-create-per-version-function-modules" style="color:#1d4ed8;">FEES-2.2: Create per-version function modules</a></li>
+              <li><strong>DL-622</strong> &middot; 2026-05-19 &middot; <a href="https://linear.app/sydecario/issue/DL-622/fees-tab-fees-within-ui-stubs" style="color:#1d4ed8;">Fees Tab: Fees within UI stubs</a></li>
+            </ul>
+          </div>
           <span class="updated">Last updated: May 17, 2026</span>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="feature-card" data-priority="p1" data-tags="wip remove sydecar manager signatory roadmap-2026" draggable="true">
+    <div class="feature-card" data-priority="p1" data-tags="wip remove sydecar manager signatory roadmap-2026" draggable="true" data-linear-activity="partial">
       <div class="card-row">
         <span class="drag-handle">⠿</span>
         <div class="card-content">
@@ -1215,6 +1286,12 @@
             <a class="source-link" href="https://docs.google.com/presentation/d/1aSfiA9F9S-F1RESvrL8RT-aJ_yNdYi1FHyB9fyWiFIs">Apr 9 Product Update</a>
             <p class="cx-note" style="background:#e3f2fd;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📋 <strong>"Where We Draw the Line" memo (Apr 16, 2026):</strong> Removing Sydecar as manager is explicitly called out as a Q2'26 priority — reduces risk by distancing Sydecar from operative governing role in LLCA, and positions platform for institutional customers who want to serve as their own manager. Memo calls this "addresses two issues at once" (liability reduction + institutional positioning). Confirmed as one of the top 5 recommendations in the layered SPV policy proposal.</p><p class="roadmap-note" style="background:#eff6ff;border-left:3px solid #2563eb;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📍 <strong>2026 Roadmap:</strong> PM: Jamie · EM: Carlos · Stage: <strong>⚙ In flight</strong> · Channel: <a href="https://sydecar.slack.com/archives/C0B0323S485" style="color:#1d4ed8;">#proj-removing-sydecar-manager</a> · Artifacts: Project Deck · Figma · Linear · <a href="https://docs.google.com/spreadsheets/d/1IoB8dfESAwCqYDiguOAq1Lf1icE39KWMOEWqJolZKHo" style="color:#1d4ed8;">Roadmap sheet ↗</a></p>
 <p style="background:#e3f2fd;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">🔄 <strong>May 19–20 (Linear):</strong> Project moved from concept to active build. <strong>DL-450</strong> Update LLCA for Removing Sydecar as Manager — In Progress (Mohammad). <strong>DL-563</strong> SPV manager POA legal documents — In Progress (Huy). <strong>DL-623</strong> Opt-in for manager checkbox — In Review (Huy). <strong>DL-562</strong> SPV manager POA datasets — Backlog (Mohammad). Whole pod (Legal, Engineering, Product) now executing in parallel via #proj-remove-sydecar-manager. First customer-visible surface (opt-in checkbox) is the closest to ship.</p>
+          <div class="linear-log" style="background:#f0fdf4;border-left:3px solid #16a34a;padding:8px 12px;margin:8px 0;border-radius:3px;">
+            <strong style="font-size:12px;color:#15803d;">📜 Linear completions (since Jan 1, 2026):</strong>
+            <ul style="font-size:11px;margin:6px 0 0 0;padding-left:18px;color:#333;">
+              <li><strong>DL-623</strong> &middot; 2026-05-20 &middot; <a href="https://linear.app/sydecario/issue/DL-623/opt-in-for-manager-checkbox" style="color:#1d4ed8;">Opt-in for manager checkbox</a></li>
+            </ul>
+          </div>
           <span class="updated">Last updated: Apr 28, 2026</span>
           </div>
         </div>
@@ -1255,7 +1332,7 @@
       </div>
     </div>
 
-    <div class="feature-card" data-priority="p1" data-tags="naming guardrails wip roadmap-2026" draggable="true">
+    <div class="feature-card" data-priority="p1" data-tags="naming guardrails wip roadmap-2026" draggable="true" data-linear-activity="partial">
       <div class="card-row">
         <span class="drag-handle">⠿</span>
         <div class="card-content">
@@ -1279,7 +1356,15 @@
             <a class="source-link" href="https://docs.google.com/presentation/d/1aSfiA9F9S-F1RESvrL8RT-aJ_yNdYi1FHyB9fyWiFIs">Apr 9 Product Update</a>
             <a class="source-link" href="https://sydecar.slack.com/archives/C09U8C6KK2R">#proj-naming-guidelines · Apr 17</a>
             <p class="roadmap-note" style="background:#eff6ff;border-left:3px solid #2563eb;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📍 <strong>2026 Roadmap:</strong> PM: Jamie · EM: Carlos · Stage: <strong>⚙ In flight</strong> · Channel: <a href="https://sydecar.slack.com/archives/C09U8C6KK2R" style="color:#1d4ed8;">#proj-naming-guidelines</a> · Artifacts: PRD · Figma · Linear · <a href="https://docs.google.com/spreadsheets/d/1IoB8dfESAwCqYDiguOAq1Lf1icE39KWMOEWqJolZKHo" style="color:#1d4ed8;">Roadmap sheet ↗</a></p>
-<span class="updated">Last updated: Apr 17, 2026</span>
+<div class="linear-log" style="background:#f0fdf4;border-left:3px solid #16a34a;padding:8px 12px;margin:8px 0;border-radius:3px;">
+            <strong style="font-size:12px;color:#15803d;">📜 Linear completions (since Jan 1, 2026):</strong>
+            <ul style="font-size:11px;margin:6px 0 0 0;padding-left:18px;color:#333;">
+              <li><strong>DL-614</strong> &middot; 2026-05-18 &middot; <a href="https://linear.app/sydecario/issue/DL-614/feature-request-update-spv-legal-name-character-limits" style="color:#1d4ed8;">Feature Request - Update SPV legal name character limits</a></li>
+              <li><strong>LP-752</strong> &middot; 2026-05-15 &middot; <a href="https://linear.app/sydecario/issue/LP-752/spike-investigate-and-prototype-announcekit-in-app-integration-for" style="color:#1d4ed8;">[SPIKE] Investigate and prototype AnnounceKit in-app integration for targeted announcement</a></li>
+              <li><strong>OPE-513</strong> &middot; 2026-05-15 &middot; <a href="https://linear.app/sydecario/issue/OPE-513/bug-report-edited-display-name-not-updating-target-name" style="color:#1d4ed8;">[Bug Report] Edited Display Name Not Updating Target Name</a></li>
+            </ul>
+          </div>
+          <span class="updated">Last updated: Apr 17, 2026</span>
           <p style="background:#e8f5e9;border-left:3px solid #43a047;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">✅ <strong>Shipped May 7, 2026 (3pm PT)</strong>: Three-field naming UX (Company legal / Deal display / SPV legal) live with inline validation. In-product banner targets Investors / Organizers / All Users with admin selection. Help center article published. <strong>Follow-up: DL-611</strong> (May 7, Mo/Jamie) — auto-abbreviation logic needs to check against existing SPV names to avoid collisions. Banner mechanism is short-term; <strong>AnnounceKit prototype (LP-752, Aparna spike)</strong> in flight for longer-term in-app comms.</p>
           <p style="background:#e8eaf6;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">⚙ <strong>May 11 (PDE-524, Brett):</strong> New Triage ticket — update SPV legal name character limit to 69 (IRS actual limit, includes prefix + Master LLC + spaces + punctuation). Current Sydecar limit is tighter than IRS reality, forcing customer name truncations that don't need to happen. Follow-up to the naming UX work; ungates a class of customer name requests without launching anything new.</p>
           <p style="background:#fff3e0;border-left:3px solid #ff9800;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">⚠️ <strong>May 12 (Brett · #product-feedback):</strong> Brett shared a screenshot of <em>"one DL [who] has found a minor workaround"</em> on the new naming guardrails (Peter Martinez-Fonts in thread: <em>"I've been trying to get allocation in Thea Mulet Holdings"</em> — joking nod). <strong>Nik replied: "Wow. Let's fix."</strong> Guardrails went live May 7 but the rule set is leaky on the customer side.</p>
@@ -2207,7 +2292,7 @@
       </div>
     </div>
 
-    <div class="feature-card" data-priority="p1" data-tags="wip carry share visibility tracking product" draggable="true">
+    <div class="feature-card" data-priority="p1" data-tags="wip carry share visibility tracking product" draggable="true" data-linear-activity="partial">
       <div class="card-row">
         <span class="drag-handle">⠿</span>
         <div class="card-content">
@@ -2235,13 +2320,19 @@
             <a class="source-link" href="https://sydecar.slack.com/archives/C0AELC49E0Y">#wallet-share-logs (multiple)</a>
             <a class="source-link" href="https://prod_sydecar2_dwh.mozart.all_feedback">Snowflake · all_feedback</a>
             <p style="background:#e3f2fd;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">⚠️ <strong>May 19–20 (Linear · Joshua Ford):</strong> <strong>CXM-737</strong> carry amendment — Done. <strong>CXM-738</strong> carry amendments for Thesiger Fluidstack Fund 1 (a Series of CGF2021 LLC) — To Do. Two more manual-intervention carry tickets this week. The recurrence pattern justifies the in-product self-serve scope.</p>
+          <div class="linear-log" style="background:#f0fdf4;border-left:3px solid #16a34a;padding:8px 12px;margin:8px 0;border-radius:3px;">
+            <strong style="font-size:12px;color:#15803d;">📜 Linear completions (since Jan 1, 2026):</strong>
+            <ul style="font-size:11px;margin:6px 0 0 0;padding-left:18px;color:#333;">
+              <li><strong>CXM-737</strong> &middot; 2026-05-19 &middot; <a href="https://linear.app/sydecario/issue/CXM-737/carry-amendment" style="color:#1d4ed8;">carry amendment</a></li>
+            </ul>
+          </div>
           <span class="updated">Last updated: Apr 29, 2026</span>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="feature-card" data-priority="p1" data-tags="k1 tax timing communication churn" draggable="true">
+    <div class="feature-card" data-priority="p1" data-tags="k1 tax timing communication churn" draggable="true" data-linear-activity="partial">
       <div class="card-row">
         <span class="drag-handle">⠿</span>
         <div class="card-content">
@@ -2270,6 +2361,13 @@
             <a class="source-link" href="https://sydecar.slack.com/archives/C0AELC49E0Y">#wallet-share-logs</a>
             <a class="source-link" href="https://sydecar.slack.com/archives/C04GA5766DT">#meeting-logs · Apr 14</a>
             <p class="cx-note" style="background:#fff3e0;border-left:3px solid #ff9800;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📊 <strong>Front data (Jan–Apr 2026):</strong> K-1 delays surfaced in PMF-tagged emails (high-signal customer feedback bucket). Post-close tax doc delays are generating follow-up contact with ops at scale — confirming K-1 timing as a recurring customer pain point.</p><p class="cx-note" style="background:#fff3e0;border-left:3px solid #ff9800;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📊 <strong>Front keyword scan (Jan–Apr 2026):</strong> 10 threads with "unable to download or view K-1s" — the issue isn't just delivery timing, it's also download reliability. Verbatim: <em>"I'm unable to download or view either of these K1s."</em> Customers opening metadata-only zip files. Each failure is a post-close touchpoint.</p><p class="cx-note" style="background:#fff3e0;border-left:3px solid #ff9800;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📊 <strong>mozart.all_feedback (Apr 30–May 1, 2026):</strong> 2 new SUPPORT_REQUEST tickets on K-1 timing in a 24-hour window — one asking about expected delivery date, one reporting inability to access the document. K-1 friction is persistent and seasonal; post-close tax doc issues are generating support contact at a reliable rate each year.</p><p class="cx-note" style="background:#e3f2fd;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📋 <strong>Q2 Board Memo (Apr 2026):</strong> 49% of deals now fall in the high-complexity K-1 tax bucket (vs. 33% last year) — only 51% of total K-1s delivered by mid-March goal. Q2–Q3 tax infrastructure automation is confirmed as a top investment priority. 2026 target: deliver 75% by Feb 14, 2027. Board called this a "competitive and reputational risk." <strong>North star: K-1 delivery failures generate post-close support contact at a predictable annual rate — reducing high-complexity share directly reduces ops load.</strong></p><p style="background:#e3f2fd;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">✅ <strong>May 18 (Linear · Timothy):</strong> <strong>LP-785</strong> Comms to impacted Deal Leads re: buggy automated K-1 emails — <strong>Done</strong>. Closes the FINSYS-3014 follow-up loop. <strong>FINSYS-3015</strong> K1 Upload Issue — In Progress (Louis Leon). <strong>FINSYS-1338</strong> Remove Old 2024 K-1s and Repost for API Client — Republic — To Do (Rodrigo). API-client-specific K-1 cleanup still pending.</p>
+          <div class="linear-log" style="background:#f0fdf4;border-left:3px solid #16a34a;padding:8px 12px;margin:8px 0;border-radius:3px;">
+            <strong style="font-size:12px;color:#15803d;">📜 Linear completions (since Jan 1, 2026):</strong>
+            <ul style="font-size:11px;margin:6px 0 0 0;padding-left:18px;color:#333;">
+              <li><strong>LP-785</strong> &middot; 2026-05-18 &middot; <a href="https://linear.app/sydecario/issue/LP-785/comms-to-impacted-deal-leads-re-buggy-automated-k-1-emails" style="color:#1d4ed8;">Comms to impacted Deal Leads re: buggy automated K-1 emails</a></li>
+              <li><strong>FINSYS-3014</strong> &middot; 2026-05-15 &middot; <a href="https://linear.app/sydecario/issue/FINSYS-3014/bug-report-deal-name-not-populating-on-automated-k-1-emails" style="color:#1d4ed8;">[Bug Report] Deal Name not populating on automated K-1 emails</a></li>
+            </ul>
+          </div>
           <span class="updated">Last updated: Apr 30, 2026</span>
           </div>
         </div>
@@ -2314,7 +2412,7 @@
 
     <div class="section-divider">Priority 2</div>
 
-    <div class="feature-card" data-priority="p2" data-tags="wip transfer of interest toi in-product api" draggable="true">
+    <div class="feature-card" data-priority="p2" data-tags="wip transfer of interest toi in-product api" draggable="true" data-linear-activity="full">
       <div class="card-row">
         <span class="drag-handle">⠿</span>
         <div class="card-content">
@@ -2336,7 +2434,13 @@
             <h4>Sources</h4>
             <a class="source-link" href="https://docs.google.com/presentation/d/1aSfiA9F9S-F1RESvrL8RT-aJ_yNdYi1FHyB9fyWiFIs">Apr 9 Product Update</a>
             <a class="source-link" href="https://sydecar.slack.com/archives/C04GA5766DT">#meeting-logs · Apr 14</a>
-            <p class="cx-note" style="background:#e8f5e9;border-left:3px solid #43a047;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">✅ <strong>Linear LP-669 (Done — Apr 27, 2026):</strong> "ToI terms loop" resolved. Fixed the transferee loop where investors were getting stuck re-accepting terms during transfer of interest flows — a direct blocker for in-product ToI completion.</p><span class="updated">Last updated: Apr 9, 2026</span>
+            <p class="cx-note" style="background:#e8f5e9;border-left:3px solid #43a047;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">✅ <strong>Linear LP-669 (Done — Apr 27, 2026):</strong> "ToI terms loop" resolved. Fixed the transferee loop where investors were getting stuck re-accepting terms during transfer of interest flows — a direct blocker for in-product ToI completion.</p><div class="linear-log" style="background:#f0fdf4;border-left:3px solid #16a34a;padding:8px 12px;margin:8px 0;border-radius:3px;">
+            <strong style="font-size:12px;color:#15803d;">📜 Linear completions (since Jan 1, 2026):</strong>
+            <ul style="font-size:11px;margin:6px 0 0 0;padding-left:18px;color:#333;">
+              <li><strong>LP-669</strong> &middot; 2026-04-27 &middot; <a href="https://linear.app/sydecario/issue/LP-669/bug-report-transferees-get-stuck-in-a-loop-to-accept-the-terms-of-an" style="color:#1d4ed8;">[Bug Report] Transferees get stuck in a loop to &quot;Accept the Terms&quot; of an investment but ca</a></li>
+            </ul>
+          </div>
+          <span class="updated">Last updated: Apr 9, 2026</span>
           </div>
         </div>
       </div>
@@ -2774,7 +2878,7 @@
       </div>
     </div>
 
-    <div class="feature-card" data-priority="p2" data-tags="exit event guidance spacex in-kind distribution" draggable="true">
+    <div class="feature-card" data-priority="p2" data-tags="exit event guidance spacex in-kind distribution" draggable="true" data-linear-activity="partial">
       <div class="card-row">
         <span class="drag-handle">⠿</span>
         <div class="card-content">
@@ -2808,7 +2912,16 @@
             <a class="source-link" href="https://app.notion.com/p/34f3608079af811393baef0cfaf990b2">Rohini 1:1 · Apr 30</a>
             <a class="source-link" href="https://docs.google.com/presentation/d/1aSfiA9F9S-F1RESvrL8RT-aJ_yNdYi1FHyB9fyWiFIs">Apr 9 Product Update · Slides 33–36</a>
             <a class="source-link" href="https://docs.google.com/document/d/137y9tMLkr5NtvxrFyagD7ak8x21NcC6eX8LCtgPw9p0">Privileged: Anthropic Investor Questions · May 13</a>
-            <span class="updated">Last updated: May 17, 2026</span>
+            <div class="linear-log" style="background:#f0fdf4;border-left:3px solid #16a34a;padding:8px 12px;margin:8px 0;border-radius:3px;">
+            <strong style="font-size:12px;color:#15803d;">📜 Linear completions (since Jan 1, 2026):</strong>
+            <ul style="font-size:11px;margin:6px 0 0 0;padding-left:18px;color:#333;">
+              <li><strong>OPE-498</strong> &middot; 2026-05-19 &middot; <a href="https://linear.app/sydecario/issue/OPE-498/build-waterfall-lps-review-table-component" style="color:#1d4ed8;">Build &quot;Waterfall LPs&quot; review table component</a></li>
+              <li><strong>OPE-506</strong> &middot; 2026-05-18 &middot; <a href="https://linear.app/sydecario/issue/OPE-506/console-upload-lp-distribution-waterfall-spreadsheet-on-a-distribution" style="color:#1d4ed8;">Console: upload LP Distribution Waterfall spreadsheet on a distribution</a></li>
+              <li><strong>LP-748</strong> &middot; 2026-05-15 &middot; <a href="https://linear.app/sydecario/issue/LP-748/audience-targeted-system-banner" style="color:#1d4ed8;">Audience-targeted system banner</a></li>
+              <li><strong>OPE-490</strong> &middot; 2026-05-08 &middot; <a href="https://linear.app/sydecario/issue/OPE-490/extract-distribution-approval-state-machine-into-shared-service" style="color:#1d4ed8;">Extract distribution-approval state machine into shared service</a></li>
+            </ul>
+          </div>
+          <span class="updated">Last updated: May 17, 2026</span>
           </div>
         </div>
       </div>
@@ -3042,7 +3155,7 @@
       </div>
     </div>
 
-    <div class="feature-card" data-priority="p1" data-tags="operations distributions spaceX in-kind" draggable="true">
+    <div class="feature-card" data-priority="p1" data-tags="operations distributions spaceX in-kind" draggable="true" data-linear-activity="partial">
       <div class="card-row">
         <span class="drag-handle">⠿</span>
         <div class="card-content">
@@ -3060,7 +3173,13 @@
             <h4>Signal Type</h4>🔴 Internal Ops Risk
             <h4>Sources</h4>
             <a class="source-link" href="https://sydecar.slack.com/archives/C08PR4EQ448/p1776807218181559">#pmux-internal (Apr 21)</a> · <a class="source-link" href="https://docs.google.com/document/d/1hjz91dnJ1kCFGAHgc4OTvBwGp6jfWrPOoOsYEY0mU0c/edit">SpaceX In-Kind Distribution Brief (Dan)</a>
-            <span class="updated">Last updated: Apr 30, 2026</span>
+            <div class="linear-log" style="background:#f0fdf4;border-left:3px solid #16a34a;padding:8px 12px;margin:8px 0;border-radius:3px;">
+            <strong style="font-size:12px;color:#15803d;">📜 Linear completions (since Jan 1, 2026):</strong>
+            <ul style="font-size:11px;margin:6px 0 0 0;padding-left:18px;color:#333;">
+              <li><strong>OPE-490</strong> &middot; 2026-05-08 &middot; <a href="https://linear.app/sydecario/issue/OPE-490/extract-distribution-approval-state-machine-into-shared-service" style="color:#1d4ed8;">Extract distribution-approval state machine into shared service</a></li>
+            </ul>
+          </div>
+          <span class="updated">Last updated: Apr 30, 2026</span>
           <p style="background:#fff3e0;border-left:3px solid #ff9800;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📊 <strong>Front (May 4–6):</strong> "SpaceX IPO prep for your SPV" subject hit <strong>83 inbound threads in 2 days</strong> — top subject by volume across all of ops@. Confirms investor anxiety is broad and immediate. PRD scope is the gating step.</p>
           <p style="background:#e3f2fd;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">⚙ <strong>May 11 (Linear, OPE-465 / "SpaceX IPO Support" project):</strong> <strong>OPE-491</strong> (ts-rest contract + endpoints for DL distribution approval) In Review — sub-ticket of OPE-465 with companion <strong>OPE-490</strong> (shared state-machine service) as blocker. Distribution approval API for DLs is the gating piece for both in-kind handling and the broader distribution flow. Pace and dependency chain are real; the gap from "approval API in review" to "in-kind distribution shippable" is still wide. Also: Hanu Kunduru (SpaceX Riverside Ventures June 24 investor) submitted support request May 11 looking for investment details — investor-facing visibility ask, separate from the in-kind ops work.</p>
           <p style="background:#ffebee;border-left:3px solid #c62828;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">🚨 <strong>May 11–13 (Email + mozart.all_feedback · Anthropic-related parallel):</strong> Anthropic posted a public "unauthorized SPV stock sales and investment scams" article on their support site May 11. <em>Pieter Snoeck (May 12):</em> <em>"Anthropic announced SPV investments through sydecar as void. Could you please provide more information?"</em> <em>Basil Hashem (May 11):</em> linked to the Anthropic article asking <em>"As a holder of SPV-based equity from 2023. Can you confirm that we are ok?"</em> Brett Martin compiling a privileged "Anthropic Investor Questions" doc with Halle/Sam/Shauna. Shauna also notified Academy Bank under Program Agreement §10(e). <strong>Same investor-comms pattern as SpaceX</strong>: a public counterparty event triggers a flood of "is my SPV legitimate" inquiries with no in-product surface to reassure holders. Same gap, different ticker.</p>
@@ -3209,7 +3328,7 @@
     </div>
 
 
-    <div class="feature-card" data-priority="p2" data-tags="operations fund-plus commitment manual-intervention pde-525 pde-527 ope-509" draggable="true">
+    <div class="feature-card" data-priority="p2" data-tags="operations fund-plus commitment manual-intervention pde-525 pde-527 ope-509" draggable="true" data-linear-activity="partial">
       <div class="card-row">
         <span class="drag-handle">⠿</span>
         <div class="card-content">
@@ -3230,7 +3349,13 @@
             <a class="source-link" href="https://linear.app/sydecario/issue/PDE-525">Linear · PDE-525</a>
             <a class="source-link" href="https://linear.app/sydecario/issue/PDE-527">Linear · PDE-527</a>
             <a class="source-link" href="https://linear.app/sydecario/issue/OPE-509">Linear · OPE-509</a>
-            <span class="updated">Added May 13, 2026 (Linear)</span>
+            <div class="linear-log" style="background:#f0fdf4;border-left:3px solid #16a34a;padding:8px 12px;margin:8px 0;border-radius:3px;">
+            <strong style="font-size:12px;color:#15803d;">📜 Linear completions (since Jan 1, 2026):</strong>
+            <ul style="font-size:11px;margin:6px 0 0 0;padding-left:18px;color:#333;">
+              <li><strong>PDE-525</strong> &middot; 2026-05-13 &middot; <a href="https://linear.app/sydecario/issue/PDE-525/manual-intervention-cancel-increased-commitment-in-hvf1-fund" style="color:#1d4ed8;">Manual Intervention - Cancel Increased Commitment in HVF1 (Fund+)</a></li>
+            </ul>
+          </div>
+          <span class="updated">Added May 13, 2026 (Linear)</span>
           </div>
         </div>
       </div>
@@ -3539,7 +3664,7 @@
       </div>
     </div>
   
-    <div class="feature-card" data-priority="p2" data-tags="api third-party-manager monark aqua republic architecture" draggable="true">
+    <div class="feature-card" data-priority="p2" data-tags="api third-party-manager monark aqua republic architecture" draggable="true" data-linear-activity="partial">
       <div class="card-row">
         <span class="drag-handle">⠿</span>
         <div class="card-content">
@@ -3558,7 +3683,17 @@
             <h4>Sources</h4>
             <a class="source-link" href="https://sydecar.slack.com/archives/C06U764CHHA/p1778437597629109">#team-api-gtm · May 10 (Brett)</a>
             <a class="source-link" href="https://sydecar.slack.com/archives/C06U764CHHA/p1778594645267459">#team-api-gtm · May 12 (Brett/Shauna/Tuan)</a>
-            <span class="updated">Added May 13, 2026 (#team-api-gtm)</span>
+            <div class="linear-log" style="background:#f0fdf4;border-left:3px solid #16a34a;padding:8px 12px;margin:8px 0;border-radius:3px;">
+            <strong style="font-size:12px;color:#15803d;">📜 Linear completions (since Jan 1, 2026):</strong>
+            <ul style="font-size:11px;margin:6px 0 0 0;padding-left:18px;color:#333;">
+              <li><strong>LP-782</strong> &middot; 2026-05-19 &middot; <a href="https://linear.app/sydecario/issue/LP-782/stateful-mock-signing-file-backed-mocksigningstore-for-resumeteammate" style="color:#1d4ed8;">Stateful mock signing — file-backed MockSigningStore for resume/teammate-swap scenarios</a></li>
+              <li><strong>DL-614</strong> &middot; 2026-05-18 &middot; <a href="https://linear.app/sydecario/issue/DL-614/feature-request-update-spv-legal-name-character-limits" style="color:#1d4ed8;">Feature Request - Update SPV legal name character limits</a></li>
+              <li><strong>LP-732</strong> &middot; 2026-05-18 &middot; <a href="https://linear.app/sydecario/issue/LP-732/embedded-render-embedded-dropbox-sign-view-for-series-agreement" style="color:#1d4ed8;">[embedded] Render embedded Dropbox Sign view for Series Agreement</a></li>
+              <li><strong>PDE-525</strong> &middot; 2026-05-13 &middot; <a href="https://linear.app/sydecario/issue/PDE-525/manual-intervention-cancel-increased-commitment-in-hvf1-fund" style="color:#1d4ed8;">Manual Intervention - Cancel Increased Commitment in HVF1 (Fund+)</a></li>
+              <li><strong>LP-707</strong> &middot; 2026-05-11 &middot; <a href="https://linear.app/sydecario/issue/LP-707/collect-outgoing-bank-account-for-existing-investors-without-payment" style="color:#1d4ed8;">Collect outgoing bank account for existing investors without payment instructions on file</a></li>
+            </ul>
+          </div>
+          <span class="updated">Added May 13, 2026 (#team-api-gtm)</span>
           </div>
         </div>
       </div>
@@ -3605,9 +3740,17 @@ let activePriority = 'all';
 let activeTeam    = 'all';
 
 const filterBtnIds = {
-  all: 'filterAll', churn: 'filterChurn', wip: 'filterWIP',
-  'no-wip': 'filterNoWIP', 'ops-risk': 'filterOpsRisk', 'new': 'filterNew'
-};
+    'all': 'filterAll',
+    'wip': 'filterWIP',
+    'no-wip': 'filterNoWIP',
+    'churn': 'filterChurn',
+    'new': 'filterNew',
+    'ops-risk': 'filterOpsRisk',
+    'linear-full': 'filterLinearFull',
+    'linear-partial': 'filterLinearPartial',
+    'archive': 'filterArchive',
+    'done': 'filterDone'
+  };
 const priorityBtnIds = { all: 'priAll', p1: 'priP1', p2: 'priP2', p3: 'priP3' };
 const teamBtnIds = {
   all: 'teamAll', investors: 'teamInvestors', deal: 'teamDeal',
@@ -3620,6 +3763,9 @@ function setFilter(f) {
   document.querySelectorAll('.header .status-btn').forEach(b => b.classList.remove('active'));
   const btnId = filterBtnIds[f];
   if (btnId) document.getElementById(btnId).classList.add('active');
+  // Toggle archive-section visibility when archive filter active
+  const arch = document.getElementById('archive-section');
+  if (arch) arch.style.display = (f === 'archive') ? 'block' : '';
   applyFilter();
 }
 
@@ -3649,7 +3795,13 @@ function applyFilter() {
   const cards = document.querySelectorAll('.feature-card');
   const query = document.getElementById('searchInput').value.toLowerCase();
   cards.forEach(card => {
-    // Skip archived cards — they live outside normal sections
+    // Archive view: show only archived cards (caller can toggle archive-section visibility)
+    if (activeFilter === 'archive') {
+      const isArchived = card.dataset.archived === 'true';
+      card.classList.toggle('hidden', !isArchived);
+      return;
+    }
+    // Skip archived cards — they live outside normal sections in normal views
     if (card.dataset.archived) return;
     const tags = card.dataset.tags || '';
     const text = card.innerText.toLowerCase();
@@ -3670,6 +3822,9 @@ function applyFilter() {
     else if (activeFilter === 'no-wip') statusMatch = !tags.includes('wip');
     else if (activeFilter === 'ops-risk') statusMatch = text.includes('internal ops risk') || text.includes('🔴');
     else if (activeFilter === 'new')    statusMatch = tags.includes('manually-added');
+    else if (activeFilter === 'linear-full')    statusMatch = card.dataset.linearActivity === 'full';
+    else if (activeFilter === 'linear-partial') statusMatch = card.dataset.linearActivity === 'partial';
+    else if (activeFilter === 'done')   statusMatch = card.dataset.done === 'true';
     let show = priorityMatch && statusMatch;
 
     // Search query (AND with status filter)
