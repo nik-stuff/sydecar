@@ -3939,23 +3939,21 @@ function addCheckbox(card) {
 function updateArchiveBtnCount() {
   const n = document.querySelectorAll('.card-check:checked').length;
   const btn = document.getElementById('btnArchiveSelected');
-  btn.style.display = n > 0 ? 'inline-block' : 'none';
-  btn.textContent = n > 0 ? `📦 Archive (${n  const c2 = document.getElementById('markDoneCount');
-  if (c2) c2.textContent = checked;
-  const mdb = document.getElementById('markDoneBtn');
-  if (mdb) mdb.style.display = checked > 0 ? 'inline-block' : 'none';
-})` : '📦 Archive';
+  if (btn) {
+    btn.style.display = n > 0 ? 'inline-block' : 'none';
+    btn.textContent = n > 0 ? `📦 Archive (${n})` : '📦 Archive';
+  }
   const c2 = document.getElementById('markDoneCount');
-  if (c2) c2.textContent = checked;
+  if (c2) c2.textContent = n;
   const mdb = document.getElementById('markDoneBtn');
-  if (mdb) mdb.style.display = checked > 0 ? 'inline-block' : 'none';
+  if (mdb) mdb.style.display = n > 0 ? 'inline-block' : 'none';
 }
 
 function archiveSelected() {
   const checked = [...document.querySelectorAll('.card-check:checked')];
   if (!checked.length) return;
 
-  const stored = loadArchived(); loadMarkedDone();
+  const stored = loadArchived();
 
   checked.forEach(cb => {
     const card = cb.closest('.feature-card');
@@ -3983,42 +3981,6 @@ function archiveSelected() {
       restoreBtn.setAttribute('onclick', `restoreCard(this)`);
       cardTop.appendChild(restoreBtn);
     }
-function markDoneSelected() {
-  const checked = document.querySelectorAll('.feature-card .archive-checkbox:checked');
-  if (checked.length === 0) return;
-  checked.forEach(cb => {
-    const card = cb.closest('.feature-card');
-    if (!card) return;
-    card.setAttribute('data-done', 'true');
-    cb.checked = false;
-  });
-  saveMarkedDone();
-  toggleSelectMode();
-  applyFilter();
-  alert(`Marked ${checked.length} card(s) as Done. Toggle the 🏁 Done (manual) filter to view.`);
-}
-
-function saveMarkedDone() {
-  const done = [];
-  document.querySelectorAll('.feature-card[data-done="true"]').forEach(c => {
-    const title = c.querySelector('.card-title');
-    if (title) done.push(title.textContent.trim());
-  });
-  try { localStorage.setItem('sydecar-tracker-done', JSON.stringify(done)); } catch(e){}
-}
-
-function loadMarkedDone() {
-  try {
-    const saved = JSON.parse(localStorage.getItem('sydecar-tracker-done') || '[]');
-    document.querySelectorAll('.feature-card').forEach(c => {
-      const title = c.querySelector('.card-title');
-      if (title && saved.includes(title.textContent.trim())) {
-        c.setAttribute('data-done', 'true');
-      }
-    });
-  } catch(e){}
-}
-
 
     // Move card to archive body
     const archiveBody = document.getElementById('archive-body');
@@ -4044,6 +4006,54 @@ function loadMarkedDone() {
   document.getElementById('btnSelect').classList.remove('active');
   document.getElementById('btnSelect').textContent = '☑ Select';
   document.querySelectorAll('.card-check').forEach(cb => cb.remove());
+}
+
+function markDoneSelected() {
+  const checked = [...document.querySelectorAll('.card-check:checked')];
+  if (!checked.length) return;
+  const count = checked.length;
+  checked.forEach(cb => {
+    const card = cb.closest('.feature-card');
+    if (!card) return;
+    card.setAttribute('data-done', 'true');
+    cb.remove();
+  });
+  saveMarkedDone();
+
+  // Exit select mode (same as archiveSelected)
+  document.body.classList.remove('select-mode');
+  const btnSelect = document.getElementById('btnSelect');
+  if (btnSelect) {
+    btnSelect.classList.remove('active');
+    btnSelect.textContent = '☑ Select';
+  }
+  document.querySelectorAll('.card-check').forEach(cb => cb.remove());
+
+  applyFilter();
+  updateCounts();
+  updateArchiveBtnCount();
+  alert(`Marked ${count} card(s) as Done. Click the 🏁 Done (manual) filter to view.`);
+}
+
+function saveMarkedDone() {
+  const done = [];
+  document.querySelectorAll('.feature-card[data-done="true"]').forEach(c => {
+    const title = c.querySelector('.card-title');
+    if (title) done.push(title.textContent.trim());
+  });
+  try { localStorage.setItem('sydecar-tracker-done', JSON.stringify(done)); } catch(e){}
+}
+
+function loadMarkedDone() {
+  try {
+    const saved = JSON.parse(localStorage.getItem('sydecar-tracker-done') || '[]');
+    document.querySelectorAll('.feature-card').forEach(c => {
+      const title = c.querySelector('.card-title');
+      if (title && saved.includes(title.textContent.trim())) {
+        c.setAttribute('data-done', 'true');
+      }
+    });
+  } catch(e){}
 }
 
 function restoreCard(btn) {
