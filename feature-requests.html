@@ -224,7 +224,7 @@
 
 <div class="header">
   <h1>📋 Sydecar Product Feature Requests</h1>
-  <span class="meta">Last synced: May 20, 2026 · Jan 1–May 20, 2026</span>
+  <span class="meta">Last synced: May 22, 2026 · Jan 1–May 22, 2026</span>
   <input class="search-bar" id="searchInput" placeholder="Search features…" oninput="filterCards()">
   <span class="filter-row-label">Priority</span>
   <button class="filter-btn priority-btn active" id="priAll" onclick="setPriority('all')">All</button>
@@ -317,7 +317,8 @@
               <li><strong>LP-50</strong> &middot; 2026-05-18 &middot; <a href="https://linear.app/sydecario/issue/LP-50/phase-2-ubo-management-handoff" style="color:#1d4ed8;">Phase 2: UBO management + handoff</a></li>
             </ul>
           </div>
-          <span class="updated">Last updated: Apr 9, 2026</span>
+          <p style="background:#e3f2fd;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">🔄 <strong>May 21–22 (Aparna 1:1 + roadmap):</strong> Entity Onboarding <strong>Phase 2 in UAT</strong>, two-week soak due to feature size; <strong>production target W3 (Jun 1–5)</strong>. PII leak fix included. Fast-follow UX fixes already scoped post-UAT. Phase 3 (UBOs as Entities) discovery W11–W13; production target W6 (Aug 10–14). Onboarding Reimagination spike with Jo running through Q3. Customer signal still hot: 4+ UBO-confusion SUPPORT_REQUESTs in mozart.all_feedback this window (verbatim May 20, single-member LLC user: <em>"I have selected 'single member llc' but the profile says 'Ultimate Beneficial Owners (UBOs) No owners own more than 25% of this entity.' I am confused about this so unable to confirm the profile"</em>). Phase 2 UI directly targets this confusion class.</p>
+          <span class="updated">Last updated: May 22, 2026 (v16)</span>
           </div>
         </div>
       </div>
@@ -567,6 +568,8 @@
           <p style="background:#e3f2fd;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">🔄 <strong>May 11 (Linear):</strong> Sub-ticket progress on LP-640/LP-653: <strong>LP-647</strong> (Series Agreement / LLCA end-to-end Dropbox Sign) In Progress; <strong>LP-732</strong> (embedded Dropbox Sign iframe in SingleAgreement / DualAgreementsCoinvestor) In Review; <strong>LP-782</strong> (Claude-created: file-backed MockSigningStore for resume/teammate-swap stories) In Review. The mock surface is being hardened to unblock resume + teammate-swap flows that previously died past Story 1. End of May MVP target is on track for the happy path; resume/swap edge cases are the real gating risk.</p>
           <p style="background:#e3f2fd;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">🔄 <strong>May 13–17 (Linear):</strong> Packet-flow tickets advanced: <strong>LP-640</strong> Backend Packet Creation + Variables — In Review (Tyler). <strong>LP-647</strong> Series Agreement / LLCA — In Review. <strong>LP-653</strong> Frontend Series Agreement / LLCA — In Review. <strong>LP-732</strong> Embedded Dropbox Sign view — In Review. <strong>LP-646</strong> Deal Lead Signature Page — newly active. All four review-stage tickets need to land together for end-of-May happy-path target.</p>
           <p style="background:#e8f5e9;border-left:3px solid #43a047;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">✅ <strong>May 15 (Linear LP-752, Done · Aparna spike):</strong> AnnounceKit prototype spike closed. Compliance/DPA review was the gating concern; spike outcome will inform whether AnnounceKit becomes the canonical in-app comms primitive or whether LP-748 (Audience-targeted system banner, shipped May 15) carries the load. Both now exist as in-app announcement rails — issuer-notice + naming-launch use cases unblocked either way.</p>
+          <p style="background:#e3f2fd;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">🔄 <strong>May 22 (Linear):</strong> <strong>LP-647</strong> Series Agreement / LLCA — In Review. <strong>LP-791</strong> AnnounceKit integration for qualified-client banners — In Progress (Ibrahim, sibling to LP-752). Roadmap: AnnounceKit β next week, production W3 (Jun 1–5), paired with QC Threshold launch and targeted banners. <strong>Phase 1 (LLCAs + Subscription Agreements happy path) production target W2 of Jul (Jul 13–17) per roadmap.</strong></p>
+          <p style="background:#fff3e0;border-left:3px solid #ff9800;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">⚠️ <strong>May 22 Dropbox Sign re-evaluation (Aparna 1:1 + #pmux-internal):</strong> M-of-N signer limitation still unresolved and becoming more material as deals with UBOs + entities trend upmarket. Aparna and Nik confirmed: signer selection workaround on Sydecar platform before passing to Dropbox is the leading path; vendor switch remains a fallback. <strong>Roadmap Phase 4 ("Multiple signers") slotted W7 of Aug (Aug 17–21)</strong> — gives ~12 weeks to either solve in-product or vendor-switch.</p>
           </div>
         </div>
       </div>
@@ -633,9 +636,11 @@
             <strong style="font-size:12px;color:#15803d;">📜 Linear completions (since Jan 1, 2026):</strong>
             <ul style="font-size:11px;margin:6px 0 0 0;padding-left:18px;color:#333;">
               <li><strong>LP-766</strong> &middot; 2026-05-20 &middot; <a href="https://linear.app/sydecario/issue/LP-766/implement-plaid-auto-import-of-outgoing-bank-account-details" style="color:#1d4ed8;">Implement Plaid auto-import of outgoing bank account details</a></li>
+              <li><strong>LP-776</strong> &middot; 2026-05-22 &middot; Frontend: wire Plaid auto-import into Receiving Funds UI (Timothy)</li>
             </ul>
           </div>
-          <span class="updated">Last updated: Apr 30, 2026</span>
+          <p style="background:#e3f2fd;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">🔄 <strong>May 22 (Linear):</strong> <strong>LP-776 Done</strong>. Frontend Plaid auto-import shipped — outgoing bank capture now live end-to-end. LP-798 inline UX redesign still in progress (Timothy). <strong>May 22 (Front signal):</strong> 184 conversations in 2 days under "!action requested - refund or distribution claim" subject, indicating ongoing manual refund/distribution payment-instruction follow-up volume. New <strong>HSBC US</strong> bank not recognized by Plaid (mozart.all_feedback May 20, Patrick Cooper) — surface as a known Plaid bank coverage gap.</p>
+          <span class="updated">Last updated: May 22, 2026 (v16)</span>
           </div>
         </div>
       </div>
@@ -906,7 +911,9 @@
             <h4>Sources</h4>
             <a class="source-link" href="https://app.frontapp.com">Front · operations@sydecar.io · Jan–Apr 2026</a>
             <p class="cx-note" style="background:#fff3e0;border-left:3px solid #ff9800;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📊 <strong>Front keyword scan (Jan–Apr 2026):</strong> Magic link expiry triggering direct frustration in inbound emails. Verbatim: <em>"This nonsense about magic link just to login is not only stupid, but again a terrible experience, especially because they expire."</em> Also 2 threads "unable to find an associated account." Each failed login = a touchpoint. <strong>North star impact: direct — every auth failure creates an ops email.</strong></p><p class="cx-note" style="background:#fff3e0;border-left:3px solid #ff9800;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📊 <strong>mozart.all_feedback (Apr 30–May 1, 2026):</strong> CSAT comment from David Lincoln: magic link returned "time expired" error mid-onboarding. Customer had to restart the flow from scratch. Each expired magic link = guaranteed ops touchpoint or abandonment. Consistent with the 2 "unable to find associated account" threads already in Front.</p><p style="background:#e3f2fd;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">🔄 <strong>May 20 (Linear):</strong> <strong>LP-700</strong> Investor profile creation: accreditation validation gap on magic link path — moved to <strong>In Progress</strong> (Ibrahim). Closes a known compliance gap in the magic-link onboarding route.</p>
-          <span class="updated">Last updated: Apr 30, 2026</span>
+          <p style="background:#fff3e0;border-left:3px solid #ff9800;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">🐞 <strong>May 22 (Linear PDE-555, NEW Backlog):</strong> "Magic-link tokens may be invalidated by customer email-security scanners." Distinct from LP-700 (accreditation) — this is a deliverability/security-scanner consumption bug. Enterprise email security tools pre-fetch links to scan, burning the one-time token before the user clicks. Affects any customer behind Mimecast / Proofpoint / similar. Likely contributing to the "magic link doesn't work" pattern in NPS comments. Worth pairing with LP-700 disposition.</p>
+          <p style="background:#e3f2fd;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">🔄 <strong>May 22 (Linear):</strong> <strong>LP-700</strong> now <strong>In Review</strong> (Timothy). Fix moving through.</p>
+          <span class="updated">Last updated: May 22, 2026 (v16)</span>
           </div>
         </div>
       </div>
@@ -1250,9 +1257,12 @@
             <ul style="font-size:11px;margin:6px 0 0 0;padding-left:18px;color:#333;">
               <li><strong>DL-154</strong> &middot; 2026-05-19 &middot; <a href="https://linear.app/sydecario/issue/DL-154/fees-22-create-per-version-function-modules" style="color:#1d4ed8;">FEES-2.2: Create per-version function modules</a></li>
               <li><strong>DL-622</strong> &middot; 2026-05-19 &middot; <a href="https://linear.app/sydecario/issue/DL-622/fees-tab-fees-within-ui-stubs" style="color:#1d4ed8;">Fees Tab: Fees within UI stubs</a></li>
+              <li><strong>DL-462</strong> &middot; 2026-05-20 &middot; Frontend: Create UI for Fee Estimate (Steven)</li>
+              <li><strong>DL-626</strong> &middot; 2026-05-21 &middot; Fees On Top / Within Deal Economics Panel (Steven)</li>
             </ul>
           </div>
-          <span class="updated">Last updated: May 17, 2026</span>
+          <p style="background:#fff3e0;border-left:3px solid #ff9800;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">🔄 <strong>May 22 (#fees-on-top-2026 · Aparna):</strong> Major strategy reset, sales-approved May 21. <em>"While Henry continues to work on decoupling + improving the fees engine through Q2, we will press pause on further enhancements to the design for Fees on Top."</em> Q2 = validate hypotheses with users (Steve + Henry join customer calls) and build the <strong>Estimates Calculator</strong>. Backend was 16 weeks (Henry) → negotiated to 8. <strong>Realistic ship: Q3 mid-to-late, not Q2.</strong> Estimates Calculator addresses CX pain point of building Google sheets <em>"four times a day"</em> and the fee-transparency complaint from current DLs. Ultimate goal: get DLs to opt in for expense holdback. Roadmap: Phase 2 (UX for Fees on Top) discovery W8–W12, CC W6 (Aug 10–14), production tail W7 (Aug 17–21).</p>
+          <span class="updated">Last updated: May 22, 2026 (v16)</span>
           </div>
         </div>
       </div>
@@ -1293,9 +1303,14 @@
             <strong style="font-size:12px;color:#15803d;">📜 Linear completions (since Jan 1, 2026):</strong>
             <ul style="font-size:11px;margin:6px 0 0 0;padding-left:18px;color:#333;">
               <li><strong>DL-623</strong> &middot; 2026-05-20 &middot; <a href="https://linear.app/sydecario/issue/DL-623/opt-in-for-manager-checkbox" style="color:#1d4ed8;">Opt-in for manager checkbox</a></li>
+              <li><strong>DL-452</strong> &middot; 2026-05-21 &middot; Show SPV manager in console (Huy)</li>
+              <li><strong>DL-625</strong> &middot; 2026-05-22 &middot; Show banner for existing DLs with old SPVs where the manager is Sydecar (Mohammad)</li>
+              <li><strong>DL-601</strong> &middot; 2026-05-22 &middot; SPV Legal Name Update subtext (state filings + cap table) (Mohammad)</li>
             </ul>
           </div>
-          <span class="updated">Last updated: Apr 28, 2026</span>
+          <p style="background:#e3f2fd;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">🔄 <strong>May 21 (Aparna 1:1 + roadmap):</strong> Phase 1 going to UAT for one week, <strong>production June 1</strong>. Approach: shift from officer/manager capacity to delegate capacity via deal-level Power of Attorney (one-page document, customer becomes manager of each specific deal). Form ID / Form D considerations identified but not yet scoped. Discussion of future move to account-level blanket PoA, possibly folded into SOW. Phase 2 discovery in Week 8 (May 25–29) with Legal stakeholder input. Shauna out May 22 → June 1, follow-up scheduled for her return.</p>
+          <p style="background:#fff3e0;border-left:3px solid #ff9800;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📨 <strong>May 22 Nik directive (#pmux-internal):</strong> Compliance &amp; security work should build for core AND API together. <em>"Anticipate both surface areas for things like removing Sydecar as a manager, KYC/EDD updates, etc."</em> Implication: API parity needs to be scoped into Phase 1.5/2 of this project.</p>
+          <span class="updated">Last updated: May 22, 2026 (v16)</span>
           </div>
         </div>
       </div>
@@ -1375,6 +1390,7 @@
           <p style="background:#e3f2fd;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">⚙ <strong>May 12 (Linear DL-614, In Review):</strong> "Update SPV legal name character limits" — extends SPV legal name + Deal display name to the IRS 69-char limit. PR open. This is the executing ticket for the PDE-524 follow-up; the May 11 entry above can be retired once DL-614 ships.</p>
           <p style="background:#fff3e0;border-left:3px solid #ff9800;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📧 <strong>May 13–15 (Front, ops@sydecar.io):</strong> "Action Required: Your Sydecar Deal in Review" still generating investor confusion at scale. Verbatim from inbound: <em>"I'm still confused — what do I put under investor name. This whole thing: 'MHI0526, a Series of CGF2021 LLC,' please clarify."</em> The display/legal split landed for DLs but investors still see the raw legal string in deal-review emails and freeze. Templated copy probably needs the same display-first treatment.</p>
           <p style="background:#e3f2fd;border-left:3px solid #1e88e5;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">🐞 <strong>May 17 (Linear DL-617, Triage · spawned from OPE-513):</strong> "Stale target_company.short_name after deal-naming flag rollout." OPE-513 (closed May 17) confirmed edited Display Name wasn't propagating to Target Name in admin/console; DL-617 is the follow-up for the same staleness pattern in target_company.short_name. The naming refactor surface area is still leaking — likely more downstream consumers to audit.</p>
+          <p style="background:#fff3e0;border-left:3px solid #ff9800;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">🐞 <strong>May 22 (Linear regressions):</strong> Two new naming bugs filed in 48 hours. <strong>DL-627</strong> "[Bug Report] naming project failing." <strong>PDE-564</strong> "Short name in Target Companies is populating with the same as legal name generated." Naming guardrails surface area is still leaking past launch — pattern is consistent with the DL-617/OPE-513 staleness trail. Pair to audit all downstream target_company.* consumers.</p>
           </div>
         </div>
       </div>
@@ -2240,6 +2256,39 @@
             <div class="enrichment-note" style="background:#fff3e0;border-left:3px solid #ff9800;padding:8px 10px;margin-top:8px;font-size:0.9em;"><strong>May 11 update (Gmail / Nik thread):</strong> Zive restructuring confirmed externally. NAV agreed to match current pricing for remainder of customer terms. Customer outreach in progress. The same dynamic Darius experienced will play out for every remaining Fund+ customer in the next 21 days. Risk: stacked migration + pricing change + product fixes compound churn. Pre-stage Cher's playbook so it isn't a one-off save per customer.</div>
             <div class="enrichment-note" style="background:#fff3e0;border-left:3px solid #ff9800;padding:8px 10px;margin-top:8px;font-size:0.9em;"><strong>May 13–16 update (Gmail · Cher · Customer Acquisition Agreement):</strong> Active Customer Acquisition Agreement negotiation with Zive — 16 confirmed funds worth $1M+ in future billings being transitioned. Migration fees + pricing model detailed in agreement. Separate NAV/Zive pricing parity thread shows Zive matching Sydecar pricing and bundling taxes — explicit competitive response. Fund+ → June 1 cutoff is now compressed with three active streams: (1) Zive intake of fund admin book; (2) NAV taking the remaining customers; (3) outbound comms to ~10 Fund+ customers left. Cher's individual save model is structurally not going to scale across all three streams in 2 weeks.</div>
             <span class="updated">Added May 10, 2026 · Enriched May 17, 2026 (Zive Customer Acquisition Agreement in negotiation; pricing parity competitive response; June 1 deadline compressed)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="feature-card" data-priority="p1" data-tags="estimates calculator fees-transparency cx-touchpoint roadmap-2026" draggable="true" data-clock="pre-close" data-pm="Aparna (covering)" data-em="Carlos Mecha">
+      <div class="card-row">
+        <span class="drag-handle">&#8286;</span>
+        <div class="card-content">
+          <div class="card-top">
+            <span class="card-title" onclick="toggleDetail(this)">Estimates Calculator — Replace Custom CX Spreadsheets, Surface Fee Transparency In-Product</span>
+            <span class="badge p1">P1</span>
+            <span class="badge wip">⚙ WIP · Q2 (design → CC W7)</span>
+            <span class="badge" style="background:#6a1b9a;color:#fff;font-size:10px;padding:2px 6px;border-radius:4px;">✨ New</span>
+          </div>
+          <div class="card-meta"><span class="mention">Deal Leads</span><span>CX team builds a custom Google Sheet 4× a day to answer the same fee/holdback question; in-product calculator removes the touchpoint and surfaces fee structure to DLs directly</span><div class="owner-bar" style="font-size:11px;color:#666;margin-top:4px;"><strong>PM:</strong> Aparna (covering) · <strong>EM:</strong> Carlos Mecha · <strong>Design:</strong> Wooj / Jo</div></div>
+          <div class="friction-bar"><span class="friction-label">Friction impact:</span><div class="friction-dots"><div class="friction-dot filled"></div><div class="friction-dot filled"></div><div class="friction-dot filled"></div></div></div>
+          <div class="card-detail">
+            <h4>Why a separate card from Fees on Top</h4>
+            Estimates Calculator was elevated to a standalone Q2 deliverable on May 21–22. It solves an immediate CX touchpoint pain (each CX team member building a custom spreadsheet ~4× per day) AND begins to address the fee-transparency complaint that current DLs raise often. Fees on Top is the bigger structural change (Q3 mid–late) and is being paused on design enhancements; the calculator ships ahead of it and lays groundwork for DLs to opt into expense holdback later.
+            <h4>Customer Feedback</h4>
+            <ul>
+              <li>CX (internal): Custom spreadsheet built 4× per day to answer "what's the right size for this commitment given fees + management fee + carry?" — direct touchpoint driver.</li>
+              <li>DL complaint pattern: fee transparency surfaced in multiple #wallet-share-logs threads and Apr–May customer interviews (Health Trend Capital syndicate, Michele Tan, others — see Aparna 1:1 May 21).</li>
+            </ul>
+            <h4>WIP status</h4>
+            Design + prototype complete; <strong>code complete W7 (Jun 29–Jul 3)</strong>, CX UAT, production tail per 2026 Roadmap. Stakeholder customer validation runs through Q2 with Steve Gomez + Henry joining customer calls. DL-462 (Frontend: Fee Estimate UI) Done May 20; DL-626 (Deal Economics Panel) Done May 21 — UI scaffolding in place.
+            <h4>Signal Type</h4>🟠 Current CX Touchpoint + DL Frustration
+            <h4>North Star Relevance</h4>Direct touchpoint kill — every spreadsheet built is an outgoing CX email; in-product calculator removes the email entirely. Aparna explicitly tied this to the touchpoint metric in her May 22 #fees-on-top-2026 update.
+            <h4>Sources</h4>
+            <a class="source-link" href="https://sydecar.slack.com/archives/C0AFBP7JCGP/p1779490956825439">#fees-on-top-2026 · May 22 (Aparna)</a>
+            <a class="source-link" href="https://www.notion.so/3673608079af800ab029cbd3b8398141">Aparna 1:1 · May 21</a>
+            <a class="source-link" href="https://docs.google.com/spreadsheets/d/1IoB8dfESAwCqYDiguOAq1Lf1icE39KWMOEWqJolZKHo">2026 Roadmap</a>
+            <span class="updated">Added May 22, 2026 (Slack #fees-on-top-2026 + Notion 1:1 + Roadmap)</span>
           </div>
         </div>
       </div>
@@ -3661,7 +3710,8 @@
             <h4>Customer Feedback</h4>Brett Martin in #team-api-gtm (May 7): "Dev is getting errors trying to refund investors in Florence Capital SPV XX, a Series of Florence Cap, LLC. Is he not able to do refunds on his own since we auto-sweep investor funds into the main SPV account?" Open question to Dan Bertan + Johannes Neumann.
             <h4>Signal Type</h4>🟠 Current API Customer Issue
             <h4>North Star Relevance</h4>Refund initiation is a recurring CX touch in non-API flows too — the auto-sweep behavior blocks self-serve refunds at the API layer. Aligns with the broader Refunds & Re-Sign workstream (DL-567) but specifically calls out a banking-architecture interaction.
-            <span class="updated">Added May 8, 2026 (Slack #team-api-gtm)</span>
+            <p style="background:#fff3e0;border-left:3px solid #ff9800;padding:6px 10px;margin:6px 0;font-size:12px;border-radius:3px;">📊 <strong>May 20–22 (Front, ops@sydecar.io):</strong> "!action requested - refund or distribution claim" subject ran 184 conversations / 21 inbound replies in 2 days — the dominant inbound subject this window. Open question (FinSys PM + API client eng lead) still unresolved per <code>open_questions.md</code>. Shauna is OOO May 22 → June 1, which removes legal cover for any decision in the next 10 days. Surfacing for prioritization.</p>
+            <span class="updated">Last updated: May 22, 2026 (v16)</span>
           </div>
         </div>
       </div>
@@ -3702,6 +3752,29 @@
       </div>
     </div>
 
+    <div class="feature-card" data-priority="p2" data-tags="api lifecycle bug aqua spv-state" draggable="true" data-clock="post-close" data-pm="TBD" data-em="TBD">
+      <div class="card-row">
+        <span class="drag-handle">&#8286;</span>
+        <div class="card-content">
+          <div class="card-top">
+            <span class="card-title" onclick="toggleDetail(this)">API SPV Lifecycle — Aqua SPVs Incorrectly Moving to CLOSED After Disbursement</span>
+            <span class="badge p2">P2</span>
+            <span class="badge" style="background:#6a1b9a;color:#fff;font-size:10px;padding:2px 6px;border-radius:4px;">✨ New</span>
+          </div>
+          <div class="card-meta"><span class="mention">API Partners</span><span>Aqua API SPVs flip to CLOSED state after disbursement, breaking downstream lifecycle assumptions</span><div class="owner-bar" style="font-size:11px;color:#666;margin-top:4px;"><strong>PM:</strong> TBD · <strong>EM:</strong> TBD</div></div>
+          <div class="friction-bar"><span class="friction-label">Friction impact:</span><div class="friction-dots"><div class="friction-dot filled"></div><div class="friction-dot filled"></div><div class="friction-dot"></div></div></div>
+          <div class="card-detail">
+            <h4>Signal</h4>
+            <strong>Linear PDE-557</strong> (NEW · Backlog · May 22): "Aqua API SPVs incorrectly moving to CLOSED after disbursement." State-machine regression — disbursement should not terminate the SPV record; downstream tax, K-1, and reporting flows still need ACTIVE state. Aqua is one of the named third-party-manager API clients (paired with Republic, Monark).
+            <h4>Signal Type</h4>🟠 API Lifecycle Bug
+            <h4>North Star Relevance</h4>Post-close clock. Wrong state breaks downstream automations and forces manual lookups; pairs with the API Refund/Auto-Sweep open question — same banking/disbursement surface area. Worth pairing investigation with Florence Capital refund issue.
+            <h4>Sources</h4>
+            <a class="source-link" href="https://linear.app/sydecario/issue/PDE-557">Linear PDE-557</a>
+            <span class="updated">Added May 22, 2026 (Linear)</span>
+          </div>
+        </div>
+      </div>
+    </div>
     </div><!-- /api -->
 
 
